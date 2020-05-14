@@ -1,4 +1,4 @@
-@extends('layouts.test', [
+@extends('layouts.fixed-navbar', [
     'namePage' => 'HOMEPAGE',
     'activePage' => 'home',
 ])

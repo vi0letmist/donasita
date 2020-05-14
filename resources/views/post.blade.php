@@ -1,16 +1,16 @@
-@extends('layouts.test', [
+@extends('layouts.sticky-navbar', [
     'namePage' => 'post',
     'activePage' => 'post',
 ])
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-12" style="padding-top:8em;">
+        <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20">
             <div class="center-heading">
                 <h1><strong>Pembangunan Gedung Baru Pondok pesantren Tebu Ireng</strong></h1>
             </div>
         </div>
-        <div class="col-lg-8 col-md-6 col-sm-12">
+        <div class="col-lg-8 col-md-6 col-sm-12" id="item-post">
             <div class="item-post">
                 <div class="post-pict-item">
                     <img src="assets/images/eduard.jpg" class="rounded img-fluid d-block mx-auto" alt="">
@@ -105,7 +105,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 sidebar-item">
-            <div class="sidebar-donate-item">
+            <div class="sidebar-donate-item" id="sidebar">
                 <div class="sidebar-donate-header">
                     <h3><strong>Rp. 80.000.000 </strong></h3>
                     <p>terkumpul dari Rp. 400.000.000</p>
@@ -117,10 +117,11 @@
                 <div class="sidebar-donate-body">
                 <a href="#" class="donate-button">Donasi Sekarang</a>
                 </div>
-                <div class="sidebar-donate-footer">
+                <div class="sidebar-donate-footer padding-bottom-10">
                     <a href="#" class="share-button">Bagikan</a>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20 border-bottom-20">
+                <!-- people donation -->
+                <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
                     <div class="row">
                         <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
                             <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
@@ -130,22 +131,91 @@
                         <div class="col-lg-10 col-md-8 col-sm-8">
                             <p>Luhut Pandjaitan</p>
                             <div class="row padding-0">
-                                <div class="col-lg-6 col-md-5 col-sm-5">
-                                    <p><b>Rp. 10.000</b></p>        
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1">
-                                    <i class="fas fa-circle" style="font-size: 6px;"></i>        
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <p>jancok</p>                
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <ul>
+                                        <li>
+                                            <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                        </li>
+                                        <li>
+                                            <span class="lastdonate dot">14 jam yang lalu</span>
+                                        </li>
+                                    </ul>      
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
+                </div>
+                <!-- end people donation-->
+                <!-- people donation -->
+                <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-8 col-sm-8">
+                            <p>Luhut Pandjaitan</p>
+                            <div class="row padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <ul>
+                                        <li>
+                                            <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                        </li>
+                                        <li>
+                                            <span class="lastdonate dot">14 jam yang lalu</span>
+                                        </li>
+                                    </ul>      
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end people donation-->
+                <!-- people donation -->
+                <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-8 col-sm-8">
+                            <p>Luhut Pandjaitan</p>
+                            <div class="row padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <ul>
+                                        <li>
+                                            <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                        </li>
+                                        <li>
+                                            <span class="lastdonate dot">14 jam yang lalu</span>
+                                        </li>
+                                    </ul>      
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end people donation-->
+                <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20 padding-left-5 padding-right-5">
+                    <a href="#" class="seeall-button">Lihat Semua</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function () { 
+    var top = $('#sidebar').offset().top - parseFloat($('#sidebar').css('marginTop').replace(/auto/, 0));
+    $(window).scroll(function (event) {
+        var y = $(this).scrollTop();
+        //if y > top, it means that if we scroll down any more, parts of our element will be outside the viewport
+        //so we move the element down so that it remains in view.
+        if (y >= top) {
+           var difference = y - top;
+           $('#sidebar').css("top",difference);
+       }
+   });
+});</script>
 @endsection
