@@ -41,7 +41,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
+    <header class="header-area2 header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">

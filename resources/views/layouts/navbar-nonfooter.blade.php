@@ -60,11 +60,11 @@ https://templatemo.com/tm-535-softy-pinko
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="#welcome" class="active">Beranda</a></li>
+                            <!-- <li><a href="#welcome" class="active">Beranda</a></li>
                             <li><a href="#features">Penggalangan Dana</a></li>
                             <li><a href="/login" class="main-login">Masuk</a></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
+                          document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li> -->
                         </ul>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -83,7 +83,7 @@ https://templatemo.com/tm-535-softy-pinko
     @yield('content')
     
     <!-- ***** Footer Start ***** -->
-    <footer>
+    <!-- <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -102,7 +102,7 @@ https://templatemo.com/tm-535-softy-pinko
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>

@@ -6259,9 +6259,12 @@ a.close.disabled {
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
   outline: 0;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  padding: 30px 20px 40px 20px;
 }
 
 .modal-backdrop {
@@ -6283,7 +6286,7 @@ a.close.disabled {
 }
 
 .modal-header {
-  display: flex;
+  display: flow-root;
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 1rem;
@@ -6308,13 +6311,71 @@ a.close.disabled {
   padding: 1rem;
 }
 
+.modal-body ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.modal-body li{
+  float: left;
+  font-size: 14px;
+}
+.modal-body .dot::before{
+  content: "\2022";
+  color: #adadad;
+  font-weight: 900;
+  display: inline-block; 
+  width: 1.1em;
+  margin-left: 0.750em;
+}
+.modal-body li a{
+  font-size: 14px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+.modal-body .lastdonate{
+  font-weight: 400;
+  text-align: left;
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 0.5px;
+  line-height: 15px;
+  position: relative;
+  z-index: 2;
+}
+.modal-body .loyalty-item{
+  font-size: 30px;
+  text-align: center;
+  width:50px;
+  height:50px;
+  border:none;
+  padding:0;
+  outline:none;
+  position:relative;
+  z-index:2;
+  cursor:pointer;
+  transition:all 0.3s ease-in-out;
+  background:#c3ffe0;
+  border-radius:30px
+}
+.modal-body .loyalty-item i{
+  padding-top:0.345em;
+  width:32px;
+  height:32px;
+  align-items: center;
+}
+
 .modal-footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   padding: 0.75rem;
-  border-top: 1px solid #dee2e6;
+  /* border-top: 1px solid #dee2e6; */
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
 }
@@ -11068,4 +11129,141 @@ button.main-button:hover {
 .bg-grow-early{
   padding-bottom: 35px;
   background-image:linear-gradient(to top, #0ba360 0%, #3cba92 100%) !important
+}
+/* 
+---------------------------------------------
+scroll
+--------------------------------------------- 
+*/
+.ps{
+  overflow:hidden !important;
+  overflow-anchor:none;
+  touch-action:auto
+}
+.ps__rail-x{
+  display:none !important;
+  opacity:0;
+  transition:background-color .2s linear, opacity .2s linear;
+  height:15px;
+  bottom:0;
+  position:absolute;
+  z-index:7
+}
+.ps__rail-y{
+  display:none;
+  opacity:0;
+  transition:background-color .2s linear, opacity .2s linear;
+  width:15px;
+  right:0;
+  position:absolute;
+  border-radius:50px;
+  z-index:7
+}
+.ps--active-x>.ps__rail-x,.ps--active-y>.ps__rail-y{
+  display:block;
+  background-color:transparent
+}
+.ps:hover>.ps__rail-x,.ps:hover>.ps__rail-y,.ps--focus>.ps__rail-x,.ps--focus>.ps__rail-y,.ps--scrolling-x>.ps__rail-x,.ps--scrolling-y>.ps__rail-y{
+  opacity:0.6
+}
+.ps__rail-x:hover,.ps__rail-y:hover,.ps__rail-x:focus,.ps__rail-y:focus{
+  background-color:rgba(0,0,0,0.1);
+  opacity:0.9
+}
+.ps__thumb-x{
+  background-color:rgba(0,0,0,0.1);
+  border-radius:6px;
+  transition:background-color .2s linear, height .2s ease-in-out;
+  height:6px;
+  bottom:2px;
+  position:absolute
+}
+.ps__thumb-y{
+  background-color:rgba(0,0,0,0.1);
+  border-radius:6px;
+  transition:background-color .2s linear, width .2s ease-in-out;
+  width:6px;
+  right:2px;
+  position:absolute
+}
+.ps__rail-x:hover>.ps__thumb-x,.ps__rail-x:focus>.ps__thumb-x{
+  background-color:rgba(0,0,0,0.12);
+  height:11px
+}
+.ps__rail-y:hover>.ps__thumb-y,.ps__rail-y:focus>.ps__thumb-y{
+  background-color:rgba(0,0,0,0.12);
+  width:11px
+}
+@supports (-ms-overflow-style: none){
+  .ps{
+    overflow:auto !important
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+  .ps{
+    overflow:auto !important
+  }
+}
+.scrollbar-sidebar,.scrollbar-container{
+  position:relative;
+  height:100%
+}
+.scroll-area{
+  overflow-x:hidden;
+  height:400px
+}
+.scroll-area-xs{
+  height:150px;
+  overflow-x:hidden
+}
+.scroll-area-sm{
+  height:200px;
+  overflow-x:hidden
+}
+.scroll-area-md{
+  height:300px;
+  overflow-x:hidden
+}
+.scroll-area-lg{
+  height:400px;
+  overflow-x:hidden
+}
+.scroll-area-x{
+  overflow-x:auto;
+  width:100%;
+  max-width:100%
+}
+.shadow-overflow{
+  position:relative
+}
+.shadow-overflow::after,.shadow-overflow::before{
+  width:100%;
+  bottom:auto;
+  top:0;
+  left:0;
+  height:1.5rem;
+  position:absolute;
+  z-index:10;
+  content:'';
+  background:linear-gradient(to bottom, #fff 20%, rgba(255,255,255,0) 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0)
+}
+.shadow-overflow::after{
+  bottom:0;
+  top:auto;
+  background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 80%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0)
+}
+/* 
+---------------------------------------------
+create campaign
+--------------------------------------------- 
+*/
+.create-item {
+  background: #FFFFFF;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  padding: 30px 20px 40px 20px;
 }

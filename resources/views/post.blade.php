@@ -115,7 +115,7 @@
                     <p><strong>20%</strong> tercapai</p>
                 </div>
                 <div class="sidebar-donate-body">
-                <a href="#" class="donate-button">Donasi Sekarang</a>
+                    <a href="#" class="donate-button">Donasi Sekarang</a>
                 </div>
                 <div class="sidebar-donate-footer padding-bottom-10">
                     <a href="#" class="share-button">Bagikan</a>
@@ -198,10 +198,249 @@
                     </div>
                 </div>
                 <!-- end people donation-->
-                <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20 padding-left-5 padding-right-5">
-                    <a href="#" class="seeall-button">Lihat Semua</a>
+                <div class="col-lg-12 col-md-12 col-sm-12 center-all padding-top-20 padding-left-5 padding-right-5">
+                    <button type="button" class="btn seeall-button" data-toggle="modal" data-target="#seeallModal">
+                        Lihat Semua
+                    </button>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="seeallModal" tabindex="-1" role="dialog" aria-labelledby="seeallModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">    
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+                        <h5 class="modal-title weight-900" id="seeallModalLabel">Donasi</h5>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 padding-left-2 padding-right-2">
+                        <a href="#" class="donate-button">Donasi Sekarang</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-area-lg">
+                <div class="modal-body scrollbar-container ps--active-y">
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation-->
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation--> 
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation--> 
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation--> 
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation--> 
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation--> 
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation--> 
+                    <!-- people donation -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 border-bottom-10">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-4 padding-0">
+                                <div class="col-lg-12 col-md-12 col-sm-12 loyalty-item">
+                                    <i class="far fa-user-circle icon-gradient bg-grow-early"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-8 col-sm-8">
+                                <p>Luhut Pandjaitan</p>
+                                <div class="row padding-0">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <ul>
+                                            <li>
+                                                <span class="weight-900">Rp. 10.000.000<!-- -->&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                            </li>
+                                        </ul>      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end people donation--> 
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+               
+            </div> -->
         </div>
     </div>
 </div>

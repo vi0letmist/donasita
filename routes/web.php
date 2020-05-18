@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/post', 'PostController@index')->name('post');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+Route::get('/create-1', 'CampaignController@index')->name('create-1');
+Route::get('/create-2', 'CampaignController@create2')->name('create-2');
