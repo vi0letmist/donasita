@@ -11130,6 +11130,86 @@ button.main-button:hover {
   padding-bottom: 35px;
   background-image:linear-gradient(to top, #0ba360 0%, #3cba92 100%) !important
 }
+.bg-warm-flame{
+  background-image:linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) !important
+}
+.bg-night-fade{
+  background-image:linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%) !important
+}
+.bg-sunny-morning{
+  background-image:linear-gradient(120deg, #f6d365 0%, #fda085 100%) !important
+}
+.bg-tempting-azure{
+  background-image:linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%) !important
+}
+.bg-amy-crisp{
+  background-image:linear-gradient(120deg, #a6c0fe 0%, #f68084 100%) !important
+}
+.bg-heavy-rain{
+  background-image:linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%) !important
+}
+.bg-mean-fruit{
+  background-image:linear-gradient(120deg, #fccb90 0%, #d57eeb 100%) !important
+}
+.bg-malibu-beach{
+  background-image:linear-gradient(to right, #4facfe 0%, #00f2fe 100%) !important
+}
+.bg-deep-blue{
+  background-image:linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%) !important
+}
+.bg-ripe-malin{
+  background-image:linear-gradient(120deg, #f093fb 0%, #f5576c 100%) !important
+}
+.bg-arielle-smile{
+  background-image:radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%) !important
+}
+.bg-plum-plate{
+  background-image:linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important
+}
+.bg-happy-fisher{
+  background-image:linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%) !important
+}
+.bg-happy-itmeo{
+  background-image:linear-gradient(180deg, #2af598 0%, #009efd 100%) !important
+}
+.bg-mixed-hopes{
+  background-image:linear-gradient(to top, #c471f5 0%, #fa71cd 100%) !important
+}
+.bg-strong-bliss{
+  background-image:linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%) !important
+}
+.bg-love-kiss{
+  background-image:linear-gradient(to top, #ff0844 0%, #ffb199 100%) !important
+}
+.bg-premium-dark{
+  background-image:linear-gradient(to right, #434343 0%, black 100%) !important
+}
+.bg-happy-green{
+  background-image:linear-gradient(to bottom, #00b09b, #96c93d) !important
+}
+.bg-vicious-stance{
+  background-image:linear-gradient(60deg, #29323c 0%, #485563 100%) !important
+}
+.bg-midnight-bloom{
+  background-image:linear-gradient(-20deg, #2b5876 0%, #4e4376 100%) !important
+}
+.bg-night-sky{
+  background-image:linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important
+}
+.bg-slick-carbon{
+  background-image:linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%),linear-gradient(to top, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.25) 200%) !important;
+  background-blend-mode:multiply
+}
+.bg-royal{
+  background-image:linear-gradient(to right, #141e30, #243b55) !important
+}
+.bg-asteroid{
+  background-image:linear-gradient(to right, #0f2027, #203a43, #2c5364) !important
+}
+.bg-transparent{
+  background:transparent !important
+}
+
 /* 
 ---------------------------------------------
 scroll
@@ -11264,6 +11344,152 @@ create campaign
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   margin-bottom: 30px;
-  margin-top: 20px;
   padding: 30px 20px 40px 20px;
+}
+/* 
+---------------------------------------------
+upload
+--------------------------------------------- 
+*/
+.custom-file-upload{
+  color: #3ac47d;
+  font-size: 14px;
+  background: #c3ffe0;
+  width: 4em;
+  border: none !important;
+  height: 50px;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: .0625rem .625rem .1875rem;
+  border-radius: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 30px;
+}
+.file-upload input[type="file"] {
+    display: none;
+}
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #3ac47d;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  border-bottom: 4px solid #1e9e5e;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: rgb(37, 175, 102);
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #3ac47d;
+  border-radius: 20px;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #3ac47d;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 300px;
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 360px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.backrer{
+  background:#fff !important;
+}
+.intruksi-alert{
+  background: #fffcae;
+}
+.bg-disabled{
+  background: #fbfbfb;
 }

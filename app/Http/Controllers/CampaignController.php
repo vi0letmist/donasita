@@ -15,4 +15,8 @@ class CampaignController extends Controller
     {
         return view('campaign.create-2');
     }
+    public function create3()
+    {
+        return view('campaign.create-3');
+    }
 }

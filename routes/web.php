@@ -25,3 +25,7 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/create-1', 'CampaignController@index')->name('create-1');
 Route::get('/create-2', 'CampaignController@create2')->name('create-2');
+Route::get('/create-3', 'CampaignController@create3')->name('create-3');
+
+Route::get('/donasi-1', 'DonateController@index')->name('donasi-1');
+Route::get('/intruksi', 'DonateController@intruksi')->name('intruksi');

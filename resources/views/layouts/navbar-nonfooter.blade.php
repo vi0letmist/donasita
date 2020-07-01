@@ -23,7 +23,7 @@ https://templatemo.com/tm-535-softy-pinko
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
-    
+    <link href="summernote/summernote.css" rel="stylesheet"> 
 
     </head>
     
@@ -106,7 +106,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
-
+    <script src="assets/js/app.js"></script>
     <!-- Bootstrap -->
     <script src="assets/js/popper.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -119,6 +119,16 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script></body>
+    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
+
+    <!-- Summernote -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+    <script src="summernote/summernote.js"></script>
+    <script type="text/javascript" src="{{ asset('summernote') }}/summernote.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('#cerita').summernote();
+        });
+    </script>
   </body>
 </html>
