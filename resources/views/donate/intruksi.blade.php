@@ -44,13 +44,13 @@
                             <p class="text-center padding-top-10">Pembayaran dilakukan ke rekening a/n<br>Yayasan *gusdkjga*</p>
                             <div class="col-lg-12 col-md-12 col-sm-12 intruksi-rek bg-disabled">
                                 <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <img src="#">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 bank-logo">
+                                        <img src="assets/images/logo/mandiri_logo.png" alt="mandiri">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="text-center">1121092122112</p>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 salin">
                                         <p>salin</p>
                                     </div>
                                 </div>

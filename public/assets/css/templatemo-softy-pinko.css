@@ -2390,6 +2390,9 @@ Create-form
   text-align:center ;
 }
 .intruksi-rek{
+  display: grid;
+  align-items: center;
+  height: 60px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top:10px;
@@ -2405,6 +2408,16 @@ Create-form
 }
 .intruksi-rek-2 p{
   font-size: 14px;
+}
+.bank-logo{
+  padding-left: 30px;
+}
+.bank-logo img{
+  width: 70px;
+}
+.salin{
+  text-align: right;
+  padding-right: 30px;
 }
 /* 
 ---------------------------------------------
