@@ -9,6 +9,10 @@ class CampaignController extends Controller
 {
     public function index()
     {
+        return view('campaign.galang-dana');
+    }
+    public function create1()
+    {
         return view('campaign.create-1');
     }
     public function create2()

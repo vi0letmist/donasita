@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class AdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,14 +23,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
-    }
-    public function layout()
-    {
-        return view('layouts.dashboard');
+        return view('admin.index');
     }
     public function managepost()
     {
-        return view ('dashboard.post.index');
+        return view ('admin.post.index');
+    }
+    public function approvalpost()
+    {
+        return view ('admin.post.approval');
     }
 }

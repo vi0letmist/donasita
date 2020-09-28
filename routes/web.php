@@ -21,9 +21,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/post', 'PostController@index')->name('post');
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'AdminController@index')->name('dashboard');
+Route::get('/layout', 'AdminController@layout')->name('layout');
+Route::get('/manajemen-post', 'AdminController@managepost')->name('manajemen-post');
+Route::get('/persetujuan-post', 'AdminController@approvalpost')->name('persetujuan-post');
 
-Route::get('/create-1', 'CampaignController@index')->name('create-1');
+Route::get('/galang-dana', 'CampaignController@index')->name('galang-dana');
+Route::get('/create-1', 'CampaignController@create1')->name('create-1');
 Route::get('/create-2', 'CampaignController@create2')->name('create-2');
 Route::get('/create-3', 'CampaignController@create3')->name('create-3');
 
