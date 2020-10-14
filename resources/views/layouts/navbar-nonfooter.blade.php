@@ -17,7 +17,7 @@ https://templatemo.com/tm-535-softy-pinko
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
+    
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -103,7 +103,6 @@ https://templatemo.com/tm-535-softy-pinko
             </div>
         </div>
     </footer> -->
-    
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
     <script src="assets/js/app.js"></script>
@@ -125,9 +124,14 @@ https://templatemo.com/tm-535-softy-pinko
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
     <script src="summernote/summernote.js"></script>
     <script type="text/javascript" src="{{ asset('summernote') }}/summernote.min.js"></script>
+    
     <script>
         $(document).ready(function() {
-        $('#cerita').summernote();
+            $('#cerita').summernote();
+        });
+        $('#myTab a').on('click', function (e) {
+            e.preventDefault()
+            $(this).tab('show')
         });
     </script>
   </body>

@@ -78,11 +78,12 @@
                     <h5 class="features-title"><b>Penanganan Coronavirus</b></h5>
                     <p>Customize anything in this template to fit your website needs</p>
                     <p class="lastdonate">oleh jetri potter</p>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal">
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-success btn-blc"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-info btn-blc" data-toggle="modal" data-target="#exampleModal">
                         <i class="pe-7s-info btn-icon-wrapper"> </i>
                     </button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger btn-blc"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
+                    
                 </div>
             </div>
             <!-- ***** Features Small Item End ***** -->
@@ -95,11 +96,11 @@
                     <h5 class="features-title"><b>Penanganan Coronavirus</b></h5>
                     <p>Customize anything in this template to fit your website needs</p>
                     <p class="lastdonate">oleh jetri potter</p>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal">
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-success btn-blc"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-info btn-blc" data-toggle="modal" data-target="#exampleModal">
                         <i class="pe-7s-info btn-icon-wrapper"> </i>
                     </button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger btn-blc"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
                 </div>
             </div>
             <!-- ***** Features Small Item End ***** -->
@@ -112,11 +113,11 @@
                     <h5 class="features-title"><b>Penanganan Coronavirus</b></h5>
                     <p>Customize anything in this template to fit your website needs</p>
                     <p class="lastdonate">oleh jetri potter</p>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal">
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-success btn-blc"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-info btn-blc" data-toggle="modal" data-target="#exampleModal">
                         <i class="pe-7s-info btn-icon-wrapper"> </i>
                     </button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger btn-blc"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
                 </div>
             </div>
             <!-- ***** Features Small Item End ***** -->
@@ -128,14 +129,11 @@
 @endsection
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
+<div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">    
                 <div class="row">
-                    <div class="col-lg-10 col-md-10 col-sm-10">
-                        <h5 class="modal-title weight-900" id="exampleModal">Donasi</h5>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="col-lg-2 offset-lg-10 col-md-2 offset-md-10 col-sm-2 offset-sm-10">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -144,7 +142,43 @@
             </div>
             <div class="scroll-area-lg">
                 <div class="modal-body scrollbar-container ps--active-y">
-                    
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 no-padding">
+                            <div class="postimage">
+                                <img src="assets/images/eduard.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <strong>Judul: </strong><br>
+                                Penggalangan dana ponpes tebu ireng
+                            </div>
+                            <div class="form-group">
+                                <strong>Penggalangan dana untuk: </strong><br>
+                                Pondok Pesantren Tebu Ireng
+                            </div>
+                            <div class="form-group">
+                                <strong>Kode Pos/Alamat: </strong><br>
+                                55183 - Brajan, Tamantirto, Kasihan, Bantul, Yogyakarta bla bla bla bla bla bla bla bla bla bla bla bla bla
+                            </div>
+                            <div class="form-group">
+                                <strong>Target pencapaian donasi: </strong><br>
+                                Rp. 10.000.000
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <strong>Oleh: </strong><br>
+                                Jaffar Jatmiko Jati
+                            </div>
+                            <div class="form-group">
+                                <strong>Cerita/Penjelasan: </strong><br>
+                                <text>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </text>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- <div class="modal-footer">

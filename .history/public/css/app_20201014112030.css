@@ -4467,7 +4467,7 @@ input[type=button].btn-block {
 
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
-  border-color: #fff #fff #ffffff;
+  border-color: #e9ecef #e9ecef #dee2e6;
 }
 
 .nav-tabs .nav-link.disabled {
@@ -4479,8 +4479,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #fff;
-  border-color: #fff #fff #f8fafc;
+  background-color: #f8fafc;
+  border-color: #dee2e6 #dee2e6 #f8fafc;
 }
 
 .nav-tabs .dropdown-menu {
@@ -11348,7 +11348,7 @@ create campaign
 }
 /* 
 ---------------------------------------------
-edit item
+create campaign
 --------------------------------------------- 
 */
 .edit-item {
@@ -11371,10 +11371,11 @@ edit item
   height: 3.5rem;
 }
 .edit-item-body .edit-body-header{
-  padding: .5rem 1rem;
+  padding: .75rem 1.25rem;
   margin-bottom: 0;
   color: inherit;
   background-color: #fff;
+  border-bottom: 1px solid rgba(26,54,126,0.125);;
 }
 .edit-item-body .edit-body-header>.nav{
   margin-left: -.625rem;
@@ -11395,9 +11396,6 @@ edit item
 }
 .edit-item-body .edit-body-header>.nav .nav-link.active{
   color: #3f6ad8;
-}
-.edit-item-body .edit-body-header>.nav .nav-link.active::before{
-  opacity: 1;
 }
 .edit-item-body .edit-body-header>.nav .nav-link::before{
   content: '';

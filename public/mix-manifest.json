@@ -1,4 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/templatemo-softy-pinko.css": "/css/templatemo-softy-pinko.css",
+    "/css/main.css": "/css/main.css",
+    "/css/bootstrap.min.css": "/css/bootstrap.min.css"
 }

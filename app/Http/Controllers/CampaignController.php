@@ -23,4 +23,9 @@ class CampaignController extends Controller
     {
         return view('campaign.create-3');
     }
+    public function edit()
+    {
+        return view('campaign.edit');
+    }
+    
 }

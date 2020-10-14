@@ -131,7 +131,9 @@ body {
 .section.colored {
   background: #f2f2fe;
 }
-
+div.colored{
+  background: #f2f2fe;
+}
 .hr {
   bottom: 0px;
   width: 100%;
@@ -2175,6 +2177,24 @@ contact
 .contact-text p {
   margin-bottom: 28px;
 }
+.edit-item span,
+.edit-item textarea {
+  color: #3ac47d;
+  font-size: 14px;
+  background: #c3ffe0;
+  width: 4em;
+  border: none !important;
+  height: 50px;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: .0625rem .625rem .1875rem;
+  border-radius: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 30px;
+}
 .create-form span,
 .create-form textarea {
   color: #3ac47d;
@@ -2367,7 +2387,108 @@ Create-form
 Create-form
 --------------------------------------------- 
 */
+/*
+---------------------------------------------
+edit-item
+---------------------------------------------
+*/
+.edit-item input,
+.edit-item textarea {
+  color: #777;
+  font-size: 14px;
+  border: 1px solid #eee;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 20px;
+}
 
+.edit-item textarea {
+  height: 150px;
+  resize: none;
+  padding: 20px;
+}
+.edit-item .price span,
+.edit-item .price textarea {
+  color: #3ac47d;
+  font-size: 2.9rem;
+  font-weight: 800;
+  text-align: right;
+  background: #c3ffe0;
+  width: 2em;
+  border: none !important;
+  height: 100px;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: .0625rem .625rem .1875rem;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 30px;
+}
+.edit-item .price input,
+.edit-item .price textarea {
+  color: #3ac47d;
+  font-size: 2.9rem;
+  font-weight: 800;
+  text-align: right;
+  background: #c3ffe0;
+  width: 100%;
+  border: none !important;
+  height: 100px;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: .0625rem .625rem .1875rem;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 30px;
+}
+.edit-item #file-input-button input,
+.edit-item #file-input-button textarea{
+  color: #3ac47d;
+  font-size: 2.9rem;
+  font-weight: 800;
+  text-align: right;
+  background: #c3ffe0;
+  width: 100%;
+  border: none !important;
+  height: 100px;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: .0625rem .625rem .1875rem;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 30px;
+}
+.edit-item .price input::placeholder,
+.edit-item .price textarea::placeholder {
+  color: #fff;
+}
+
+.edit-item .price textarea {
+  height: 150px;
+  resize: none;
+  padding: 20px;
+}
+/*
+---------------------------------------------
+intruksi
+---------------------------------------------
+*/
 #intruksi-us {
   padding: 160px 0px;
 }

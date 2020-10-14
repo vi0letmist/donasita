@@ -25,11 +25,13 @@ Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 Route::get('/layout', 'AdminController@layout')->name('layout');
 Route::get('/manajemen-post', 'AdminController@managepost')->name('manajemen-post');
 Route::get('/persetujuan-post', 'AdminController@approvalpost')->name('persetujuan-post');
+Route::get('/test', 'AdminController@test')->name('test');
 
 Route::get('/galang-dana', 'CampaignController@index')->name('galang-dana');
 Route::get('/create-1', 'CampaignController@create1')->name('create-1');
 Route::get('/create-2', 'CampaignController@create2')->name('create-2');
 Route::get('/create-3', 'CampaignController@create3')->name('create-3');
+Route::get('/campaign', 'CampaignController@edit');
 
 Route::get('/donasi-1', 'DonateController@index')->name('donasi-1');
 Route::get('/intruksi', 'DonateController@intruksi')->name('intruksi');

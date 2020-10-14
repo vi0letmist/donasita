@@ -33,4 +33,8 @@ class AdminController extends Controller
     {
         return view ('admin.post.approval');
     }
+    public function test()
+    {
+        return view ('admin.test');
+    }
 }

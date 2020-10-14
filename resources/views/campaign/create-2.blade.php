@@ -1,6 +1,6 @@
 @extends('layouts.navbar-nonfooter', [
-    'namePage' => 'post',
-    'activePage' => 'post',
+    'namePage' => 'campaign',
+    'activePage' => 'campaign',
 ])
 @section('content')
 <div class="container padding-top-60">

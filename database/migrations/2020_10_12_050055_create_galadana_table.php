@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreateGaladanaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('galadana', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul');
             $table->string('gambar');
@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('target_capaian');
             $table->string('progres_capaian');
             $table->string('status');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('galadana');
     }
 }
