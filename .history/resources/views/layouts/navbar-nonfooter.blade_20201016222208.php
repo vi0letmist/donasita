@@ -127,7 +127,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     <script>
         $(document).ready(function() {
-            $('#taek').summernote();
+            $('').summernote();
         });
         $('#myTab a').on('click', function (e) {
             e.preventDefault()

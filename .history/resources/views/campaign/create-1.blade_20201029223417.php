@@ -6,9 +6,9 @@
 <div class="container padding-top-60">
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="row">
-            <div class="offset-lg-1 col-lg-7 col-md-12 col-sm-12 padding-left-0 padding-right-0">
-                <div class="create-cam">
-                    <div class="col-lg-12 col-md-12 col-sm-12 center-all padding-left-0 padding-right-0">
+            <div class="offset-lg-1 col-lg-7 col-md-12 col-sm-12 padding-left-1 padding-right-1">
+                <div class="create-item padding-left-0 padding-right-0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 center-all padding-top-20 padding-left-0 padding-right-0">
                         <div class="create-form">
                             <form id="regForm" action="/action_page.php">
                                 <h1>Buat Penggalangan Dana</h1><br>
@@ -19,50 +19,41 @@
                                             <li class="step" id="prolog"><strong>Account</strong></li>
                                             <li class="step" id="mbuhla"><strong>Personal</strong></li>
                                             <li class="step" id="confirm"><strong>Selesai</strong></li>
-                                            <li class="step" id="confirm"><strong>Selesai</strong></li>
+                                        </ul>
+                                        <ul id="progressbar">
+                                            <li class="active" id="account"><strong>Account</strong></li>
+                                            <li id="personal"><strong>Personal</strong></li>
+                                            <li id="payment"><strong>Payment</strong></li>
+                                            <li id="confirm"><strong>Finish</strong></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <!-- One "tab" for each step in the form: -->
                                 <div class="tab">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 price padding-left-0 padding-right-0">
-                                        <div class="form-group mb-3">
-                                            <div class="input-group input-group-alternative">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Rp.</span>
-                                                    <fieldset>
-                                                        <input oninput="this.className = ''" name="target" type="text" class="form-control" id="target" placeholder="10.000.000" required="" autofocus>
-                                                    </fieldset>
-                                                </div>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="target" type="text" class="form-control" id="target" placeholder="10.000.000" required="" autofocus>
+                                    </fieldset>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="judul" type="text" class="form-control" id="judul" placeholder="Judul Penggalangan Dana" required="">
+                                    </fieldset>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="penerima" type="email" class="form-control" id="penerima" placeholder="Untuk siapa kamu mengumpulkan dana?" required="">
+                                    </fieldset>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="kodepos" type="email" class="form-control" id="kodepos" placeholder="Kode Pos" required="">
+                                    </fieldset>
+                                    <div class="file-upload">
+                                        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                                        <div class="image-upload-wrap">
+                                            <input oninput="this.className = ''" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                            <div class="drag-text">
+                                            <h3>Drag and drop a file or select add Image</h3>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="fit">
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="target" type="text" class="form-control" id="target" placeholder="10.000.000" required="" autofocus>
-                                        </fieldset>
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="judul" type="text" class="form-control" id="judul" placeholder="Judul Penggalangan Dana" required="">
-                                        </fieldset>
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="penerima" type="email" class="form-control" id="penerima" placeholder="Untuk siapa kamu mengumpulkan dana?" required="">
-                                        </fieldset>
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="kodepos" type="email" class="form-control" id="kodepos" placeholder="Kode Pos" required="">
-                                        </fieldset>
-                                        <div class="file-upload">
-                                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
-                                            <div class="image-upload-wrap">
-                                                <input oninput="this.className = ''" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                                                <div class="drag-text">
-                                                <h3>Drag and drop a file or select add Image</h3>
-                                                </div>
-                                            </div>
-                                            <div class="file-upload-content">
-                                                <img class="file-upload-image" src="#" alt="your image" />
-                                                <div class="image-title-wrap">
-                                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                                                </div>
+                                        <div class="file-upload-content">
+                                            <img class="file-upload-image" src="#" alt="your image" />
+                                            <div class="image-title-wrap">
+                                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
                                             </div>
                                         </div>
                                     </div>

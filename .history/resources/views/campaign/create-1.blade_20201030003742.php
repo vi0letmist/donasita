@@ -19,7 +19,6 @@
                                             <li class="step" id="prolog"><strong>Account</strong></li>
                                             <li class="step" id="mbuhla"><strong>Personal</strong></li>
                                             <li class="step" id="confirm"><strong>Selesai</strong></li>
-                                            <li class="step" id="confirm"><strong>Selesai</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -37,32 +36,30 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="fit">
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="target" type="text" class="form-control" id="target" placeholder="10.000.000" required="" autofocus>
-                                        </fieldset>
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="judul" type="text" class="form-control" id="judul" placeholder="Judul Penggalangan Dana" required="">
-                                        </fieldset>
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="penerima" type="email" class="form-control" id="penerima" placeholder="Untuk siapa kamu mengumpulkan dana?" required="">
-                                        </fieldset>
-                                        <fieldset>
-                                            <input oninput="this.className = ''" name="kodepos" type="email" class="form-control" id="kodepos" placeholder="Kode Pos" required="">
-                                        </fieldset>
-                                        <div class="file-upload">
-                                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
-                                            <div class="image-upload-wrap">
-                                                <input oninput="this.className = ''" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                                                <div class="drag-text">
-                                                <h3>Drag and drop a file or select add Image</h3>
-                                                </div>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="target" type="text" class="form-control" id="target" placeholder="10.000.000" required="" autofocus>
+                                    </fieldset>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="judul" type="text" class="form-control" id="judul" placeholder="Judul Penggalangan Dana" required="">
+                                    </fieldset>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="penerima" type="email" class="form-control" id="penerima" placeholder="Untuk siapa kamu mengumpulkan dana?" required="">
+                                    </fieldset>
+                                    <fieldset>
+                                        <input oninput="this.className = ''" name="kodepos" type="email" class="form-control" id="kodepos" placeholder="Kode Pos" required="">
+                                    </fieldset>
+                                    <div class="file-upload">
+                                        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                                        <div class="image-upload-wrap">
+                                            <input oninput="this.className = ''" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                            <div class="drag-text">
+                                            <h3>Drag and drop a file or select add Image</h3>
                                             </div>
-                                            <div class="file-upload-content">
-                                                <img class="file-upload-image" src="#" alt="your image" />
-                                                <div class="image-title-wrap">
-                                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                                                </div>
+                                        </div>
+                                        <div class="file-upload-content">
+                                            <img class="file-upload-image" src="#" alt="your image" />
+                                            <div class="image-title-wrap">
+                                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
                                             </div>
                                         </div>
                                     </div>

@@ -11347,21 +11347,6 @@ create campaign
   padding: 30px 20px 40px 20px;
 }
 /* 
-/* 
----------------------------------------------
-create campaign
---------------------------------------------- 
-*/
-.create-cam {
-  background: #FFFFFF;
-  width: 98%;
-  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  margin-bottom: 30px;
-  padding: 0 0 0 0;
-  
-}
-/* 
 ---------------------------------------------
 edit item
 --------------------------------------------- 
@@ -11588,14 +11573,11 @@ upload
 }
 #regForm {
   background-color: #ffffff;
+  margin: 20px auto;
   font-family: Raleway;
-  width: 100%;
-  border-radius: 20px;
+  padding: 20px;
+  width: 500px;
   min-width: 300px;
-  text-align: center;
-}
-#regForm ul,li{
-  z-index: 0;
 }
 /* Mark input boxes that gets an error on validation: */
 #regForm input.invalid {
@@ -11611,23 +11593,31 @@ upload
 }
 
 /* Make circles that indicate the steps of the form: */
-
+#regForm .step {
+  height: 50px;
+  width: 50px;
+  margin: 0 30px 0 0;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  text-align: center;
+  position: relative;
+  left: 20px;
+}
 
 #regForm .step.active {
   opacity: 1;
 }
 
 /* Mark the steps that are finished and valid: */
-#regForm li.finish:before,
-#probar li.finish:after {
-  background: skyblue;
+#regForm .step.finish {
+  background-color: #4CAF50;
 }
 
-#regForm .fit{
-  width: 80%;
-  min-width: 300px;
-  margin: 20px;
-  text-align: center;
+#regForm .titik{
+  margin:20px;
 }
 #probar #prolog:before {
   font-family: FontAwesome;
@@ -11642,9 +11632,8 @@ upload
   content: "\f00c"
 }
 #probar{
-  margin-bottom: 30px;
-  overflow: hidden;
-  color: lightgrey
+  width: 60%;
+  margin: auto;
 }
 #probar li {
   list-style-type: none;
@@ -11679,7 +11668,152 @@ upload
 #probar li.active:after {
   background: skyblue
 }
+/* Mark input boxes that gets an error on validation: */
+#createForm input.invalid {
+  background-color: #ffdddd;
+}
 
+/* Hide all steps by default: */
+#createForm .tab {
+  display: none;
+}
+#createForm #prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+#createForm .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+#createForm .step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+#createForm .step.finish {
+  background-color: #4CAF50;
+}
+#regForm {
+  text-align: center;
+  position: relative;
+  margin-top: 20px
+}
+#regForm ul,li{
+  z-index:0;
+}
+
+#regForm fieldset .form-card {
+  background: white;
+  border: 0 none;
+  border-radius: 0px;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 20px 40px 30px 40px;
+  box-sizing: border-box;
+  width: 94%;
+  margin: 0 3% 20px 3%;
+  position: relative
+}
+
+#regForm fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative
+}
+
+#regForm fieldset:not(:first-of-type) {
+  display: none
+}
+
+#regForm fieldset .form-card {
+  text-align: left;
+  color: #9E9E9E
+}
+
+#regForm input,
+#regForm textarea {
+  padding: 0px 8px 4px 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 16px;
+  letter-spacing: 1px
+}
+
+#regForm input:focus,
+#regForm textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none;
+  font-weight: bold;
+  border-bottom: 2px solid skyblue;
+  outline-width: 0
+}
+
+#regForm .action-button {
+  width: 100px;
+  background: skyblue;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px
+}
+
+#regForm .action-button:hover,
+#regForm .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue
+}
+
+#regForm .action-button-previous {
+  width: 100px;
+  background: #616161;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px
+}
+
+#regForm .action-button-previous:hover,
+#regForm .action-button-previous:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #616161
+}
+
+select.list-dt {
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 2px 5px 3px 5px;
+  margin: 2px
+}
+
+select.list-dt:focus {
+  border-bottom: 2px solid skyblue
+}
 #progressbar {
   margin-bottom: 30px;
   overflow: hidden;

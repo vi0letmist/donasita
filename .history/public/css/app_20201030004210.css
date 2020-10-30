@@ -11623,11 +11623,8 @@ upload
   background: skyblue;
 }
 
-#regForm .fit{
-  width: 80%;
-  min-width: 300px;
-  margin: 20px;
-  text-align: center;
+#regForm .titik{
+  margin:20px;
 }
 #probar #prolog:before {
   font-family: FontAwesome;

@@ -11347,21 +11347,6 @@ create campaign
   padding: 30px 20px 40px 20px;
 }
 /* 
-/* 
----------------------------------------------
-create campaign
---------------------------------------------- 
-*/
-.create-cam {
-  background: #FFFFFF;
-  width: 98%;
-  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  margin-bottom: 30px;
-  padding: 0 0 0 0;
-  
-}
-/* 
 ---------------------------------------------
 edit item
 --------------------------------------------- 
@@ -11588,11 +11573,11 @@ upload
 }
 #regForm {
   background-color: #ffffff;
+  margin: 20px auto;
   font-family: Raleway;
-  width: 100%;
-  border-radius: 20px;
+  padding: 20px;
+  width: 500px;
   min-width: 300px;
-  text-align: center;
 }
 #regForm ul,li{
   z-index: 0;
@@ -11618,16 +11603,12 @@ upload
 }
 
 /* Mark the steps that are finished and valid: */
-#regForm li.finish:before,
-#probar li.finish:after {
-  background: skyblue;
+#regForm .step.finish {
+  background-color: #4CAF50;
 }
 
-#regForm .fit{
-  width: 80%;
-  min-width: 300px;
-  margin: 20px;
-  text-align: center;
+#regForm .titik{
+  margin:20px;
 }
 #probar #prolog:before {
   font-family: FontAwesome;
@@ -11679,6 +11660,7 @@ upload
 #probar li.active:after {
   background: skyblue
 }
+
 
 #progressbar {
   margin-bottom: 30px;

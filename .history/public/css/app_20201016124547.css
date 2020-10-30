@@ -11347,21 +11347,6 @@ create campaign
   padding: 30px 20px 40px 20px;
 }
 /* 
-/* 
----------------------------------------------
-create campaign
---------------------------------------------- 
-*/
-.create-cam {
-  background: #FFFFFF;
-  width: 98%;
-  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  margin-bottom: 30px;
-  padding: 0 0 0 0;
-  
-}
-/* 
 ---------------------------------------------
 edit item
 --------------------------------------------- 
@@ -11586,16 +11571,14 @@ upload
 .bg-disabled{
   background: #fbfbfb;
 }
+
 #regForm {
   background-color: #ffffff;
+  margin: 20px auto;
   font-family: Raleway;
-  width: 100%;
-  border-radius: 20px;
+  padding: 20px;
+  width: 500px;
   min-width: 300px;
-  text-align: center;
-}
-#regForm ul,li{
-  z-index: 0;
 }
 /* Mark input boxes that gets an error on validation: */
 #regForm input.invalid {
@@ -11611,140 +11594,129 @@ upload
 }
 
 /* Make circles that indicate the steps of the form: */
-
+#regForm .step {
+  height: 50px;
+  width: 50px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  text-align: center;
+  position: relative;
+}
 
 #regForm .step.active {
   opacity: 1;
 }
 
 /* Mark the steps that are finished and valid: */
-#regForm li.finish:before,
-#probar li.finish:after {
-  background: skyblue;
-}
-
-#regForm .fit{
-  width: 80%;
-  min-width: 300px;
-  margin: 20px;
-  text-align: center;
+#regForm .step.finish {
+  background-color: #4CAF50;
 }
 #probar #prolog:before {
   font-family: FontAwesome;
   content: "\f040"
 }
-#probar #mbuhla:before {
-  font-family: FontAwesome;
-  content: "\f041"
-}
-#probar #confirm:before {
-  font-family: FontAwesome;
-  content: "\f00c"
-}
-#probar{
-  margin-bottom: 30px;
-  overflow: hidden;
-  color: lightgrey
-}
-#probar li {
-  list-style-type: none;
-  font-size: 12px;
-  width: 25%;
-  float: left;
-  position: relative
-}
-#probar li:before {
-  width: 50px;
-  height: 50px;
-  line-height: 45px;
-  display: block;
-  font-size: 18px;
-  color: #ffffff;
-  background: lightgray;
-  border-radius: 50%;
-  margin: 0 auto 10px auto;
-  padding: 2px
-}
-#probar li:after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: lightgray;
-  position: absolute;
-  left: 0;
-  top: 25px;
-  z-index: -1
-}
-#probar li.active:before,
-#probar li.active:after {
-  background: skyblue
+/* Mark input boxes that gets an error on validation: */
+#createForm input.invalid {
+  background-color: #ffdddd;
 }
 
+/* Hide all steps by default: */
+#createForm .tab {
+  display: none;
+}
+#createForm #prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+#createForm .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+#createForm .step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+#createForm .step.finish {
+  background-color: #4CAF50;
+}
 #progressbar {
-  margin-bottom: 30px;
-  overflow: hidden;
-  color: lightgrey
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
 }
 
 #progressbar .active {
-  color: #000000
+    color: #000000
 }
 
 #progressbar li {
-  list-style-type: none;
-  font-size: 12px;
-  width: 25%;
-  float: left;
-  position: relative
+    list-style-type: none;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative
 }
 
 #progressbar #account:before {
-  font-family: FontAwesome;
-  content: "\f023"
+    font-family: FontAwesome;
+    content: "\f023"
 }
 
 #progressbar #personal:before {
-  font-family: FontAwesome;
-  content: "\f007"
+    font-family: FontAwesome;
+    content: "\f007"
 }
 
 #progressbar #payment:before {
-  font-family: FontAwesome;
-  content: "\f09d"
+    font-family: FontAwesome;
+    content: "\f09d"
 }
 
 #progressbar #confirm:before {
-  font-family: FontAwesome;
-  content: "\f00c"
+    font-family: FontAwesome;
+    content: "\f00c"
 }
 
 #progressbar li:before {
-  width: 50px;
-  height: 50px;
-  line-height: 45px;
-  display: block;
-  font-size: 18px;
-  color: #ffffff;
-  background: lightgray;
-  border-radius: 50%;
-  margin: 0 auto 10px auto;
-  padding: 2px
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
 }
 
 #progressbar li:after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: lightgray;
-  position: absolute;
-  left: 0;
-  top: 25px;
-  z-index: -1
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
 }
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: skyblue
+    background: skyblue
 }
 #msform {
   text-align: center;
