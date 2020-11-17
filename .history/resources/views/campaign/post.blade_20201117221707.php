@@ -44,7 +44,7 @@
                             <img src="{{ asset('assets') }}/images/avatars/5.jpg" alt="">
                         </div>
                         <div class="col-lg-6 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item">    
-                            <p>{{$author->name}}<br>Pengelola</p>
+                            <p>{{Auth::user()->name}}<br>Pengelola</p>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item right-text">    
                             <a href="#" class="contact-button">Kontak</a>

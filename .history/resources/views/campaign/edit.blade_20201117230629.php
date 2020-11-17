@@ -6,14 +6,14 @@
 <div class="container padding-top-60">
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="row">
-            <div class="offset-lg-1 col-lg-8 col-md-12 col-sm-12">
-                <div class="edit-item">
-                    <form method="POST" action="{{ route('galadana.update', $galadana->id) }}" autocomplete="off" enctype="multipart/form-data">
+            <div class="offset-lg-1 col-lg-8 col-md-12 col-sm-12 padding-left-1 padding-right-1">
+                <div class="edit-item padding-left-1 padding-right-1">
+                    <form method="POST" action="{{ route('book.update', $book->id) }}" autocomplete="off" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="edit-item-header">
                             <strong><h5>Ubah Penggalangan Dana</h5></strong>
-                            <p>{{ ($galadana->judul) }}</p>  
+                            <p>penggalangan dana pembangunan gedung baru di pondok pesantren tebu ireng </p>  
                         </div>
                         <div class="edit-item-body">
                             <div class="edit-body-header">
@@ -33,25 +33,25 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="col-lg-6">
                                                 <p>Judul:</p>
                                                 <fieldset>
-                                                    <input name="judul" type="text" class="form-control" id="judul" placeholder="{{ $galadana->judul }}" value="{{ old($galadana->judul) }}" required="">
+                                                    <input name="judul" type="text" class="form-control" id="judul" placeholder="Judul Penggalangan Dana" required="">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="col-lg-6">
                                                 <p>Target:</p>
                                                 <fieldset>
-                                                    <input name="target" type="text" class="form-control" id="target" placeholder="{{ $galadana->target_capaian }}" value="{{ old($galadana->target_capaian) }}" required="">
+                                                    <input name="target" type="text" class="form-control" id="target" placeholder="Target" required="">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="col-lg-6">
                                                 <p>Tautan penggalangan dana:</p>
                                                 <fieldset>
-                                                    <input name="link" type="text" class="form-control" id="link" placeholder="galangdana/{{ $galadana->slug }}" value="{{ old($galadana->slug) }}" required="">
+                                                    <input name="link" type="text" class="form-control" id="link" placeholder="galang-dana/pushi" required="">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                                            <div class="col-lg-12 center-all">
                                                 <fieldset>
                                                     <button type="submit" id="form-submit" class="main-button">Lanjutkan</button>
                                                 </fieldset>
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="file-upload ">
+                                        <div class="file-upload padding-left-3 padding-right-3">
                                             <div class="image-upload-wrap">
                                                 <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
                                                 <div class="drag-text">

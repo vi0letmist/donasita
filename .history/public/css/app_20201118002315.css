@@ -11370,7 +11370,7 @@ edit item
   background: #FFFFFF;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
   border-radius: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding: 30px 30px 40px 30px;
   background-color: #ffffff;
   font-family: Raleway;
@@ -11413,7 +11413,7 @@ edit item
   cursor: pointer;
 }
 .edit-item-body .edit-body-header>.nav .nav-link.active{
-  color: #3ac47d;
+  color: #3f6ad8;
 }
 .edit-item-body .edit-body-header>.nav .nav-link.active::before{
   opacity: 1;
@@ -11421,7 +11421,7 @@ edit item
 .edit-item-body .edit-body-header>.nav .nav-link::before{
   content: '';
   border-radius: 15px;
-  background: #3ac47d;
+  background: #3f6ad8;
   transition: all .2s;
   height: 4px;
   width: 100%;
@@ -11442,11 +11442,6 @@ edit item
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-}
-.edit-body-body p{
-  font-size: 14px;
-  font-weight: 600;
-  margin: 10px 10px 4px 20px;
 }
 /* 
 ---------------------------------------------

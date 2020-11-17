@@ -18,7 +18,7 @@ class GaladanaController extends Controller
     {
         $galadana = Galadana::where('slug', $slug)->first();
         $author = User::join('galadana', 'galadana.user_id', '=', 'users.id')
-                ->where('users.id','=', $galadana->user_id)
+                ->where('galadana.id','=', $galadana->id)
                 ->select('users.*')
                 ->getQuery()
                 ->first();
@@ -27,11 +27,6 @@ class GaladanaController extends Controller
     public function create()
     {
         return view('campaign.create-1');
-    }
-    public function edit($slug)
-    {
-        $galadana = Galadana::where('slug', $slug)->first();
-        return view('campaign.edit', compact('galadana'));
     }
     public function store(Request $request)
     {

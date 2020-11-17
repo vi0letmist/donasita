@@ -22,16 +22,12 @@ class GaladanaController extends Controller
                 ->select('users.*')
                 ->getQuery()
                 ->first();
+        dd($author);
         return view('campaign.post', compact('galadana','author'));
     }
     public function create()
     {
         return view('campaign.create-1');
-    }
-    public function edit($slug)
-    {
-        $galadana = Galadana::where('slug', $slug)->first();
-        return view('campaign.edit', compact('galadana'));
     }
     public function store(Request $request)
     {

@@ -28,11 +28,6 @@ class GaladanaController extends Controller
     {
         return view('campaign.create-1');
     }
-    public function edit($slug)
-    {
-        $galadana = Galadana::where('slug', $slug)->first();
-        return view('campaign.edit', compact('galadana'));
-    }
     public function store(Request $request)
     {
         $this->validate($request, [

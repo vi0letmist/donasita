@@ -33,25 +33,25 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                                <p>Judul:</p>
+                                            <div class="col-lg-6">
+                                                <strong>Judul:</strong>
                                                 <fieldset>
                                                     <input name="judul" type="text" class="form-control" id="judul" placeholder="{{ $galadana->judul }}" value="{{ old($galadana->judul) }}" required="">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                                <p>Target:</p>
+                                            <div class="col-lg-6">
+                                                <strong>Target:</strong>
                                                 <fieldset>
                                                     <input name="target" type="text" class="form-control" id="target" placeholder="{{ $galadana->target_capaian }}" value="{{ old($galadana->target_capaian) }}" required="">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                                <p>Tautan penggalangan dana:</p>
+                                            <div class="col-lg-6">
+                                                <strong>Tautan penggalangan dana:</strong>
                                                 <fieldset>
                                                     <input name="link" type="text" class="form-control" id="link" placeholder="galangdana/{{ $galadana->slug }}" value="{{ old($galadana->slug) }}" required="">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                                            <div class="col-lg-12 center-all">
                                                 <fieldset>
                                                     <button type="submit" id="form-submit" class="main-button">Lanjutkan</button>
                                                 </fieldset>

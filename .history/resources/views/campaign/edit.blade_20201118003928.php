@@ -40,13 +40,13 @@
                                                 </fieldset>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12">
-                                                <p>Target:</p>
+                                                <strong>Target:</strong>
                                                 <fieldset>
                                                     <input name="target" type="text" class="form-control" id="target" placeholder="{{ $galadana->target_capaian }}" value="{{ old($galadana->target_capaian) }}" required="">
                                                 </fieldset>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12">
-                                                <p>Tautan penggalangan dana:</p>
+                                                <strong>Tautan penggalangan dana:</strong>
                                                 <fieldset>
                                                     <input name="link" type="text" class="form-control" id="link" placeholder="galangdana/{{ $galadana->slug }}" value="{{ old($galadana->slug) }}" required="">
                                                 </fieldset>

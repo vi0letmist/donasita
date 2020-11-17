@@ -11443,10 +11443,9 @@ edit item
   margin-bottom: 0;
   list-style: none;
 }
-.edit-body-body p{
-  font-size: 14px;
-  font-weight: 600;
-  margin: 10px 10px 4px 20px;
+.edit-body-body strong{
+  font-size: 12px;
+  font-weight: 500;
 }
 /* 
 ---------------------------------------------
