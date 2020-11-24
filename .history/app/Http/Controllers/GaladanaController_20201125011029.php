@@ -67,6 +67,7 @@ class GaladanaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'gambar' => 'nullable',
             'cerita' => 'nullable'
         ]);
         $galadana = Galadana::find($id);
@@ -86,7 +87,9 @@ class GaladanaController extends Controller
             $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
             $galadana->gambar = $cover;
             $request->file('gambar')->move($target, $cover);
-        } 
+        } else {
+            $galadana->gambar = $request->gambar;
+        }
        
         $galadana->update();
 

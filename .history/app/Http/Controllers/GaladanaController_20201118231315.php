@@ -64,31 +64,17 @@ class GaladanaController extends Controller
 
         return redirect()->route('campaign.index')->withStatus(__('Penggalangan dana berhasil dibuat.'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
         $this->validate($request, [
-            'cerita' => 'nullable'
+            'judul' => 'required',
         ]);
-        $galadana = Galadana::find($id);
-        $galadana->judul = $request->judul;
-        $galadana->slug = Str::slug($request->judul);
-        $galadana->cerita = $request->cerita;
-        $galadana->target_capaian = $request->target_capaian;
-
-        if ($request->gambar != null) {
-            $target = base_path('public/images');
-
-            //code for remove old file
-            if($galadana->galadana != ''  && $galadana->gambar != null){
-                 $file_old = $target.$galadana->gambar;
-                 unlink($file_old);
-            }
-            $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
-            $galadana->gambar = $cover;
-            $request->file('gambar')->move($target, $cover);
-        } 
+        
+        $input = $request->all();
+        $input = Str::slug($request->judul);
+        $galadana = Galadana::find($slug);
        
-        $galadana->update();
+        $galadana->update($input);
 
         return redirect()->route('campaign.index')->withStatus(__('Penggalangan dana berhasil diupdate'));
     }

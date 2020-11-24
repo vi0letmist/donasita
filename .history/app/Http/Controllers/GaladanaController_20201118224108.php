@@ -64,32 +64,35 @@ class GaladanaController extends Controller
 
         return redirect()->route('campaign.index')->withStatus(__('Penggalangan dana berhasil dibuat.'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $this->validate($request, [
-            'cerita' => 'nullable'
+            'judul' => 'required',
+            'target_capaian' => 'required',
+            'gambar' => 'required',
+            'status'=> 'nullable'
         ]);
-        $galadana = Galadana::find($id);
+        $galadana = new Galadana();
         $galadana->judul = $request->judul;
         $galadana->slug = Str::slug($request->judul);
+        if ($request->gambar != null) {
+            $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
+            $galadana->gambar = $cover;
+        } else {
+            $galadana->gambar = 'default.jpg';
+        }
         $galadana->cerita = $request->cerita;
         $galadana->target_capaian = $request->target_capaian;
+        $galadana->progres_capaian = 0;
+        $galadana->status = 0;
+        $galadana->user_id = Auth::user()->id;
+        $galadana->save();
 
         if ($request->gambar != null) {
             $target = base_path('public/images');
-
-            //code for remove old file
-            if($galadana->galadana != ''  && $galadana->gambar != null){
-                 $file_old = $target.$galadana->gambar;
-                 unlink($file_old);
-            }
-            $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
-            $galadana->gambar = $cover;
             $request->file('gambar')->move($target, $cover);
-        } 
-       
-        $galadana->update();
+        }
 
-        return redirect()->route('campaign.index')->withStatus(__('Penggalangan dana berhasil diupdate'));
+        return redirect()->route('campaign.index')->withStatus(__('Penggalangan dana berhasil dibuat.'));
     }
 }

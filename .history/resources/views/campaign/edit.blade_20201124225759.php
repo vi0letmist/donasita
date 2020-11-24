@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                                                 <fieldset>
-                                                    <button type="submit" id="form-submit" class="main-button">Simpan</button>
+                                                    <button type="submit" id="form-submit" class="main-button">Lanjutkan</button>
                                                 </fieldset>
                                             </div>
                                         </div>
@@ -66,18 +66,26 @@
                                             <img src="{{URL::asset('/images/' . $galadana->gambar)}}" class="rounded img-fluid d-block mx-auto" alt="">
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-12 right-all">
-                                                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#editModal">
-                                                    edit
-                                                </button>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12 left-all">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 center-all">
                                                 <fieldset>
-                                                    <button type="submit" id="form-submit" class="main-button">Simpan</button>
+                                                    <button type="submit" id="form-submit" class="main-button">Lanjutkan</button>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <fieldset>
+                                                    <button type="submit" id="form-submit" class="main-button">Lanjutkan</button>
                                                 </fieldset>
                                             </div>
                                         </div>
-                                        
+                                        <div class="file-upload">
+                                            <input style="padding-top: 10px;" type="file" class="form-control btn btn-sm" name="gambar" value="{{old('name', $galadana->gambar)}}" onchange="readURL(this);" accept="image/*">
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image" src="{{URL::asset('/images/' . $galadana->gambar)}}" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">{{old('name', $galadana->gambar)}}</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                         <fieldset>
@@ -98,41 +106,6 @@
                     
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">    
-                <div class="row">
-                    <div class="col-lg-10 col-md-10 col-sm-10">
-                        <h5 class="modal-title weight-900" id="seeallModalLabel">Donasi</h5>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-area-lg">
-                <div class="modal-body scrollbar-container ps--active-y">
-                    <div class="file-upload">
-                        <input style="padding-top: 10px;" type="file" class="form-control btn btn-sm" name="gambar" value="{{old('name', $galadana->gambar)}}" onchange="readURL(this);" accept="image/*">
-                        <div class="file-upload-content">
-                            <img class="file-upload-image" src="{{URL::asset('/images/' . $galadana->gambar)}}" alt="your image" />
-                            <div class="image-title-wrap">
-                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">{{old('name', $galadana->gambar)}}</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="modal-footer">
-               
-            </div> -->
         </div>
     </div>
 </div>

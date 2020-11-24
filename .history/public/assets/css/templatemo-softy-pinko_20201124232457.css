@@ -646,13 +646,10 @@ a.edit-button:hover {
 button.edit-button {
   outline: none;
   border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  cursor: pointer;
   font-size: 13px;
-  text-align: center;
-  padding: 12px 20px;
   border-radius: 20px;
+  padding: 12px 20px;
   background-color: #f7b924;
   text-transform: uppercase;
   color: #353535;
@@ -664,12 +661,8 @@ button.edit-button {
 }
 
 button.edit-button:hover {
-  background-color: #fff;
-  color: #f7b924;
-  padding: 12px 20px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #f7b924;
+  background-color: #9e7006;
+  color: #353535;
 }
 /* ----------------share donate---------------- */
 a.share-button-slider {

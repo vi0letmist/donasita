@@ -74,19 +74,6 @@ class GaladanaController extends Controller
         $galadana->slug = Str::slug($request->judul);
         $galadana->cerita = $request->cerita;
         $galadana->target_capaian = $request->target_capaian;
-
-        if ($request->gambar != null) {
-            $target = base_path('public/images');
-
-            //code for remove old file
-            if($galadana->galadana != ''  && $galadana->gambar != null){
-                 $file_old = $target.$galadana->gambar;
-                 unlink($file_old);
-            }
-            $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
-            $galadana->gambar = $cover;
-            $request->file('gambar')->move($target, $cover);
-        } 
        
         $galadana->update();
 

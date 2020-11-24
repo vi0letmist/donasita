@@ -122,19 +122,8 @@ https://templatemo.com/tm-535-softy-pinko
     <script src="{{ asset('assets') }}/js/custom.js"></script>
     <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script></body>
 
-    <script src="{{ asset('ckeditor') }}/ckeditor.js"></script>
-    <script type="text/javascript">
-        CKEDITOR.replace( 'cerita',{
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
-        });
-    </script>
+    
     <script>
-        $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
         $('#myTab a').on('click', function (e) {
             e.preventDefault()
             $(this).tab('show')

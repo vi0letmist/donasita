@@ -130,11 +130,6 @@ https://templatemo.com/tm-535-softy-pinko
         });
     </script>
     <script>
-        $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
         $('#myTab a').on('click', function (e) {
             e.preventDefault()
             $(this).tab('show')

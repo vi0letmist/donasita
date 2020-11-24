@@ -86,7 +86,7 @@ class GaladanaController extends Controller
             $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
             $galadana->gambar = $cover;
             $request->file('gambar')->move($target, $cover);
-        } 
+        }
        
         $galadana->update();
 

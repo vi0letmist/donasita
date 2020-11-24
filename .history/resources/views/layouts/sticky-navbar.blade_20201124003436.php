@@ -128,13 +128,13 @@ https://templatemo.com/tm-535-softy-pinko
             filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
             filebrowserUploadMethod: 'form'
         });
+        timer = setInterval(updateDiv,100);
+        function updateDiv(){
+            var editorText = CKEDITOR.instances.cerita.getData();
+            $('#myTabContent').html(editorText);
+        }
     </script>
     <script>
-        $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
         $('#myTab a').on('click', function (e) {
             e.preventDefault()
             $(this).tab('show')

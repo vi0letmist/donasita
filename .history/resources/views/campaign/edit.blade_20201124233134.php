@@ -77,7 +77,15 @@
                                                 </fieldset>
                                             </div>
                                         </div>
-                                        
+                                        <div class="file-upload">
+                                            <input style="padding-top: 10px;" type="file" class="form-control btn btn-sm" name="gambar" value="{{old('name', $galadana->gambar)}}" onchange="readURL(this);" accept="image/*">
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image" src="{{URL::asset('/images/' . $galadana->gambar)}}" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">{{old('name', $galadana->gambar)}}</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                         <fieldset>
@@ -119,15 +127,7 @@
             </div>
             <div class="scroll-area-lg">
                 <div class="modal-body scrollbar-container ps--active-y">
-                    <div class="file-upload">
-                        <input style="padding-top: 10px;" type="file" class="form-control btn btn-sm" name="gambar" value="{{old('name', $galadana->gambar)}}" onchange="readURL(this);" accept="image/*">
-                        <div class="file-upload-content">
-                            <img class="file-upload-image" src="{{URL::asset('/images/' . $galadana->gambar)}}" alt="your image" />
-                            <div class="image-title-wrap">
-                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">{{old('name', $galadana->gambar)}}</span></button>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <!-- <div class="modal-footer">

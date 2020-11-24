@@ -64,6 +64,9 @@
                                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="post-pict-item">
                                             <img src="{{URL::asset('/images/' . $galadana->gambar)}}" class="rounded img-fluid d-block mx-auto" alt="">
+                                            <fieldset style="display:none;">
+                                                <input name="gambar" type="file" class="form-control" id="gambar" value="{{$galadana->gambar}}">
+                                            </fieldset>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12 right-all">
