@@ -5,8 +5,8 @@
 @section('content')
     <style>
         .populer{
-            width: 100%;
-            height: 200px;
+            width: 300px;
+            height: 300px;
         }
     </style>
     <!-- ***** Welcome Area Start ***** -->
@@ -39,7 +39,7 @@
                         <!-- ***** Features Small Item Start ***** -->
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                             <div class="features-populer-item">
-                                <div class="populer" style="background-image: url(../images/{{$l->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
+                                <div class="populer" style="background-image: url(../assets/images/adult-beautiful-blonde.jpg);background-size:cover;background-repeat: no-repeat;background-position: center;">
                                     
                                 </div>
                                 <h5 class="features-title"><b>{{$l->judul}}</b></h5>

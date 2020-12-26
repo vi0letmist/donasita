@@ -40,6 +40,6 @@ class KategoriController extends Controller
             $request->file('gambar')->move($target, $cover);
         }
 
-        return redirect()->route('manajemen-kategori.index')->withStatus(__('Kategori berhasil dibuat.'));
+        return redirect()->route('manajemen-kategori')->withStatus(__('Kategori berhasil dibuat.'));
     }
 }

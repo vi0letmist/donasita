@@ -3353,7 +3353,7 @@ features-populer
 }
 .features-populer-item:hover {
   margin-top: -10px;
-  box-shadow: 0 4px 52px 0 rgba(0, 0, 0, 0.20);
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.40);
 }
 
 .features-populer-item:before {

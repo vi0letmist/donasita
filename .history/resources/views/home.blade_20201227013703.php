@@ -3,12 +3,7 @@
     'activePage' => 'home',
 ])
 @section('content')
-    <style>
-        .populer{
-            width: 100%;
-            height: 200px;
-        }
-    </style>
+
     <!-- ***** Welcome Area Start ***** -->
     <div class="welcome-area" id="welcome">
 
@@ -40,7 +35,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                             <div class="features-populer-item">
                                 <div class="populer" style="background-image: url(../images/{{$l->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
-                                    
+                                    <img src="{{URL::asset('/images/' . $l->gambar)}}" alt="{{$l->judul}}">
                                 </div>
                                 <h5 class="features-title"><b>{{$l->judul}}</b></h5>
                                 <p>{!! html_entity_decode(\Illuminate\Support\Str::limit($l->cerita, $limit = 80, $end = '...')) !!}</p>

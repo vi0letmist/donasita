@@ -16,6 +16,14 @@
             background-size: contain; 
             height: 100vh;
         }
+        .populer {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        
+        background-size: cover;
+        background-position: center;
+        }
     </style>
 
     <!-- ***** Welcome Area Start ***** -->
@@ -55,7 +63,7 @@
                 @foreach($kategori as $k)
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 kategoriBox" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/galadana/{{$k->slug}}';" style="cursor: pointer;">
                     <div class="features-populer-item-kategori">
-                        <div class="populer" style="background-image: url(../images/{{$k->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
+                        <div class="populer" style="background-image: url(../images/{{$k->gambar}});background-size: contain;background-repeat: no-repeat;">
                         </div>
                         <h5 class="features-title"><b>{{$k->nama}}</b></h5>
                     </div>

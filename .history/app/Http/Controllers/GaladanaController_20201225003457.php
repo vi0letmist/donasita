@@ -16,7 +16,7 @@ class GaladanaController extends Controller
     public function index()
     {
         $kategori = Kategori::all();
-        return view('campaign.index', compact('kategori'));
+        return view('campaign.index');
     }
     public function post($slug)
     {

@@ -5,8 +5,8 @@
 @section('content')
     <style>
         .populer{
-            width: 100%;
-            height: 200px;
+            width: 300px;
+            height: 300px;
         }
     </style>
     <!-- ***** Welcome Area Start ***** -->

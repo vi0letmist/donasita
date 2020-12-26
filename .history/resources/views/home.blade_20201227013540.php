@@ -3,12 +3,7 @@
     'activePage' => 'home',
 ])
 @section('content')
-    <style>
-        .populer{
-            width: 100%;
-            height: 200px;
-        }
-    </style>
+
     <!-- ***** Welcome Area Start ***** -->
     <div class="welcome-area" id="welcome">
 

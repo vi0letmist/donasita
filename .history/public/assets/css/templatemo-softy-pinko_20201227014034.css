@@ -3351,25 +3351,7 @@ features-populer
   margin-bottom: 30px;
   overflow-wrap: break-word;
 }
-.features-populer-item:hover {
-  margin-top: -10px;
-  box-shadow: 0 4px 52px 0 rgba(0, 0, 0, 0.20);
-}
 
-.features-populer-item:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: #fff;
-  width: 100%;
-  opacity: .15;
-  height: 100%;
-  bottom: -10px;
-  left: 0px;
-  right: -20px;
-  margin: auto;
-  border-radius: 20px;
-}
 .features-populer-item:hover .icon {
   background-color: #3f6ad8;
 }
@@ -3502,7 +3484,7 @@ features-populer-kategori
   margin: auto;
   position: relative;
   margin-bottom: 20px;
-  width: 100%;
+  width: 100px;
   height: 200px;
   overflow: hidden;
 }

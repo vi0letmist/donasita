@@ -55,14 +55,60 @@
                 @foreach($kategori as $k)
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 kategoriBox" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/galadana/{{$k->slug}}';" style="cursor: pointer;">
                     <div class="features-populer-item-kategori">
-                        <div class="populer" style="background-image: url(../images/{{$k->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
+                        <div class="populer">
+                        <img src="{{URL::asset('/images/' . $k->gambar)}}" alt="{{$k->nama}}">
                         </div>
                         <h5 class="features-title"><b>{{$k->nama}}</b></h5>
                     </div>
                 </div>
                 @endforeach
                 <!-- ***** Features Small Item End ***** -->
-                <div class="out"></div>
+                <!-- ***** Mini Box Start ***** -->
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                            <strong>Get Ideas</strong>
+                            <span>Godard pabst prism fam cliche.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                            <strong>Sketch Up</strong>
+                            <span>Godard pabst prism fam cliche.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                            <strong>Discuss</strong>
+                            <span>Godard pabst prism fam cliche.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                            <strong>Revise</strong>
+                            <span>Godard pabst prism fam cliche.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                            <strong>Approve</strong>
+                            <span>Godard pabst prism fam cliche.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="assets/images/work-process-item-01.png" alt=""></i>
+                            <strong>Launch</strong>
+                            <span>Godard pabst prism fam cliche.</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- ***** Mini Box End ***** -->
                 <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                     <button type="button" class="btn seeall-gal-button">
                         Lihat Semua

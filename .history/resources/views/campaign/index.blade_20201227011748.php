@@ -16,6 +16,14 @@
             background-size: contain; 
             height: 100vh;
         }
+        .populer {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        
+        background-size: cover;
+        background-position: center;
+        }
     </style>
 
     <!-- ***** Welcome Area Start ***** -->
