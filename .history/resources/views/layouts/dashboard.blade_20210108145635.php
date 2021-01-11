@@ -434,7 +434,7 @@
                                         Manajemen Post
                                     </a>
                                 </li>
-                                <li class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-active' : '' }}">
+                                <li class="mm-active">
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-check"></i>
                                         Persetujuan Post

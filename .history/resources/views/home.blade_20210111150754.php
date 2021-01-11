@@ -44,7 +44,7 @@
                                 </div>
                                 <h5 class="features-title"><b>{{$l->judul}}</b></h5>
                                 <p>{!! html_entity_decode(\Illuminate\Support\Str::limit($l->cerita, $limit = 80, $end = '...')) !!}</p>
-                                <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($l->created_at))->locale('id')->diffForHumans()}}</p>
+                                <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($l->created_at))->locale('id')->diffForHumans()}} yang lalu</p>
                                 <div class="bar">
                                     <div class="progress-bar-xs progress">
                                         <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $l->progres_capaian / $l->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$l->progres_capaian / $l->target_capaian * 100}}%"></div>

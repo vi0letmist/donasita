@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        {{Auth::user()->name}}
+                                        Alina Mclourd
                                     </div>
                                     <div class="widget-subheading">
                                         VP People Manager
@@ -422,33 +422,33 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Dashboards</li>
                                 <li>
-                                    <a href="/dashboard" class="{{ Request::is('dashboard') ? 'mm-active' : '' }}">
+                                    <a href="index.html" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Dashboard Example 1
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">Posts</li>
                                 <li>
-                                    <a href="/manajemen-post" class="{{ Request::is('manajemen-post') ? 'mm-active' : '' }}">
+                                    <a href="/manajemen-post">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Manajemen Post
                                     </a>
                                 </li>
-                                <li class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-active' : '' }}">
+                                <li>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-check"></i>
                                         Persetujuan Post
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-show' : '' }}">
+                                    <ul>
                                     <li>
-                                            <a href="/persetujuan-post" class="{{ Request::is('persetujuan-post') ? 'mm-active' : '' }}">
+                                            <a href="/persetujuan-post">
                                                 <i class="metismenu-icon"></i>
                                                 Persetujuan
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/post-ditolak" class="{{ Request::is('post-ditolak') ? 'mm-active' : '' }}">
+                                            <a href="/post-ditolak">
                                                 <i class="metismenu-icon">
                                                 </i>Post Ditolak
                                             </a>

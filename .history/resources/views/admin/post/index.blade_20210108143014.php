@@ -2,7 +2,7 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
-@section('manajemen-post','active')
+@section('manajemen-post','mm-active')
 @section('content')
     <div class="app-main__inner">
         <div class="app-page-title">

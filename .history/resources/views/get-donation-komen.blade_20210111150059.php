@@ -14,7 +14,7 @@
                             <p>{{$row->nama}} donasi <b>@currency($row->nominal)</b></p>
                             <p>{{$row->komen}}</p>
                             <br>
-                            <p class="lastdonate">{{\Carbon\Carbon::createFromTimeStamp(strtotime($row->created_at))->locale('id')->diffForHumans()}}</p>
+                            <p class="lastdonate">1 jam yang lalu</p>
                         </div>
                     </div>
                 </div>

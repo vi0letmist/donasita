@@ -2,7 +2,6 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
-@section('manajemen-post','active')
 @section('content')
     <div class="app-main__inner">
         <div class="app-page-title">

@@ -2,7 +2,6 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
-@section('manajemen-post','active')
 @section('content')
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -113,11 +112,11 @@
         ],
         order: [[ 5, "desc" ]],
         columnDefs: [
-            { "width": "20%", "targets": 1 },
-            { "width": "25%", "targets": 2 },
-            { "width": "8%", "targets": 3 },
+            { "width": "15%", "targets": 1 },
+            { "width": "15%", "targets": 2 },
+            { "width": "5%", "targets": 3 },
             { "width": "5%", "targets": 4 },
-            { "width": "15%", "targets": 5 },
+            { "width": "10%", "targets": 5 },
             { "width": "15%", "targets": 6 }
         ]
        });

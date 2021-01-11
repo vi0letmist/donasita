@@ -434,7 +434,7 @@
                                         Manajemen Post
                                     </a>
                                 </li>
-                                <li class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-active' : '' }}">
+                                <li>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-check"></i>
                                         Persetujuan Post
@@ -532,6 +532,9 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+                $(".vertical-nav-menu li").removeClass("mm-active");//this will remove the active class from  
+                                     //previously active menu item 
+                $(this).addClass('mm-active');
               $('body').on('click','.deleteGaladana', function(e){
                   e.preventDefault();
                   var delete_id = $(this).closest("tr").find('.deleteGaladanaId').val();

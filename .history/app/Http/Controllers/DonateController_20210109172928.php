@@ -76,7 +76,7 @@ class DonateController extends Controller
         $donasi->save();
 
         $galadana = Galadana::find($donasi->galadana_id);
-        $galadana->progres_capaian = ($galadana->progres_capaian + $donasi->nominal);
+        $galadana->progres_capaian = Galadana::sum($galadana->progres_capaian, $donasi->nominal);
         $galadana->update();
         return redirect('donasi/intruksi/'. $donasi->id);
     }

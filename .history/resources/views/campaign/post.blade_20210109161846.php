@@ -77,7 +77,7 @@
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10">
                             <div class="date-item">
-                                <p>Dibuat pada {{ \Carbon\Carbon::parse($galadana->created_at)->locale('id')->isoFormat('LLL') }}</p>
+                                <p>Dibuat pada {{ $galadana->created_at }}</p>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20">
@@ -90,8 +90,8 @@
         <div class="col-lg-4 col-md-12 col-sm-12 sidebar-item">
             <div class="sidebar-donate-item" id="sidebar">
                 <div class="sidebar-donate-header">
-                    <h3><strong>@currency($galadana->progres_capaian) </strong></h3>
-                    <p>terkumpul dari @currency($galadana->target_capaian)</p>
+                    <h3><strong>Rp. {{ $galadana->progres_capaian }} </strong></h3>
+                    <p>terkumpul dari Rp. {{ $galadana->target_capaian }}</p>
                     <div class="progress-bar-xs progress">
                         <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$galadana->progres_capaian / $galadana->target_capaian * 100}}%"></div>
                     </div>
@@ -118,10 +118,10 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <ul>
                                         <li>
-                                            <span class="weight-900">@currency($a->nominal)<!-- -->&nbsp;</span>
+                                            <span class="weight-900">Rp. {{$a->nominal}}<!-- -->&nbsp;</span>
                                         </li>
                                         <li>
-                                            <span class="lastdonate dot">{{\Carbon\Carbon::createFromTimeStamp(strtotime($a->created_at))->locale('id')->diffForHumans()}}</span>
+                                            <span class="lastdonate dot">14 jam yang lalu</span>
                                         </li>
                                     </ul>      
                                 </div>
@@ -155,7 +155,7 @@
                         </button>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10 padding-left-2 padding-right-2">
-                        <a href="/g/{{$galadana->slug}}/donasi" class="donate-button">Donasi Sekarang</a>
+                        <a href="#" class="donate-button">Donasi Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -176,7 +176,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <ul>
                                             <li>
-                                                <span class="weight-900">Rp. @currency($a->nominal)<!-- -->&nbsp;</span>
+                                                <span class="weight-900">Rp. {{$a->nominal}}<!-- -->&nbsp;</span>
                                             </li>
                                             <li>
                                                 <span class="lastdonate dot">14 jam yang lalu</span>

@@ -58,7 +58,7 @@ class DonateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
             'nama' => 'required',
@@ -75,8 +75,8 @@ class DonateController extends Controller
         $donasi->batas_date = date('Y-m-d H:i:s', strtotime('+3 days'));
         $donasi->save();
 
-        $galadana = Galadana::find($donasi->galadana_id);
-        $galadana->progres_capaian = ($galadana->progres_capaian + $donasi->nominal);
+        $galadana = Galadana::find($id);
+        $galadana->progres_capaian = Galadana::sum($galadana->progres_capaian, $request->progres_capaian);
         $galadana->update();
         return redirect('donasi/intruksi/'. $donasi->id);
     }
