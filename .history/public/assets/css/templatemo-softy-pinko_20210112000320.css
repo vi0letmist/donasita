@@ -4082,10 +4082,11 @@ search
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 10px 10px;
+  color: #fff;
 }
 .edit-item .kelola:hover{
-  background: #3490dc;
+  background: #fff;
 }
-.edit-item .kelola a{
-  color: #fff;
+.edit-item .kelola a:hover{
+  color: #3ac47d !important;
 }

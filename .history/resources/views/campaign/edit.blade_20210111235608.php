@@ -14,9 +14,7 @@
             <div class="offset-lg-1 col-lg-10 col-md-12 col-sm-12">
                 <div class="edit-item">
                     <div class="kelola">
-                        <a href="/kelola">
-                            <h5><i class="fa fa-fw" aria-hidden="true"></i>Kelola Galadana</h5>
-                        </a>
+                        <h5><i class="fa fa-fw bg-putih" aria-hidden="true"></i>Kelola Galadana</h5>
                     </div>
                     <form id="kelolaUpdate" method="POST" action="{{ route('kelola.update', $galadana->id) }}" enctype="multipart/form-data">
                         @csrf

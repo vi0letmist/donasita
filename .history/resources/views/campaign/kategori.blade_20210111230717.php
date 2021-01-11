@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="donateprog">
-                            <p><b>@currency($g->progres_capaian)</b> dari @currency($g->target_capaian)</p>
+                            <p><b>Rp. {{ $g->progres_capaian }}</b> dari Rp. {{ $g->target_capaian }}</p>
                         </div>
                     </div>
                 </div>

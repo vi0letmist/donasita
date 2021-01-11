@@ -44,8 +44,7 @@ class GaladanaController extends Controller
     }
     public function kelola()
     {
-        $galadana = Galadana::where('user_id', Auth::user()->id)->get();
-        return view('campaign.kelola', compact('galadana'));
+        
     }
     public function kategori($slug)
     {

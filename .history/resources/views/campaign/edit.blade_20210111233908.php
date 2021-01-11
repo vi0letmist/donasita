@@ -12,13 +12,13 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="row">
             <div class="offset-lg-1 col-lg-10 col-md-12 col-sm-12">
+                <div class="edit-item" style="bottom:-10;">
+                </div>
                 <div class="edit-item">
-                    <div class="kelola">
-                        <a href="/kelola">
-                            <h5><i class="fa fa-fw" aria-hidden="true"></i>Kelola Galadana</h5>
-                        </a>
+                    <div class="col-lg-12 col-md-12 col-sm-12 kelola">
+                        <h5><i class="fa fa-fw" aria-hidden="true" title="Copy to use angle-left"></i>kelola</h5>
                     </div>
-                    <form id="kelolaUpdate" method="POST" action="{{ route('kelola.update', $galadana->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('kelola.update', $galadana->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="edit-item-header">

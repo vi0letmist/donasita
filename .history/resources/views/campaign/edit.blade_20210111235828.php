@@ -15,7 +15,7 @@
                 <div class="edit-item">
                     <div class="kelola">
                         <a href="/kelola">
-                            <h5><i class="fa fa-fw" aria-hidden="true"></i>Kelola Galadana</h5>
+                            <h5 style="color:#fff;"><i class="fa fa-fw bg-putih" aria-hidden="true"></i>Kelola Galadana</h5>
                         </a>
                     </div>
                     <form id="kelolaUpdate" method="POST" action="{{ route('kelola.update', $galadana->id) }}" enctype="multipart/form-data">

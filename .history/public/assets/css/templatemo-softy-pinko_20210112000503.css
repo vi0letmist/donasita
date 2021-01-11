@@ -4084,8 +4084,11 @@ search
   padding: 10px 10px;
 }
 .edit-item .kelola:hover{
-  background: #3490dc;
+  background: #fff;
 }
 .edit-item .kelola a{
   color: #fff;
+}
+.edit-item .kelola a:hover{
+  color: #3ac47d !important;
 }

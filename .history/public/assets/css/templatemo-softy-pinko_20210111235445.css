@@ -2884,7 +2884,7 @@ footer .social li {
   fill:#2e7d32 !important;
 }
 .bg-putih{
-  color: #fff;
+  background-color: #fff;
 }
 footer .social li a {
   color: #2e7d32;
@@ -4082,10 +4082,4 @@ search
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 10px 10px;
-}
-.edit-item .kelola:hover{
-  background: #3490dc;
-}
-.edit-item .kelola a{
-  color: #fff;
 }
