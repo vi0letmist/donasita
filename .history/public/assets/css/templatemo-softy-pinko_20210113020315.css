@@ -4078,7 +4078,7 @@ search
   opacity:1 !important
 }
 .edit-item .sideRight{
-  background: #adadad;
+  background: #343a40;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -4095,7 +4095,7 @@ search
   color: #fff;
 }
 .edit-item .kelolaAll{
-  padding: 20px 10px 40px 10px;
+  padding: 20px 30px 40px 30px;
 }
 .sidebarKelola{
   padding: 20px 16px 40px 30px;

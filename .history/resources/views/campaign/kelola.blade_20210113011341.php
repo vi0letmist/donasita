@@ -1,0 +1,116 @@
+@extends('layouts.sticky-navbar', [
+    'namePage' => 'post',
+    'activePage' => 'post',
+])
+@section('content')
+<style>
+    html,body{
+        background: #f2f2fe;
+    }
+    .populer{
+        width: 100%;
+        height: 200px;
+    }
+</style>
+<div class="container padding-top-60">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="edit-item">
+                <div class="row">
+                    <div class="col-lg-2">
+                    <div class="scrollbar-sidebar">
+                        <div class="app-sidebar__inner">
+                            <ul class="vertical-nav-menu">
+                                <li class="app-sidebar__heading">Dashboards</li>
+                                <li>
+                                    <a href="/dashboard" class="{{ Request::is('dashboard') ? 'mm-active' : '' }}">
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        Dashboard Example 1
+                                    </a>
+                                </li>
+                                <li class="app-sidebar__heading">Posts</li>
+                                <li>
+                                    <a href="/manajemen-post" class="{{ Request::is('manajemen-post') ? 'mm-active' : '' }}">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Manajemen Post
+                                    </a>
+                                </li>
+                                <li class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-active' : '' }}">
+                                    <a href="#">
+                                        <i class="metismenu-icon pe-7s-check"></i>
+                                        Persetujuan Post
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                    </a>
+                                    <ul class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-show' : '' }}">
+                                    <li>
+                                            <a href="/persetujuan-post" class="{{ Request::is('persetujuan-post') ? 'mm-active' : '' }}">
+                                                <i class="metismenu-icon"></i>
+                                                Persetujuan
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/post-ditolak" class="{{ Request::is('post-ditolak') ? 'mm-active' : '' }}">
+                                                <i class="metismenu-icon">
+                                                </i>Post Ditolak
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="app-sidebar__heading">Kategori</li>
+                                <li>
+                                    <a href="/manajemen-kategori">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Manajemen Kategori
+                                    </a>
+                                    <a href="/persetujuan-post">
+                                        <i class="metismenu-icon pe-7s-check"></i>
+                                        Persetujuan post
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-10">
+                    
+                        <div class="row kelolaAll">
+                            <!-- ***** Features Small Item Start ***** -->
+                            @foreach($galadana as $g)
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$g->slug}}';" style="cursor: pointer;">
+                                <div class="features-populer-item">
+                                    <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
+                                        
+                                    </div>
+                                    <h5 class="features-title"><b>{{$g->judul}}</b></h5>
+                                </div>
+                            </div>
+                            @endforeach
+                            <!-- ***** Features Small Item End ***** -->
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offset-lg-1 col-lg-10 col-md-12 col-sm-12">
+            <div class="create-item">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
+                        <h5>Hapus Penggalangan Dana</h5>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <p style="color: #999;">You will no longer have access to this fundraiser after deleting.<br>
+                        If you received donations, your donors will still be able to view a summary.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 right-all">
+                        <a href="#" style="color: #d92550;text-decoration: underline!important;">
+                            <strong>Hapus Galadana</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection

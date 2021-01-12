@@ -19,22 +19,12 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 sidebarKelola">
                         <ul class="vertical-nav-menu">
-                            <li class="app-sidebar__heading">Pengaturan & Pengelolaan</li>
-                            <li>
-                                <a href="/kelola/galadana" class="{{ Request::is('kelola/umum') ? 'mm-active' : '' }}">
-                                    <i class="metismenu-icon pe-7s-config"></i>
-                                    Umum
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/kelola/galadana" class="{{ Request::is('kelola/galadana') ? 'mm-active' : '' }}">
-                                    <i class="metismenu-icon pe-7s-albums"></i>
-                                    Galadana Anda
-                                </a>
-                            </li>
+                            <li>asas</li>
+                            <li>asas</li>
+                            <li>asas</li>
                         </ul>
                     </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 sideRight">
+                    <div class="col-lg-9">
                     
                         <div class="row kelolaAll">
                             <!-- ***** Features Small Item Start ***** -->

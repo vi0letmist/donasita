@@ -42,7 +42,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('manajemen-kategori', 'KategoriController', ['except' => ['show']]);
     Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
-    Route::get('kelola/galadana', 'KelolaController@index');
+    Route::get('kelola/galadana', 'GaladanaController@kelola');
     Route::get('kelola/{slug}/edit', 'GaladanaController@edit')->name('galadana.edit');
     Route::put('kelola/{slug}', ['as' => 'kelola.update', 'uses' => 'GaladanaController@update']);
     Route::get('/dashboard', 'AdminController@index')->name('dashboard');

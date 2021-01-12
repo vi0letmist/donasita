@@ -29,7 +29,7 @@
                             <li>
                                 <a href="/kelola/galadana" class="{{ Request::is('kelola/galadana') ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-albums"></i>
-                                    Galadana Anda
+                                    Penggalangan Dana Anda
                                 </a>
                             </li>
                         </ul>

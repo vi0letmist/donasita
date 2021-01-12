@@ -11380,8 +11380,7 @@ edit item
 }
 .edit-item-kelola {
   background: #FFFFFF;
-  box-shadow: 0 2px 10px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
   margin-bottom: 40px;
   background-color: #ffffff;
   font-family: Raleway;
