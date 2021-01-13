@@ -95,7 +95,7 @@
                                                     If you received donations, your donors will still be able to view a summary.</p>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-12 right-all">
-                                                    <a href="#" class="deleteGaladana" data-id="{{$galadana->id}}" style="color: #d92550;text-decoration: underline!important;">
+                                                    <a href="#" class="deleteGaladana" style="color: #d92550;text-decoration: underline!important;">
                                                         <strong>Hapus Galadana</strong>
                                                     </a>
                                                 </div>
@@ -202,7 +202,7 @@
             });
               $('body').on('click','.deleteGaladana', function(e){
                   e.preventDefault();
-                  var delete_id = $(this).data('id');
+                  var delete_id = $(this).closest("ul").find('.deleteGaladanaId').val();
                   swal({
                       title: "Anda yakin?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
@@ -227,7 +227,7 @@
                             url: "/galadana/"+delete_id+"/delete",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ window.location.href= "/kelola/galadana";});
+                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{

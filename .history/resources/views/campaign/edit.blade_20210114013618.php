@@ -15,7 +15,6 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 sidebarKelola">
                         <ul class="vertical-nav-menu">
-                        <input type="hidden" class="deleteGaladanaId" value="$galadana->id">
                             <li class="app-sidebar__heading">Pengaturan & Pengelolaan</li>
                             <li>
                                 <a href="/kelola/galadana" class="{{ Request::is('kelola/umum') ? 'mm-active' : '' }}">
@@ -86,20 +85,6 @@
                                                     </fieldset>
                                                 </div>
                                             </div>
-                                            <div class="row padding-top-20">
-                                                <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
-                                                    <h5>Hapus Penggalangan Dana</h5>
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-sm-12">
-                                                    <p style="color: #999;font-weight:normal;margin:auto;">You will no longer have access to this fundraiser after deleting.<br>
-                                                    If you received donations, your donors will still be able to view a summary.</p>
-                                                </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-12 right-all">
-                                                    <a href="#" class="deleteGaladana" data-id="{{$galadana->id}}" style="color: #d92550;text-decoration: underline!important;">
-                                                        <strong>Hapus Galadana</strong>
-                                                    </a>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <div class="post-pict-item">
@@ -119,18 +104,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 right-all">
                                                     <a href="/kelola/galadana" class="main-button-slider" style="margin-right: 10px;">Batalkan</a>
-                                                    <fieldset>
-                                                    <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#editCollapse" style="margin-right: 10px;">
+                                                    <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#editCollapse">
                                                         Ubah
                                                     </button>
-                                                    </fieldset>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 left-all">
                                                     <fieldset>
                                                         <button type="submit" id="form-submit" class="main-button">Simpan</button>
                                                     </fieldset>
                                                 </div>
                                             </div>
+                                            
                                         </div>
                                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                             <fieldset>
@@ -146,6 +132,20 @@
                                                 </fieldset>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
+                                        <h5>Hapus Penggalangan Dana</h5>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12">
+                                        <p style="color: #999;">You will no longer have access to this fundraiser after deleting.<br>
+                                        If you received donations, your donors will still be able to view a summary.</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 right-all">
+                                        <a href="#" style="color: #d92550;text-decoration: underline!important;">
+                                            <strong>Hapus Galadana</strong>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -192,49 +192,3 @@
     </div>
 </div>
 @endsection
-@push('js')
-<script type="text/javascript">
-          $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-              $('body').on('click','.deleteGaladana', function(e){
-                  e.preventDefault();
-                  var delete_id = $(this).data('id');
-                  swal({
-                      title: "Anda yakin?",
-                      text: "Anda tidak akan bisa mengembalikannya lagi",
-                      icon: "warning",
-                      buttons: true,
-                      daggerMode:true,
-                      buttons: true,
-                      confirmButtonText: "Yes",
-                      cancelButtonText: "No",
-                      closeModal: false,
-                      closeModal: false
-                  })
-                  .then((willDelete) => {
-                      if(willDelete){
-                          var data = {
-                            "_token": $('input[name=_token]').val(),
-                            "id_lomba": delete_id,
-                            "_method": "DELETE"
-                        };
-                        $.ajax({
-                            type: "POST",
-                            url: "/galadana/"+delete_id+"/delete",
-                            data: data,
-                            success: function(){
-                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ window.location.href= "/kelola/galadana";});
-                            }
-                        });
-                      }else{
-                        swal("Batal dihapus!", "Data aman di database.", "error");
-                      }
-                  });
-              });
-              });
-          </script>
-@endpush

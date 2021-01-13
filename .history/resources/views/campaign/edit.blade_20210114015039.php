@@ -86,20 +86,6 @@
                                                     </fieldset>
                                                 </div>
                                             </div>
-                                            <div class="row padding-top-20">
-                                                <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
-                                                    <h5>Hapus Penggalangan Dana</h5>
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-sm-12">
-                                                    <p style="color: #999;font-weight:normal;margin:auto;">You will no longer have access to this fundraiser after deleting.<br>
-                                                    If you received donations, your donors will still be able to view a summary.</p>
-                                                </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-12 right-all">
-                                                    <a href="#" class="deleteGaladana" data-id="{{$galadana->id}}" style="color: #d92550;text-decoration: underline!important;">
-                                                        <strong>Hapus Galadana</strong>
-                                                    </a>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <div class="post-pict-item">
@@ -146,6 +132,20 @@
                                                 </fieldset>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
+                                        <h5>Hapus Penggalangan Dana</h5>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12">
+                                        <p style="color: #999;">You will no longer have access to this fundraiser after deleting.<br>
+                                        If you received donations, your donors will still be able to view a summary.</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 right-all">
+                                        <a href="#" class="deleteGaladana" style="color: #d92550;text-decoration: underline!important;">
+                                            <strong>Hapus Galadana</strong>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
             });
               $('body').on('click','.deleteGaladana', function(e){
                   e.preventDefault();
-                  var delete_id = $(this).data('id');
+                  var delete_id = $(this).closest("ul").find('.deleteGaladanaId').val();
                   swal({
                       title: "Anda yakin?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
@@ -227,7 +227,7 @@
                             url: "/galadana/"+delete_id+"/delete",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ window.location.href= "/kelola/galadana";});
+                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{

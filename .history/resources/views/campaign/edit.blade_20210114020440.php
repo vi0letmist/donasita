@@ -200,7 +200,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-              $('body').on('click','.deleteGaladana', function(e){
+              $('body').on('click','button', function(e){
                   e.preventDefault();
                   var delete_id = $(this).data('id');
                   swal({
@@ -227,7 +227,7 @@
                             url: "/galadana/"+delete_id+"/delete",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ window.location.href= "/kelola/galadana";});
+                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{

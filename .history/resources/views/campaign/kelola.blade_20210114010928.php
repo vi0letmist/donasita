@@ -57,6 +57,24 @@
                 </div>
             </div>
         </div>
+        <div class="offset-lg-1 col-lg-10 col-md-12 col-sm-12">
+            <div class="create-item">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
+                        <h5>Hapus Penggalangan Dana</h5>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <p style="color: #999;">You will no longer have access to this fundraiser after deleting.<br>
+                        If you received donations, your donors will still be able to view a summary.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 right-all">
+                        <a href="#" style="color: #d92550;text-decoration: underline!important;">
+                            <strong>Hapus Galadana</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -15,7 +15,6 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 sidebarKelola">
                         <ul class="vertical-nav-menu">
-                        <input type="hidden" class="deleteGaladanaId" value="$galadana->id">
                             <li class="app-sidebar__heading">Pengaturan & Pengelolaan</li>
                             <li>
                                 <a href="/kelola/galadana" class="{{ Request::is('kelola/umum') ? 'mm-active' : '' }}">
@@ -42,6 +41,7 @@
                             <div class="edit-item-body">
                                 <div class="edit-body-header">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <input type="hidden" class="deleteGaladanaId" value="$galadana->id">
                                         <li class="nav-item">
                                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ringkasan</a>
                                         </li>
@@ -84,20 +84,6 @@
                                                     <fieldset>
                                                         <button type="submit" id="form-submit" class="main-button">Simpan</button>
                                                     </fieldset>
-                                                </div>
-                                            </div>
-                                            <div class="row padding-top-20">
-                                                <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
-                                                    <h5>Hapus Penggalangan Dana</h5>
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-sm-12">
-                                                    <p style="color: #999;font-weight:normal;margin:auto;">You will no longer have access to this fundraiser after deleting.<br>
-                                                    If you received donations, your donors will still be able to view a summary.</p>
-                                                </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-12 right-all">
-                                                    <a href="#" class="deleteGaladana" data-id="{{$galadana->id}}" style="color: #d92550;text-decoration: underline!important;">
-                                                        <strong>Hapus Galadana</strong>
-                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -146,6 +132,20 @@
                                                 </fieldset>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
+                                        <h5>Hapus Penggalangan Dana</h5>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12">
+                                        <p style="color: #999;">You will no longer have access to this fundraiser after deleting.<br>
+                                        If you received donations, your donors will still be able to view a summary.</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 right-all">
+                                        <a href="#" class="deleteGaladana" style="color: #d92550;text-decoration: underline!important;">
+                                            <strong>Hapus Galadana</strong>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
             });
               $('body').on('click','.deleteGaladana', function(e){
                   e.preventDefault();
-                  var delete_id = $(this).data('id');
+                  var delete_id = $(this).closest("tr").find('.deleteGaladanaId').val();
                   swal({
                       title: "Anda yakin?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
@@ -227,7 +227,7 @@
                             url: "/galadana/"+delete_id+"/delete",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ window.location.href= "/kelola/galadana";});
+                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{
