@@ -24,9 +24,6 @@
         font-weight: bold;
         font-size: 14px;
     }
-    .center-all a:hover{
-        color: #3ac47d;
-    }
     .dot::before{
         content: "\2022";
         color: #adadad;

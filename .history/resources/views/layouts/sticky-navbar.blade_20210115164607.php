@@ -17,13 +17,13 @@ https://templatemo.com/tm-535-softy-pinko
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/bootstrap.min.css">
-    
+
     <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/templatemo-softy-pinko.css">
-    
 
     </head>
     
@@ -41,7 +41,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area2 header-sticky">
+    <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -84,24 +84,68 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- ***** Footer Start ***** -->
     @include('layouts.footer')
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">Copyright &copy; 2020 Softy Pinko Company - Design: TemplateMo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <!-- jQuery -->
     <script src="{{ asset('assets') }}/js/jquery-3.5.1.js"></script>
     <script src="{{ asset('assets') }}/js/app.js"></script>
+
     <!-- Bootstrap -->
     <script src="{{ asset('assets') }}/js/popper.js"></script>
     <script src="{{ asset('assets') }}/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
     <script src="{{ asset('assets') }}/js/scrollreveal.min.js"></script>
-    <script src="{{ asset('assets') }}/js/waypoints.min.js"></script>
     <script src="{{ asset('assets') }}/js/jquery.counterup.min.js"></script>
     <script src="{{ asset('assets') }}/js/imgfix.min.js"></script> 
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
-
+    @stack('js')
+    @include('sweetalert::alert')
+    <script type="text/javascript" src="{{ asset('assets') }}/js/sweetalert.min.js"></script>
     <script src="{{ asset('ckeditor') }}/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace( 'cerita',{
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+            
+            $('.collapse').collapse('hide');
+        });
+        $('#myTab a').on('click', function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            });
+    </script>
+    
+
   </body>
 </html>

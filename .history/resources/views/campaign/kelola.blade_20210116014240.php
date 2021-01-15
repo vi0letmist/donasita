@@ -20,12 +20,11 @@
         box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.12);
     }
     .center-all a{
-        color:#1e1e1e;
+        color:#3ac47d;
         font-weight: bold;
-        font-size: 14px;
     }
     .center-all a:hover{
-        color: #3ac47d;
+        
     }
     .dot::before{
         content: "\2022";
@@ -33,7 +32,7 @@
         font-weight: 900;
         display: inline-block; 
         width: 1.1em;
-        margin-left: 3px;
+        margin-left: 2px;
     }
 </style>
 <div class="container padding-top-60">

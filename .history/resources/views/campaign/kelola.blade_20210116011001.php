@@ -12,28 +12,11 @@
         height: 200px;
     }
     .features-populer-item {
-        cursor: default;
         box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.06);
     }
     .features-populer-item:hover {
         margin-top: 0;
         box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.12);
-    }
-    .center-all a{
-        color:#1e1e1e;
-        font-weight: bold;
-        font-size: 14px;
-    }
-    .center-all a:hover{
-        color: #3ac47d;
-    }
-    .dot::before{
-        content: "\2022";
-        color: #adadad;
-        font-weight: 900;
-        display: inline-block; 
-        width: 1.1em;
-        margin-left: 3px;
     }
 </style>
 <div class="container padding-top-60">
@@ -71,13 +54,8 @@
                                         
                                     </div>
                                     <h5 class="features-title"><b>{{$g->judul}}</b></h5>
-                                    <div class="center-all">
-                                        <a href="/kelola/{{$g->slug}}/ubah">
-                                            <i class="fas fa-pencil-alt"></i> Ubah
-                                        </a>
-                                        <a href="/kelola/{{$g->slug}}/lihat" class="dot">
-                                            <i class="fas fa-eye"></i> Lihat
-                                        </a>
+                                    <div>
+
                                     </div>
                                 </div>
                             </div>

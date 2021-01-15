@@ -2866,17 +2866,10 @@ footer
 --------------------------------------------- 
 */
 footer {
-  background:#fff;
+  background: #fff;
   padding-top: 30px;
 }
-footer .galu li{
-  margin: 5px 0;
-}
-footer .galu li a{
-  color: #1e1e1e;
-  text-decoration: underline !important;
-  font-size: 14px;
-}
+
 footer .social {
   overflow: hidden;
   margin-top: 10px;
@@ -2894,9 +2887,7 @@ footer .social li {
   color: #fff;
 }
 footer .social li a {
-  color: #3ac47d;
    text-align: center;
-  background-color: #fff;
   width: 36px;
   height: 36px;
   line-height: 36px;
@@ -2910,8 +2901,6 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #3f6ad8;
-  color: #fff;
 }
 
 footer .copyright {

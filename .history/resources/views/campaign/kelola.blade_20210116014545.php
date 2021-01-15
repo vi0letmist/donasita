@@ -22,10 +22,6 @@
     .center-all a{
         color:#1e1e1e;
         font-weight: bold;
-        font-size: 14px;
-    }
-    .center-all a:hover{
-        color: #3ac47d;
     }
     .dot::before{
         content: "\2022";
@@ -33,7 +29,7 @@
         font-weight: 900;
         display: inline-block; 
         width: 1.1em;
-        margin-left: 3px;
+        margin-left: 2px;
     }
 </style>
 <div class="container padding-top-60">

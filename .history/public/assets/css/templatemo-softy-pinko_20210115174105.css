@@ -2870,12 +2870,7 @@ footer {
   padding-top: 30px;
 }
 footer .galu li{
-  margin: 5px 0;
-}
-footer .galu li a{
-  color: #1e1e1e;
-  text-decoration: underline !important;
-  font-size: 14px;
+  margin: 10px 10px;
 }
 footer .social {
   overflow: hidden;

@@ -22,10 +22,6 @@
     .center-all a{
         color:#1e1e1e;
         font-weight: bold;
-        font-size: 14px;
-    }
-    .center-all a:hover{
-        color: #3ac47d;
     }
     .dot::before{
         content: "\2022";
