@@ -83,14 +83,7 @@ class GaladanaController extends Controller
         $galadana = Galadana::where('slug', $slug)
             ->where('user_id', Auth::user()->id)
             ->first();
-        return view('campaign.edit', compact('galadana'));
-    }
-    public function show($slug)
-    {
-        $galadana = Galadana::where('slug', $slug)
-            ->where('user_id', Auth::user()->id)
-            ->first();
-            
+
         DB::statement(DB::raw('set @rownum=0'));
         $donasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
             ->where('donates.galadana_id', '=', $galadana->id)
@@ -101,11 +94,6 @@ class GaladanaController extends Controller
         if(request()->ajax()) {
             return DataTables::of($donasi)
             ->addIndexColumn()
-            ->editColumn('nominal', function($donasi){
-                $rp = 'Rp';
-                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
-                return $nomin;
-            })
             ->editColumn('created_at', function($donasi){
                 $date = \Carbon\Carbon::parse($donasi->created_at)->locale('id')->isoFormat('LLL');
                 return $date;
@@ -117,6 +105,13 @@ class GaladanaController extends Controller
             ->rawColumns(['komen'])
             ->make(true);
         }
+        return view('campaign.edit', compact('galadana'));
+    }
+    public function show($slug)
+    {
+        $galadana = Galadana::where('slug', $slug)
+            ->where('user_id', Auth::user()->id)
+            ->first();
         return view('campaign.show', compact('galadana'));
     }
     public function store(Request $request)

@@ -83,6 +83,51 @@ class GaladanaController extends Controller
         $galadana = Galadana::where('slug', $slug)
             ->where('user_id', Auth::user()->id)
             ->first();
+        DB::statement(DB::raw('set @rownum=0'));
+        $galadana = galadana::join('users', 'users.id','=', 'galadana.user_id')
+            ->where('galadana.status', '=', 1)
+            ->select([
+                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
+                'galadana.*','users.name'
+            ]);
+        if(request()->ajax()) {
+            return DataTables::of($galadana)
+            ->addIndexColumn()
+            ->editColumn('created_at', function($galadana){
+                $date = \Carbon\Carbon::parse($galadana->created_at)->locale('id')->isoFormat('LLL');
+                return $date;
+            })
+            ->addColumn('cerita', function($galadana){
+                $input = '<input type="hidden" class="deleteGaladanaId" value="'.$galadana->id.'">';
+                $cerita = $input.(\Illuminate\Support\Str::limit(html_entity_decode($galadana->cerita), $limit = 40, $end = "..."));
+                return $cerita;
+            })
+            ->addColumn('status', function($galadana){
+                if($galadana->status == 1){
+                $status = '<div class="mb-2 mr-2 badge badge-success">Berjalan</div>';
+                    return $status;    
+                }
+                elseif($galadana->status == 2){
+                    $status = '<div class="mb-2 mr-2 badge badge-primary">Selesai</div>';
+                    return $status; 
+                }
+                elseif($galadana->status == 0){
+                $status = '<div class="mb-2 mr-2 badge badge-danger">Tidak Disetujui</div>';
+                return $status;
+                }
+            })
+            ->addColumn('action', function($galadana){
+                $editUrl = route('manajemen-post.edit', $galadana->slug);
+                $btn = '<a href="'.$editUrl.'">
+                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-note btn-icon-wrapper"> </i></button>
+                </a>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteGaladana"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>';
+                return $btn;
+            })
+            ->rawColumns(['cerita', 'status', 'action'])
+            ->make(true);
+        }
         return view('campaign.edit', compact('galadana'));
     }
     public function show($slug)
@@ -90,33 +135,6 @@ class GaladanaController extends Controller
         $galadana = Galadana::where('slug', $slug)
             ->where('user_id', Auth::user()->id)
             ->first();
-            
-        DB::statement(DB::raw('set @rownum=0'));
-        $donasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
-            ->where('donates.galadana_id', '=', $galadana->id)
-            ->select([
-                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-                'donates.*'
-            ]);
-        if(request()->ajax()) {
-            return DataTables::of($donasi)
-            ->addIndexColumn()
-            ->editColumn('nominal', function($donasi){
-                $rp = 'Rp';
-                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
-                return $nomin;
-            })
-            ->editColumn('created_at', function($donasi){
-                $date = \Carbon\Carbon::parse($donasi->created_at)->locale('id')->isoFormat('LLL');
-                return $date;
-            })
-            ->addColumn('komen', function($donasi){
-                $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
-                return $komen;
-            })
-            ->rawColumns(['komen'])
-            ->make(true);
-        }
         return view('campaign.show', compact('galadana'));
     }
     public function store(Request $request)

@@ -101,11 +101,6 @@ class GaladanaController extends Controller
         if(request()->ajax()) {
             return DataTables::of($donasi)
             ->addIndexColumn()
-            ->editColumn('nominal', function($donasi){
-                $rp = 'Rp';
-                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
-                return $nomin;
-            })
             ->editColumn('created_at', function($donasi){
                 $date = \Carbon\Carbon::parse($donasi->created_at)->locale('id')->isoFormat('LLL');
                 return $date;

@@ -83,18 +83,22 @@
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="donasi" role="tabpanel" aria-labelledby="donasi-tab">
                                             <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                    <table id="tableDonate" class="mb-0 table table-hover">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Nama</th>
-                                                            <th>Nominal</th>
-                                                            <th>Komen</th>
-                                                            <th>Created at</th>
-                                                        </tr>
-                                                        </thead>
-                                                    </table>
+                                                <div class="col-lg-12">
+                                                    <div class="main-card mb-3 card">
+                                                        <div class="card-body"><h5 class="card-title">Table with hover</h5>
+                                                            <table id="tableDonate" class="mb-0 table table-hover">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>No</th>
+                                                                    <th>Nama</th>
+                                                                    <th>Nominal</th>
+                                                                    <th>Komen</th>
+                                                                    <th>Created at</th>
+                                                                </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -116,7 +120,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-            url: "{{ route('galadana.show', $galadana->slug) }}",
+            url: "{{ url('kelola/$galadana->slug/lihat') }}",
             type: 'GET',
         },
         columns: [
@@ -126,12 +130,13 @@
            { data: 'komen', name: 'komen' },
            { data: 'created_at', name: 'created_at' },
         ],
-        order: [[ 4, "desc" ]],
+        order: [[ 5, "desc" ]],
         columnDefs: [
-            { "width": "30%", "targets": 1 },
-            { "width": "20%", "targets": 2 },
-            { "width": "20%", "targets": 3 },
-            { "width": "25%", "targets": 4 },
+            { "width": "20%", "targets": 1 },
+            { "width": "25%", "targets": 2 },
+            { "width": "8%", "targets": 3 },
+            { "width": "5%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
         ]
        });
      });  

@@ -126,7 +126,7 @@
            { data: 'komen', name: 'komen' },
            { data: 'created_at', name: 'created_at' },
         ],
-        order: [[ 4, "desc" ]],
+        order: [[ 1, "desc" ]],
         columnDefs: [
             { "width": "30%", "targets": 1 },
             { "width": "20%", "targets": 2 },

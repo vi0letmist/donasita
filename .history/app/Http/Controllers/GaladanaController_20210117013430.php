@@ -102,8 +102,7 @@ class GaladanaController extends Controller
             return DataTables::of($donasi)
             ->addIndexColumn()
             ->editColumn('nominal', function($donasi){
-                $rp = 'Rp';
-                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
+                $nomin = number_format($donasi->nominal, 0, ',', '.');
                 return $nomin;
             })
             ->editColumn('created_at', function($donasi){

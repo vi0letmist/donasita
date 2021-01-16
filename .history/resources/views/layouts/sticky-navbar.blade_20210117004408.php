@@ -24,6 +24,7 @@ https://templatemo.com/tm-535-softy-pinko
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/templatemo-softy-pinko.css">
+    <link href="{{ asset('assets') }}/css/datatables.min.css" rel="stylesheet">
 
     </head>
     
@@ -83,26 +84,8 @@ https://templatemo.com/tm-535-softy-pinko
     @yield('content')
     
     <!-- ***** Footer Start ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <ul class="social">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="copyright">Copyright &copy; 2020 Softy Pinko Company - Design: TemplateMo</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('layouts.footer')
+    
     
     <!-- jQuery -->
     <script src="{{ asset('assets') }}/js/jquery-3.5.1.js"></script>
@@ -119,7 +102,9 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-
+    @stack('js')
+    @include('sweetalert::alert')
+    <script type="text/javascript" src="{{ asset('assets') }}/js/sweetalert.min.js"></script>
     <script src="{{ asset('ckeditor') }}/ckeditor.js"></script>
     <script type="text/javascript">
         CKEDITOR.replace( 'cerita',{
@@ -143,34 +128,6 @@ https://templatemo.com/tm-535-softy-pinko
             });
     </script>
     
-<script>
-$(document).ready(function(){
- 
- var _token = $('input[name="_token"]').val();
 
- load_data('', _token);
-
- function load_data(id="", _token)
- {
-  $.ajax({
-   url:"{{ route('galadana.load_komen', $galadana->id) }}",
-   method:"POST",
-   data:{id:id, _token:_token},
-   success:function(data)
-   {
-    $('#load_more_button').remove();
-    $('#post_data').append(data);
-   }
-  })
- }
-
- $(document).on('click', '#load_more_button', function(){
-  var id = $(this).data('id');
-  $('#load_more_button').html('<b>Loading...</b>');
-  load_data(id, _token);
- });
-
-});
-</script>
   </body>
 </html>

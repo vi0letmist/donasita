@@ -126,12 +126,13 @@
            { data: 'komen', name: 'komen' },
            { data: 'created_at', name: 'created_at' },
         ],
-        order: [[ 4, "desc" ]],
+        order: [[ 5, "desc" ]],
         columnDefs: [
-            { "width": "30%", "targets": 1 },
-            { "width": "20%", "targets": 2 },
-            { "width": "20%", "targets": 3 },
-            { "width": "25%", "targets": 4 },
+            { "width": "20%", "targets": 1 },
+            { "width": "25%", "targets": 2 },
+            { "width": "8%", "targets": 3 },
+            { "width": "5%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
         ]
        });
      });  

@@ -75,27 +75,14 @@
                                 <div class="edit-body-header">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="donasi-tab" data-toggle="tab" href="#donasi" role="tab" aria-controls="donasi" aria-selected="true">Donasi</a>
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ringkasan</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="edit-body-body">
                                     <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="donasi" role="tabpanel" aria-labelledby="donasi-tab">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                             <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                    <table id="tableDonate" class="mb-0 table table-hover">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Nama</th>
-                                                            <th>Nominal</th>
-                                                            <th>Komen</th>
-                                                            <th>Created at</th>
-                                                        </tr>
-                                                        </thead>
-                                                    </table>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -109,31 +96,3 @@
     </div>
 </div>
 @endsection
-@push('js')
-<script>
-     $(document).ready( function () {
-      $('#tableDonate').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: {
-            url: "{{ route('galadana.show', $galadana->slug) }}",
-            type: 'GET',
-        },
-        columns: [
-           {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
-           { data: 'nama', name: 'nama' },
-           { data: 'nominal', name: 'nominal' },
-           { data: 'komen', name: 'komen' },
-           { data: 'created_at', name: 'created_at' },
-        ],
-        order: [[ 4, "desc" ]],
-        columnDefs: [
-            { "width": "30%", "targets": 1 },
-            { "width": "20%", "targets": 2 },
-            { "width": "20%", "targets": 3 },
-            { "width": "25%", "targets": 4 },
-        ]
-       });
-     });  
-   </script>
-@endpush
