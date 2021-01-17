@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Galadana;
-use App\Donate;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 
@@ -86,38 +85,12 @@ class AdminController extends Controller
     public function edit($slug)
     {
         $galadana = Galadana::where('slug', $slug)->first();
-        return view('admin.post.edit', compact('galadana'));
+        return view('admin.post.show', compact('galadana'));
     }
     public function show($slug)
     {
         $galadana = Galadana::where('slug', $slug)->first();
-        DB::statement(DB::raw('set @rownum=0'));
-        $donasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
-            ->where('donates.galadana_id', '=', $galadana->id)
-            ->select([
-                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-                'donates.*'
-            ]);
-        if(request()->ajax()) {
-            return DataTables::of($donasi)
-            ->addIndexColumn()
-            ->editColumn('nominal', function($donasi){
-                $rp = 'Rp';
-                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
-                return $nomin;
-            })
-            ->editColumn('created_at', function($donasi){
-                $date = \Carbon\Carbon::parse($donasi->created_at)->locale('id')->isoFormat('LLL');
-                return $date;
-            })
-            ->addColumn('komen', function($donasi){
-                $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
-                return $komen;
-            })
-            ->rawColumns(['komen'])
-            ->make(true);
-        }
-        return view('admin.post.show', compact('galadana'));
+        return view('admin.post.edit', compact('galadana'));
     }
     public function approvalpost()
     {

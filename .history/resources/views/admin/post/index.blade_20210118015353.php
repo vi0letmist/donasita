@@ -117,8 +117,8 @@
             { "width": "25%", "targets": 2 },
             { "width": "8%", "targets": 3 },
             { "width": "5%", "targets": 4 },
-            { "width": "13%", "targets": 5 },
-            { "width": "17%", "targets": 6 }
+            { "width": "15%", "targets": 5 },
+            { "width": "15%", "targets": 6 }
         ]
        });
      });

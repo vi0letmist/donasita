@@ -48,7 +48,7 @@
                         <input type="hidden" class="deleteGaladanaId" value="$galadana->id">
                             <li class="app-sidebar__heading">Pengaturan & Pengelolaan</li>
                             <li>
-                                <a href="/kelola/umum" class="{{ Request::is('kelola/umum') ? 'mm-active' : '' }}">
+                                <a href="/kelola/galadana" class="{{ Request::is('kelola/umum') ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-config"></i>
                                     Umum
                                 </a>

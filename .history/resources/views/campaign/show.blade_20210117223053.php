@@ -28,15 +28,6 @@
         width:50%;
         margin-top: 6px;
     }
-    #tableDonate_wrapper input{
-        height: 30px;
-    }
-    .edit-body-body{
-        margin: 0 10px 20px 10px !important;
-    }
-    .edit-body-header{
-        padding: 0 1rem 1rem !important;
-    }
 </style>
 <div class="container padding-top-60">
     <div class="row">
@@ -48,7 +39,7 @@
                         <input type="hidden" class="deleteGaladanaId" value="$galadana->id">
                             <li class="app-sidebar__heading">Pengaturan & Pengelolaan</li>
                             <li>
-                                <a href="/kelola/umum" class="{{ Request::is('kelola/umum') ? 'mm-active' : '' }}">
+                                <a href="/kelola/galadana" class="{{ Request::is('kelola/umum') ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-config"></i>
                                     Umum
                                 </a>
@@ -139,8 +130,8 @@
         columnDefs: [
             { "width": "30%", "targets": 1 },
             { "width": "20%", "targets": 2 },
-            { "width": "30%", "targets": 3 },
-            { "width": "20%", "targets": 4 },
+            { "width": "25%", "targets": 3 },
+            { "width": "25%", "targets": 4 },
         ]
        });
      });  

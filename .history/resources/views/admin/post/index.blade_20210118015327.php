@@ -4,6 +4,11 @@
 ])
 @section('manajemen-post','active')
 @section('content')
+    <style>
+        table.dataTable tbody th, table.dataTable tbody td {
+        padding: 8px 6px !important;
+    }
+    </style>
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
@@ -117,8 +122,8 @@
             { "width": "25%", "targets": 2 },
             { "width": "8%", "targets": 3 },
             { "width": "5%", "targets": 4 },
-            { "width": "13%", "targets": 5 },
-            { "width": "17%", "targets": 6 }
+            { "width": "15%", "targets": 5 },
+            { "width": "15%", "targets": 6 }
         ]
        });
      });

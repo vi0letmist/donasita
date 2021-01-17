@@ -44,15 +44,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
     Route::get('kelola/galadana', 'KelolaController@index');
     Route::get('kelola/umum', 'UserController@edit');
-    Route::put('kelola/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
+    Route::put('kelola/umum', ['as' => 'user.update', 'uses' => 'UserController@update']);
     Route::get('kelola/{slug}/ubah', 'GaladanaController@edit')->name('galadana.edit');
     Route::get('kelola/{slug}/lihat', 'GaladanaController@show')->name('galadana.show','[a-z]+');
     Route::put('kelola/{slug}', ['as' => 'kelola.update', 'uses' => 'GaladanaController@update']);
     Route::get('/dashboard', 'AdminController@index')->name('dashboard');
     Route::get('/layout', 'AdminController@layout')->name('layout');
     Route::get('manajemen-post', 'AdminController@managepost')->name('manajemen-post');
-    Route::get('manajemen-post/{slug}/edit', 'AdminController@edit')->name('manajemen-post.edit');
-    Route::get('manajemen-post/{slug}/show', 'AdminController@show')->name('manajemen-post.show');
+    Route::get('manajemen-post/edit/{slug}', 'AdminController@edit')->name('manajemen-post.edit');
     Route::put('manajemen-post/{slug}', ['as' => 'manajemen-post.update', 'uses' => 'AdminController@update']);
     Route::get('/persetujuan-post', 'AdminController@approvalpost')->name('persetujuan-post');
     Route::get('/post-ditolak', 'AdminController@declinepost')->name('post-ditolak');

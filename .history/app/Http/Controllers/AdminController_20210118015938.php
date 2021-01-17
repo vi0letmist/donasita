@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Galadana;
-use App\Donate;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 
