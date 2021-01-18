@@ -63,5 +63,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/persetujuan-post/approve/{id}', 'AdminController@approve')->name('persetujuan-post.approve');
     Route::get('/persetujuan-post/decline/{id}', 'AdminController@decline')->name('persetujuan-post.decline');
     Route::delete('/galadana/{id}/delete','GaladanaController@delete')->name('galadana.destroy');
-    Route::delete('/manajemen-kategori/{id}/hapus','KategoriController@delete')->name('manajemen-kategori.destroy');
 });

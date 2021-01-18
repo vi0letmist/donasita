@@ -41,9 +41,7 @@ Route::get('/donasi/intruksi/{id}', 'DonateController@intruksi')->name('donasi',
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('manajemen-kategori', 'KategoriController', ['except' => ['show']]);
-    Route::get('manajemen-kategori/{slug}/ubah', 'KategoriController@edit')->name('manajemen-kategori.edit');
     Route::put('manajemen-kategori/{slug}', ['as' => 'manajemen-kategori.update', 'uses' => 'KategoriController@update']);
-    Route::get('manajemen-kategori/{slug}/lihat', 'KategoriController@show')->name('manajemen-kategori.show','[a-z]+');
     Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
     Route::get('kelola/galadana', 'KelolaController@index');
     Route::get('kelola/umum', 'UserController@edit');
@@ -63,5 +61,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/persetujuan-post/approve/{id}', 'AdminController@approve')->name('persetujuan-post.approve');
     Route::get('/persetujuan-post/decline/{id}', 'AdminController@decline')->name('persetujuan-post.decline');
     Route::delete('/galadana/{id}/delete','GaladanaController@delete')->name('galadana.destroy');
-    Route::delete('/manajemen-kategori/{id}/hapus','KategoriController@delete')->name('manajemen-kategori.destroy');
 });

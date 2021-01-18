@@ -47,7 +47,7 @@
                                 @endphp
                                 @foreach($kategori as $k)
                                 <tr>
-                                    <input type="hidden" class="deleteKategoriId" value="{{$k->id}}">
+                                    <input type="hidden" class="deleteKategoriId" value="$k->id">
                                     <th scope="row">{{$no++}}</th>
                                     <td>
                                         <div class="imgKategori">

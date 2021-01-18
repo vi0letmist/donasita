@@ -570,9 +570,9 @@
               });
             //   enddelete
             //   startdelete kategori
-              $('body').on('click','.deleteKategori', function(e){
+              $('body').on('click','.deleteGaladana', function(e){
                   e.preventDefault();
-                  var delete_id = $(this).closest("tr").find('.deleteKategoriId').val();
+                  var delete_id = $(this).closest("tr").find('.deleteGaladanaId').val();
                   swal({
                       title: "Anda yakin?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
@@ -594,10 +594,10 @@
                         };
                         $.ajax({
                             type: "POST",
-                            url: "/manajemen-kategori/"+delete_id+"/hapus",
+                            url: "/galadana/"+delete_id+"/delete",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Kategori tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
+                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{

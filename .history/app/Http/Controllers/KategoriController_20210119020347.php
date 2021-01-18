@@ -131,9 +131,4 @@ class KategoriController extends Controller
 
         return redirect()->route('manajemen-kategori.index')->withStatus(__('Kategori berhasil diupdate'));
     }
-    public function delete($id)
-    {
-        Kategori::destroy($id);
-        return redirect()->back()->withStatus(__('Kategori berhasil dihapus'));
-    }
 }

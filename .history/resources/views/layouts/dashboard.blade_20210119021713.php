@@ -597,7 +597,7 @@
                             url: "/manajemen-kategori/"+delete_id+"/hapus",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Kategori tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
+                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{

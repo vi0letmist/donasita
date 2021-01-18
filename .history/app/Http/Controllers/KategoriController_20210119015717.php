@@ -31,8 +31,7 @@ class KategoriController extends Controller
         $kategori = Kategori::where('slug', $slug)->first();
         DB::statement(DB::raw('set @rownum=0'));
         $galadana = galadana::join('users', 'users.id','=', 'galadana.user_id')
-            ->where('galadana.status', '=', 1)
-            ->where('galadana.kategori_id', '=',$kategori->id)
+            ->where('galadana.status', '=', 1, '&&', 'galadana.kategori_id', '=',$kategori->id)
             ->select([
                 DB::raw('@rownum  := @rownum  + 1 AS rownum'),
                 'galadana.*','users.name'
@@ -130,10 +129,5 @@ class KategoriController extends Controller
         $kategori->update();
 
         return redirect()->route('manajemen-kategori.index')->withStatus(__('Kategori berhasil diupdate'));
-    }
-    public function delete($id)
-    {
-        Kategori::destroy($id);
-        return redirect()->back()->withStatus(__('Kategori berhasil dihapus'));
     }
 }

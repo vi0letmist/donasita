@@ -47,7 +47,6 @@
                                 @endphp
                                 @foreach($kategori as $k)
                                 <tr>
-                                    <input type="hidden" class="deleteKategoriId" value="{{$k->id}}">
                                     <th scope="row">{{$no++}}</th>
                                     <td>
                                         <div class="imgKategori">
@@ -59,10 +58,8 @@
                                         <a href="{{route('manajemen-kategori.edit', $k->slug)}}">
                                             <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-note btn-icon-wrapper"> </i></button>
                                         </a>
-                                        <a href="{{route('manajemen-kategori.show', $k->slug)}}">
-                                            <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                                        </a>
-                                        <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteKategori"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                        <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                                        <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                                         
                                     </td>
                                 </tr>

@@ -76,7 +76,7 @@
                     <div class="progress-bar-xs progress">
                         <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$galadana->progres_capaian / $galadana->target_capaian * 100}}%"></div>
                     </div>
-                    <p><strong>{{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}%</strong> tercapai</p>
+                    <p><strong>{!! number_format((float)$galadana->progres_capaian / $galadana->target_capaian * 100, 1, '.', '') !!}%</strong> tercapai</p>
                 </div>
                 <div class="sidebar-donate-body">
                     <a href="/g/{{$galadana->slug}}/donasi" class="donate-button">Donasi Sekarang</a>
