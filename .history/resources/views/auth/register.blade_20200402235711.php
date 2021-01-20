@@ -1,17 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-  .input-group-text i{
-    margin-top: 34px;
-  }
-  .invalid-feedback{
-    height: 30px !important;
-  }
-  .invalid-feedback strong{
-    font-size: 12px;
-  }
-</style>
 <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

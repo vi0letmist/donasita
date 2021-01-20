@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes(['verify' => true]);
+
 Route::get('/', 'HomeController@index', function () {
     return view('home');
 });
@@ -39,7 +39,7 @@ Route::get('/g/{slug}/donasi', 'DonateController@index')->name('galadana', '[a-z
 Route::resource('donasi', 'DonateController', ['except' => ['show']]);
 Route::get('/donasi/intruksi/{id}', 'DonateController@intruksi')->name('donasi','intruksi');
 Auth::routes();
-
+Auth::routes(['verify' => true]);
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('manajemen-kategori', 'KategoriController', ['except' => ['show']]);
     Route::get('manajemen-kategori/{slug}/ubah', 'KategoriController@edit')->name('manajemen-kategori.edit');

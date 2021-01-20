@@ -3893,7 +3893,7 @@ input[type=button].btn-block {
   color: #495057;
   text-align: center;
   white-space: nowrap;
-  background-color: #fff;
+  background-color: #e9ecef;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
@@ -10970,7 +10970,7 @@ a.text-dark:focus {
 }
 .login-form span,
 .login-form textarea {
-  color: #fff;
+  color: #777;
   font-size: 24px;
   border: 1px solid #eee;
   width: 100%;

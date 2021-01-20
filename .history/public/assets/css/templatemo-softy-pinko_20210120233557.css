@@ -3490,7 +3490,7 @@ login-item
   -moz-border-radius: 20px;
   border-radius: 20px;
   padding: 20px 0 20px 0;
-  text-align: left;
+  text-align: center;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -3498,7 +3498,6 @@ login-item
   position: relative;
   margin-bottom: 30px;
   overflow-wrap: break-word;
-  padding: 30px 30px;
 }
 /* 
 ---------------------------------------------

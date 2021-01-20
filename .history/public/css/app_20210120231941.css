@@ -3893,7 +3893,7 @@ input[type=button].btn-block {
   color: #495057;
   text-align: center;
   white-space: nowrap;
-  background-color: #fff;
+  background-color: #e9ecef;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
@@ -10970,7 +10970,7 @@ a.text-dark:focus {
 }
 .login-form span,
 .login-form textarea {
-  color: #fff;
+  color: #777;
   font-size: 24px;
   border: 1px solid #eee;
   width: 100%;
@@ -11334,7 +11334,22 @@ scroll
   background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 80%);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0)
 }
-
+/* 
+---------------------------------------------
+welcome
+--------------------------------------------- 
+*/
+.welcome-area {
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-image: url(..assets/images/banner-bg1.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; 
+  height: 100vh;
+}
 /* 
 ---------------------------------------------
 create campaign

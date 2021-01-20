@@ -19,8 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('assets') }}/css/main.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/main.css" rel="stylesheet">
 </head>
-<body class="welcome-area">
+<body class="bg-gradient">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

@@ -181,3 +181,25 @@ button::-moz-focus-inner,
   padding: 0;
   border-style: none;
 }
+/* 
+---------------------------------------------
+login-item
+--------------------------------------------- 
+*/
+.login-item {
+  display: block;
+  background: #FFFFFF;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  margin-bottom: 30px;
+  overflow-wrap: break-word;
+}
