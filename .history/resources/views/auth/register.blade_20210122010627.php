@@ -6,7 +6,6 @@
         background: #f2f2fe;
     }
   .input-group-text i{
-    font-size: 16px;
     color:#3ac47d;
   }
   .invalid-feedback{
@@ -118,7 +117,7 @@
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="far fa-user"></i></span>
+                      <span class="input-group-text"><i class="far fa-envelope"></i></span>
                     </div>
                     <input id="name" type="text" placeholder="Nama" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -160,7 +159,7 @@
                 <div class="form-group">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-retweet"></i></span>
+                      <span class="input-group-text"><i class="pe-7s-repeat icon-gradient bg-grow-early"></i></span>
                     </div>
                         <input id="password-confirm" placeholder="re-type Password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         

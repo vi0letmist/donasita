@@ -6,7 +6,7 @@
         background: #f2f2fe;
     }
   .input-group-text i{
-    font-size: 16px;
+    font-size: 12px;
     color:#3ac47d;
   }
   .invalid-feedback{
@@ -160,7 +160,7 @@
                 <div class="form-group">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-retweet"></i></span>
+                      <span class="input-group-text"><i class="far fa-repeat"></i></span>
                     </div>
                         <input id="password-confirm" placeholder="re-type Password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         

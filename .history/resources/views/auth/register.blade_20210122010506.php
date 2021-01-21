@@ -6,7 +6,6 @@
         background: #f2f2fe;
     }
   .input-group-text i{
-    font-size: 16px;
     color:#3ac47d;
   }
   .invalid-feedback{
@@ -109,6 +108,7 @@
         <div class="col-lg-5 col-md-7">
           <div class="login-item">
             
+            <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
                 <small>Or sign in with credentials</small>
               </div>
@@ -118,7 +118,7 @@
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="far fa-user"></i></span>
+                      <span class="input-group-text"><i class="far fa-envelope"></i></span>
                     </div>
                     <input id="name" type="text" placeholder="Nama" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -160,7 +160,7 @@
                 <div class="form-group">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-retweet"></i></span>
+                      <span class="input-group-text"><i class="pe-7s-repeat icon-gradient bg-grow-early"></i></span>
                     </div>
                         <input id="password-confirm" placeholder="re-type Password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         
@@ -172,13 +172,16 @@
                     <span class="text-muted" style="font-size:14px!important;">Remember me</span>
                   </label>
                 </div>
-                <div class="form-group row mb-0 center-all">
+                <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4" style="padding-top:1em;">
                                 <button type="submit" class="main-button">
                                     {{ __('Daftar') }}
                                 </button>
+                            </div>
                         </div>
               </form>
               </div>
+            </div>
           </div>
           <div class="row mt-3">
             <div class="col-6">
