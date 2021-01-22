@@ -24,7 +24,6 @@ https://templatemo.com/tm-535-softy-pinko
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/templatemo-softy-pinko.css">
-    <link href="{{ asset('assets') }}/css/datatables.min.css" rel="stylesheet">
 
     </head>
     
@@ -108,7 +107,6 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
     @stack('js')
     @include('sweetalert::alert')
     <script type="text/javascript" src="{{ asset('assets') }}/js/sweetalert.min.js"></script>

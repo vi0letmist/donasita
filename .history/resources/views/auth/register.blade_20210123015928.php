@@ -10,8 +10,6 @@
     color:#3ac47d;
   }
   .invalid-feedback{
-    color: #6c757d !important;
-    border: none !important;
     height: 30px !important;
   }
   .invalid-feedback strong{
@@ -171,7 +169,7 @@
                 <div class="custom-control custom-control-alternative custom-checkbox">
                 <input class="custom-control-input" name="remember" id="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
                   <label class="custom-control-label" for="remember">
-                    <span class="text-muted" style="font-size:14px!important;border: none !important;">Remember me</span>
+                    <span class="text-muted" style="font-size:14px!important;">Remember me</span>
                   </label>
                 </div>
                 <div class="form-group row mb-0 center-all">
@@ -185,7 +183,7 @@
           <div class="row mt-3">
             <div class="col-6">
               <a><small>Sudah mempunyai akun?</small></a> 
-                <a href="{{ route('login') }}"><small>Masuk</small></a>  
+                <a href="{{ route('login') }}" class="text-light"><small>Masuk</small></a>  
             </div>
           </div>
         </div>

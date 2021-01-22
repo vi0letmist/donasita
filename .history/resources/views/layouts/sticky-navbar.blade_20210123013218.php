@@ -47,7 +47,7 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav nav-page">
-                        <ul class="nav nav-page-left">
+                        <ul class="nav nav-page-left list-unstyled disp-flex align-middle">
                             <li>
                                 <div class="search-wrapper search">
                                     <div class="input-holder">
@@ -108,7 +108,6 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
     @stack('js')
     @include('sweetalert::alert')
     <script type="text/javascript" src="{{ asset('assets') }}/js/sweetalert.min.js"></script>

@@ -47,16 +47,14 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav nav-page">
-                        <ul class="nav nav-page-left">
-                            <li>
-                                <div class="search-wrapper search">
+                    <div class="search-wrapper search">
                                     <div class="input-holder">
                                         <input type="text" class="search-input" placeholder="Type to search">
                                         <button class="search-icon"><span></span></button>
                                     </div>
                                     <button class="close"></button>
                                 </div>
-                            </li>
+                        <ul class="nav nav-page-left">
                             <li><a href="/galadana">Penggalangan Dana</a></li>
                         </ul>
                         <!-- ***** Logo Start ***** -->
@@ -108,7 +106,6 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
     @stack('js')
     @include('sweetalert::alert')
     <script type="text/javascript" src="{{ asset('assets') }}/js/sweetalert.min.js"></script>

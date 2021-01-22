@@ -877,9 +877,11 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  margin-left: 30px;
 }
 .header-area .main-nav .search {
   float: left;
+  margin-top: 19px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1116,7 +1118,6 @@ header
     display: flex !important;
   }
 }
-
 /* 
 ---------------------------------------------
 header 2
@@ -1149,9 +1150,11 @@ header 2
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  margin-left: 30px;
 }
 .header-area2 .main-nav .search {
   float: left;
+  margin-top: 19px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -3623,7 +3626,7 @@ navigation-page
   display: grid;
   grid-gap: 1rem;
   grid-template-areas: "headerleft headercenter headerright";
-  grid-template-columns: 1fr 10rem 1fr;
+  grid-template-columns: 1fr 4.875rem 1fr;
   grid-template-rows: auto;
 }
 .nav-page-left{
@@ -3631,10 +3634,6 @@ navigation-page
 }
 .nav-page-center{
   grid-area: headercenter;
-}
-.nav-page-center a{
-  align-items: center!important;
-  text-align: center;
 }
 .nav-page-right{
   grid-area: headerright;

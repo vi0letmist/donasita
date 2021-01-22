@@ -46,9 +46,9 @@ https://templatemo.com/tm-535-softy-pinko
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="main-nav nav-page">
-                        <ul class="nav nav-page-left">
-                            <li>
+                    <nav class="main-nav">
+                        <ul class="nav-page-left list-unstyled disp-flex align-middle">
+                            <li class="align-middle">
                                 <div class="search-wrapper search">
                                     <div class="input-holder">
                                         <input type="text" class="search-input" placeholder="Type to search">
@@ -57,17 +57,18 @@ https://templatemo.com/tm-535-softy-pinko
                                     <button class="close"></button>
                                 </div>
                             </li>
-                            <li><a href="/galadana">Penggalangan Dana</a></li>
+                            <li class="disp-flex"><a href="/galadana">Penggalangan Dana</a></li>
                         </ul>
                         <!-- ***** Logo Start ***** -->
-                        <div class="nav-page-center">
+                        <div class="center-all">
                         <a href="/home" class="logo">
-                            <img src="{{ asset('assets') }}/images/logo1.png" alt="Softy Pinko" style="width:10em;"/>
+                            <img src="assets/images/logo1.png" alt="Softy Pinko" style="width:10em;"/>
                         </a>
                         </div>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav nav-page-right">
+                        <ul class="nav right-all">
+                            <li><a href="#welcome" class="active">Beranda</a></li>
                             <li><a href="/galadana">Penggalangan Dana</a></li>
                             <li><a href="/login" class="main-login">Masuk</a></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -108,7 +109,6 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
     @stack('js')
     @include('sweetalert::alert')
     <script type="text/javascript" src="{{ asset('assets') }}/js/sweetalert.min.js"></script>

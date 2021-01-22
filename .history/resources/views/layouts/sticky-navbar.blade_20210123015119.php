@@ -108,11 +108,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
     @stack('js')
-    @include('sweetalert::alert')
-    <script type="text/javascript" src="{{ asset('assets') }}/js/sweetalert.min.js"></script>
-    <script type="text/javascript" src="{{ asset('assets') }}/js/datatables.min.js"></script>
     <script src="{{ asset('ckeditor') }}/ckeditor.js"></script>
     <script type="text/javascript">
         CKEDITOR.replace( 'cerita',{
