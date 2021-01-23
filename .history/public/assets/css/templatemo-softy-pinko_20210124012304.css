@@ -3637,7 +3637,7 @@ navigation-page
   text-align: center;
 }
 .nav-page-right{
-  justify-content: flex-end;
+  float:right;
   grid-area: headerright;
 }
 .list-unstyled {
