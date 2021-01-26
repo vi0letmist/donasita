@@ -19,7 +19,7 @@ class CreateDonatesTable extends Migration
             $table->string('email');
             $table->string('nominal');
             $table->text('komen')->nullable();
-            $table->boolean('anonim')->nullable()->default(0);
+            $table->boolean('anonim')->default(0);
             $table->string('galadana_id');
             $table->dateTime('batas_date');
             $table->timestamps();

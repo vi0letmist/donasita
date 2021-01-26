@@ -57,7 +57,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- ***** Footer Start ***** -->
     @include('layouts.footer')
-    
+    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
     <!-- jQuery -->
     <script src="{{ asset('assets') }}/js/jquery-3.5.1.js"></script>
     <script src="{{ asset('assets') }}/js/app.js"></script>
@@ -73,8 +73,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="{{ asset('assets') }}/js/custom.js"></script>
-    @stack('js')
-    <script type="text/javascript" src="{{ asset('assets') }}/scripts/main.js"></script>
+    
 
     <script src="{{ asset('ckeditor') }}/ckeditor.js"></script>
   </body>

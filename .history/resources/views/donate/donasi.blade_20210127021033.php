@@ -49,9 +49,14 @@
                                         <input name="galadana_id" value="{{ $galadana->id }}" type="hidden" class="form-control" id="galadana_id">
                                     </fieldset>
                                     <div class="col-lg-12 col-md-12 col-sm-12 padding-left-4 padding-right-4">
+                                    <div class="position-relative form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="1"> Sembunyikan nama saya (donasi anonim)
+                                        </label>
+                                    </div>
                                         <div class="custom-control custom-control-alternative custom-checkbox">
-                                            <input class="custom-control-input" name="anonim" id="anonim" type="checkbox" value="1">
-                                            <label class="custom-control-label" for="anonim">
+                                            <input class="custom-control-input" name="remember" id="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
+                                            <label class="custom-control-label" for="remember">
                                                 <span class="text-muted backrer" style="font-size:14px!important;">Sembunyikan nama saya (donasi anonim)</span>
                                             </label>
                                         </div>

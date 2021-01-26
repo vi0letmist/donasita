@@ -4173,7 +4173,6 @@ search
 }
 .dropdown-menu.show{
   border:none;
-  width: max-content;
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
