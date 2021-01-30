@@ -79,7 +79,7 @@
                             <div class="progress-bar-xs progress">
                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}%;"></div>
                             </div>
-                            <p class="padding-top-10">terkumpul dari <strong>{{$sumDonasi}}</strong> orang selama {{\Carbon\Carbon::createFromTimeStamp(strtotime($galadana->created_at))->locale('id')->longAbsoluteDiffForHumans()}}</p>
+                            <p class="padding-top-10">terkumpul dari <strong>267</strong> orang selama 4 bulan</p>
                         </div>
                     </div>
                 </div>

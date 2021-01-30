@@ -11,11 +11,7 @@
                             </div>
                         </div>
                         <div class="col-lg-10 col-md-8 col-sm-8">
-                            @if($row->anonim == TRUE)
-                            <p>Anonim donasi <b>@currency($row->nominal)</b></p>
-                            @else
-                            <p>{{$row->nama}} donasi <b>@currency($row->nominal)</b></p>
-                            @endif
+                            <p>{{$row->nama}} donasi <b>@currency($row->nominal) ui</b></p>
                             <p>{{$row->komen}}</p>
                             <br>
                             <p class="lastdonate">{{\Carbon\Carbon::createFromTimeStamp(strtotime($row->created_at))->locale('id')->diffForHumans()}}</p>

@@ -39,12 +39,8 @@ class DonateController extends Controller
                 ->select('users.*')
                 ->getQuery()
                 ->first();
-        $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
-                ->where('galadana.id','=',$donasi->galadana_id)
-                ->select('galadana.*')
-                ->getQuery()
-                ->count();
-        return view('donate.intruksi', compact('donasi','galadana','author', 'sumDonasi'));
+        $sumDonasi = Donate::where('id',$id)->count();
+        return view('donate.intruksi', compact('donasi','galadana','author'));
     }
 
     /**

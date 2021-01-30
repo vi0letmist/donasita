@@ -94,11 +94,7 @@
                             </div>
                         </div>
                         <div class="col-lg-10 col-md-8 col-sm-8">
-                            @if($a->anonim == TRUE)
-                            <p>Anonim</p>
-                            @else
                             <p>{{$a->nama}}</p>
-                            @endif
                             <div class="row padding-0">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <ul>
@@ -156,11 +152,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-10 col-md-8 col-sm-8">
-                                @if($a->anonim == TRUE)
-                                <p>Anonim</p>
-                                @else
                                 <p>{{$a->nama}}</p>
-                                @endif
                                 <div class="row padding-0">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <ul>

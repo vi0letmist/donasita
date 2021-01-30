@@ -13,7 +13,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20 padding-left-1 padding-right-1">
                         <div class="intruksi-form">
                             <p class="text-center">Transfer sesuai nominal dibawah ini:</p>
-                            <h3>@currency($donasi->nominal)</h3>
+                            <h3>Rp. {{$donasi->nominal}}</h3>
                             <div class="col-lg-12 intruksi-alert">
                                 <i class="fas fa-exclamation-circle padding-right-10"></i>
                                 <p><b>PENTING!</b> Mohon transfer tepat sampai 3 angka terakhir agar donasi terverifikan otomatis</p>
@@ -74,12 +74,12 @@
                             <img src="{{URL::asset('/images/' . $galadana->gambar)}}" alt="{{$galadana->judul}}">
                         </div>
                         <div class="sidebar-donate-header">
-                            <h3><strong>@currency($galadana->progres_capaian) </strong></h3>
-                            <p>terkumpul dari @currency($galadana->target_capaian)</p>
+                            <h3><strong>Rp. {{$galadana->progres_capaian}} </strong></h3>
+                            <p>terkumpul dari Rp. {{$galadana->target_capaian}}</p>
                             <div class="progress-bar-xs progress">
                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}%;"></div>
                             </div>
-                            <p class="padding-top-10">terkumpul dari <strong>{{$sumDonasi}}</strong> orang selama {{\Carbon\Carbon::createFromTimeStamp(strtotime($galadana->created_at))->locale('id')->longAbsoluteDiffForHumans()}}</p>
+                            <p class="padding-top-10">terkumpul dari <strong>267</strong> orang selama 4 bulan</p>
                         </div>
                     </div>
                 </div>
