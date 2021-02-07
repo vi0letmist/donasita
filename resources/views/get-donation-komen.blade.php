@@ -44,6 +44,5 @@
                 <a href="/g/{{$galadana->slug}}/donasi" class="main-button">Selanjutnya</a>
             </div>
         </div>
-              
     </div>
 @endif

@@ -11,6 +11,7 @@ use App\User;
 use App\Donate;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
+use Share;
 
 class GaladanaController extends Controller
 {
@@ -40,8 +41,16 @@ class GaladanaController extends Controller
                 ->latest()
                 ->take(3)
                 ->get();
-                
-        return view('campaign.post', compact('galadana','author','donate', 'sideDonate'));
+        $share = Share::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
+                ->facebook()
+                ->twitter()
+                ->reddit()
+                ->telegram()
+                ->whatsapp();
+        $facebook = Share::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
+                    ->facebook()
+                    ->getRawLinks();
+        return view('campaign.post', compact('galadana','author','donate', 'sideDonate', 'share', 'facebook'));
     }
     public function kategori($slug)
     {
