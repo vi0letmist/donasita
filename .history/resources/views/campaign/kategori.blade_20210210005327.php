@@ -12,7 +12,7 @@
             justify-content: center;
             background-image: url(../images/{{$kategori->gambar}});
             background-repeat: no-repeat;
-            background-position: 85% 50%;
+            background-position: 75% 50%;
             background-size: contain; 
             height: 100vh;
         }

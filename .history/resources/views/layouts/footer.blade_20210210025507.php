@@ -9,11 +9,10 @@
             <div class="col-lg-9 col-md-9 col-sm-9">
                 <ul class="galu">
                     <li class="app-sidebar__heading">Galang Dana Untuk</li>
-                    <li><a href="/galadana/bencana-keadaan-darurat">Bencana & Keadaan Darurat</a></li>
-                    <li><a href="/galadana/lingkungan-hidup">Lingkungan Hidup</a></li>
-                    <li><a href="/galadana/medis-kesehatan">Medis & Kesehatan</a></li>
                     <li><a href="/galadana/pembangunan">Pembangunan</a></li>
-                    <li><a href="/galadana/pendidikan">Pendidikan</a></li>
+                    <li><a href="">Medis & Kesehatan</a></li>
+                    <li><a href="/galadana/bencana-keadaan-darurat">Bencana & Keadaan Darurat</a></li>
+                    <li><a href="">Pendidikan</a></li>
                 </ul>
             </div>
         </div>

@@ -159,12 +159,12 @@ class AdminController extends Controller
         $galadana->save();
         return redirect()->back()->withStatus(__('decline'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
         $this->validate($request, [
             'cerita' => 'nullable'
         ]);
-        $galadana = Galadana::findOrFail($id);
+        $galadana = Galadana::findOrFail($slug);
         $galadana->judul = $request->judul;
         $galadana->slug = $request->slug;
         $galadana->cerita = $request->cerita;
@@ -185,7 +185,7 @@ class AdminController extends Controller
        
         $galadana->update();
 
-        return redirect('/manajemen-post')->withStatus(__('Penggalangan dana berhasil diupdate'));
+        return redirect()->back()->withStatus(__('Penggalangan dana berhasil diupdate'));
     }
     public function test()
     {

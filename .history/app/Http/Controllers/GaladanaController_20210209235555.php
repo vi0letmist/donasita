@@ -76,8 +76,7 @@ class GaladanaController extends Controller
         {
             if($request->id){
                 $data = Kategori::join('galadana', 'galadana.kategori_id', '=', 'kategori.id')
-                ->where('galadana.kategori_id', '=', $kategori->id)
-                ->where('galadana.id','<',$request->id)
+                ->where('kategori.id','<',$request->id)
                 ->select('galadana.*')
                 ->orderBy('id', 'DESC')
                 ->limit(6)
@@ -189,12 +188,12 @@ class GaladanaController extends Controller
 
         return redirect('g/'.$galadana->slug)->withStatus(__('Penggalangan dana berhasil dibuat.'));
     }
-    public function update(Request $request, $slug)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'cerita' => 'nullable'
         ]);
-        $galadana = Galadana::findOrFail($slug);
+        $galadana = Galadana::find($id);
         $galadana->judul = $request->judul;
         $galadana->slug = $request->slug;
         $galadana->cerita = $request->cerita;
@@ -215,7 +214,7 @@ class GaladanaController extends Controller
        
         $galadana->update();
 
-        return redirect('/kelola/galadana')->withStatus(__('Penggalangan dana berhasil diupdate'));
+        return redirect()->back()->withStatus(__('Penggalangan dana berhasil diupdate'));
     }
 
     public function tost()

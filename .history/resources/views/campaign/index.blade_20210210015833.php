@@ -63,11 +63,11 @@
                 @endforeach
                 <!-- ***** Features Small Item End ***** -->
                 <div class="out"></div>
-                <!-- <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                     <button type="button" class="btn seeall-gal-button">
                         Lihat Semua
                     </button>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>

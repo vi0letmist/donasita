@@ -12,7 +12,7 @@
             justify-content: center;
             background-image: url(../images/{{$kategori->gambar}});
             background-repeat: no-repeat;
-            background-position: 85% 50%;
+            background-position: 75% 50%;
             background-size: contain; 
             height: 100vh;
         }
@@ -53,9 +53,38 @@
                     <h6><b>JELAJAHI PENGGALANGAN DANA</b></h6>
                     <h4><b>Penggalangan dana untuk {{$kategori->nama}}</b></h4>
                 </div>
-                <div class="panel-body" style="width: 100%;">
-                {{ csrf_field() }}
-                    <div id="post_data"></div>
+                @foreach($galadana as $g)
+                <!-- ***** Features Small Item Start ***** -->
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$g->slug}}';" style="cursor: pointer;">
+                    <div class="features-populer-item">
+                        <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
+                                    
+                        </div>
+                        <h5 class="features-title"><b>{{$g->judul}}</b></h5>
+                        <p>{!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}</p>
+                        <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($g->created_at))->locale('id')->diffForHumans()}}</p>
+                        <div class="bar">
+                            <div class="progress-bar-xs progress">
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $g->progres_capaian / $g->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$g->progres_capaian / $g->target_capaian * 100}}%"></div>
+                            </div>
+                        </div>
+                        <div class="donateprog">
+                            <p><b>@currency($g->progres_capaian)</b> dari @currency($g->target_capaian)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ***** Features Small Item End ***** -->
+                @endforeach
+                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                    <button type="button" class="btn seeall-gal-button">
+                        Lihat Semua
+                    </button>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                <div class="panel-body">
+                            {{ csrf_field() }}
+                                <div id="post_data"></div>
+                            </div>
                 </div>
             </div>
         </div>
@@ -75,7 +104,7 @@ $(document).ready(function(){
  {
 
   $.ajax({
-   url:"{{ route('galadana.load_galadana', $kategori->id) }}",
+   url:"{{ route('galadana.load_galadana', $galadana->id) }}",
    method:"POST",
    data:{id:id, _token:_token},
    success:function(data)

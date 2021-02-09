@@ -75,7 +75,7 @@
                                         <a href="/kelola/{{$g->slug}}/ubah">
                                             <i class="fas fa-pencil-alt"></i> Ubah
                                         </a>
-                                        <a href="/kelola/{{$g->slug}}" class="dot">
+                                        <a href="/kelola/{{$g->slug}}/lihat" class="dot">
                                             <i class="fas fa-tools"></i> Kelola
                                         </a>
                                     </div>

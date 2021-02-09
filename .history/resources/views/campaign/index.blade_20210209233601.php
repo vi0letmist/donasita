@@ -12,7 +12,7 @@
             justify-content: center;
             background-image: url(../assets/images/sebastian-staines-SBCvP6i8hR8-unsplash.jpg);
             background-repeat: no-repeat;
-            background-position: 85% 50%;
+            background-position: 75% 50%;
             background-size: contain; 
             height: 100vh;
         }
@@ -63,11 +63,11 @@
                 @endforeach
                 <!-- ***** Features Small Item End ***** -->
                 <div class="out"></div>
-                <!-- <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                     <button type="button" class="btn seeall-gal-button">
                         Lihat Semua
                     </button>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>

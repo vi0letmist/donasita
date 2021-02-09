@@ -185,7 +185,7 @@ class AdminController extends Controller
        
         $galadana->update();
 
-        return redirect('/manajemen-post')->withStatus(__('Penggalangan dana berhasil diupdate'));
+        return redirect()->back()->withStatus(__('Penggalangan dana berhasil diupdate'));
     }
     public function test()
     {

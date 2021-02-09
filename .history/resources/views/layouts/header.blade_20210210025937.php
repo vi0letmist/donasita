@@ -34,6 +34,8 @@
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Galadana Untuk
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
+                    <li><a href="/galadana/bencana-keadaan-darurat">Bencana & Keadaan Darurat</a></li>
+                    <li><a href="/galadana/lingkungan-hidup">Lingkungan Hidup</a></li>
                     <li><a href="/galadana/medis-kesehatan">Medis & Kesehatan</a></li>
                     <li><a href="/galadana/pembangunan">Pembangunan</a></li>
                     <li><a href="/galadana/pendidikan">Pendidikan</a></li>
@@ -92,6 +94,8 @@
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Galadana Untuk
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
+                    <li><a href="/galadana/bencana-keadaan-darurat">Bencana & Keadaan Darurat</a></li>
+                    <li><a href="/galadana/lingkungan-hidup">Lingkungan Hidup</a></li>
                     <li><a href="/galadana/medis-kesehatan">Medis & Kesehatan</a></li>
                     <li><a href="/galadana/pembangunan">Pembangunan</a></li>
                     <li><a href="/galadana/pendidikan">Pendidikan</a></li>
