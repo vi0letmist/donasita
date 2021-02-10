@@ -98,8 +98,8 @@
         <div class="header-body text-center mb-7 padding-top-20">
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-              <h1>Daftar</h1>
-              <p class="text-lead">Selamat datang di *nama app* sebuah situs yang mempertemukan antara Donatur dan Penggalang Dana.</p>
+              <h1>Welcome!</h1>
+              <p class="text-lead">Use these awesome forms to login or create new account in your project for free.</p>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     </div>
-                    <input id="password" type="password" placeholder="Kata Sandi" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -164,16 +164,16 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-retweet"></i></span>
                     </div>
-                        <input id="password-confirm" placeholder="Ketik ulang kata sandi" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input id="password-confirm" placeholder="re-type Password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         
                   </div>
                 </div>
-                <!-- <div class="custom-control custom-control-alternative custom-checkbox">
+                <div class="custom-control custom-control-alternative custom-checkbox">
                 <input class="custom-control-input" name="remember" id="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
                   <label class="custom-control-label" for="remember">
-                    <span class="text-muted" style="font-size:14px!important;border: none !important;">Ingat saya</span>
+                    <span class="text-muted" style="font-size:14px!important;border: none !important;">Remember me</span>
                   </label>
-                </div> -->
+                </div>
                 <div class="form-group row mb-0 center-all">
                                 <button type="submit" class="main-button">
                                     {{ __('Daftar') }}

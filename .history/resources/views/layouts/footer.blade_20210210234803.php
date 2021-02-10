@@ -19,7 +19,7 @@
         </div>
         <div class="row copyright">
             <div class="col-lg-6 col-md-6 col-sm-6 left-all">
-                <p>Copyright &copy; 2021 *Nama App* - Jaffar Jatmiko Jati</p>
+                <p>Copyright &copy; 2020 *Nama App* - Jaffar Jatmiko Jati</p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 right-all">
                 <ul class="social">

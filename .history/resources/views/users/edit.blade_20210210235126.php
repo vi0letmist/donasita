@@ -7,9 +7,6 @@
     html,body{
         background: #f2f2fe;
     }
-    .edit-item-body label{
-        margin: 0 10px 4px 20px;
-    }
 </style>
 <div class="container padding-top-60">
     <div class="row">
@@ -41,31 +38,27 @@
                             <div class="edit-item-header">
                                 <strong><h5>Pengaturan Umum Akun</h5></strong>
                             </div>
-                            <div class="edit-item-body padding-top-20">
+                            <div class="edit-item-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                        <label>Nama:</label>
                                         <fieldset>
                                             <input name="name" type="text" class="form-control" id="name" value="{{ old('name', $user->name) }}">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                        <label>Email:</label>
                                         <fieldset>
                                             <input name="email" type="text" class="form-control" id="email" value="{{ old('name',$user->email) }}">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'email'])
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label>Password Saat Ini</label>
                                         <fieldset>
                                             <input name="old_password" type="password" class="form-control" placeholder="Password Saat Ini" id="password" required>
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'old_password'])
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label>Password Baru</label>
                                         <fieldset>
                                             <input name="password" type="password" class="form-control" placeholder="Password Baru" id="password" required>
                                         </fieldset>

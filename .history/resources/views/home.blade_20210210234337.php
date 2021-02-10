@@ -18,7 +18,8 @@
                 <div class="row">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
                         <h1>Galang dana untuk orang yang anda <strong>sayangi</strong><br>dan membantu <strong>mereka</strong></h1>
-                        <p>*nama app* adalah aplikasi yang berguna untuk mempertemukan mereka yang membutuhkan bantuan dengan para dermawan</p>
+                        <p>Softy Pinko is a professional Bootstrap 4.0 theme designed by Template Mo 
+                        for your company at absolutely free of charge</p>
                         <a href="#features" class="main-button-slider">Discover More</a>
                     </div>
                 </div>

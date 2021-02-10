@@ -7,9 +7,6 @@
     html,body{
         background: #f2f2fe;
     }
-    .edit-item-body label{
-        margin: 0 10px 4px 20px;
-    }
 </style>
 <div class="container padding-top-60">
     <div class="row">
@@ -44,14 +41,14 @@
                             <div class="edit-item-body padding-top-20">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                        <label>Nama:</label>
+                                        <p>Nama:</p>
                                         <fieldset>
                                             <input name="name" type="text" class="form-control" id="name" value="{{ old('name', $user->name) }}">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'name'])
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                        <label>Email:</label>
+                                        <p>Email:</p>
                                         <fieldset>
                                             <input name="email" type="text" class="form-control" id="email" value="{{ old('name',$user->email) }}">
                                         </fieldset>

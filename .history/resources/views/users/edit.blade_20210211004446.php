@@ -7,7 +7,7 @@
     html,body{
         background: #f2f2fe;
     }
-    .edit-item-body label{
+    .edit-item-body{
         margin: 0 10px 4px 20px;
     }
 </style>

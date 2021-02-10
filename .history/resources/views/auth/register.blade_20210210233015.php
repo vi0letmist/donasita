@@ -168,12 +168,12 @@
                         
                   </div>
                 </div>
-                <!-- <div class="custom-control custom-control-alternative custom-checkbox">
+                <div class="custom-control custom-control-alternative custom-checkbox">
                 <input class="custom-control-input" name="remember" id="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
                   <label class="custom-control-label" for="remember">
                     <span class="text-muted" style="font-size:14px!important;border: none !important;">Ingat saya</span>
                   </label>
-                </div> -->
+                </div>
                 <div class="form-group row mb-0 center-all">
                                 <button type="submit" class="main-button">
                                     {{ __('Daftar') }}

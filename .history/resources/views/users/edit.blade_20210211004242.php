@@ -7,9 +7,6 @@
     html,body{
         background: #f2f2fe;
     }
-    .edit-item-body label{
-        margin: 0 10px 4px 20px;
-    }
 </style>
 <div class="container padding-top-60">
     <div class="row">
