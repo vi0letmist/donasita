@@ -89,7 +89,7 @@
                             <div class="tab">
                                 <div class="fit">
                                     <i class="fas fa-heart icon-gradient bg-tempting-azure" style="font-size:8rem;"></i>
-                                    <h5 class="padding-top-20">Terimakasih telah melakukan penggalangan dana menggunakan *namaapp*<br>
+                                    <h5 class="padding-top-20">Terimakasih telah melakukan penggalangan dana menggunakan *namaapp*
                                         penggalangan dana anda akan ditinjau terlebih dahulu
                                     </h5>
                                 </div>

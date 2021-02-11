@@ -134,9 +134,7 @@
                             
                         </div>
                         <h5 class="features-title"><b>{{$g->judul}}</b></h5>
-                        <div class="desc-ngitem">
-                        {!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}
-                        </div>
+                        <p>{!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}</p>
                         <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($g->created_at))->locale('id')->diffForHumans()}}</p>
                         <div class="bar">
                             <div class="progress-bar-xs progress">

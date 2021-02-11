@@ -56,10 +56,6 @@
                         </div>
                         <!-- ***** Features Small Item End ***** -->
                         @endforeach
-                        <div class="col-lg-12 col-md-12 col-sm-12 padding-bottom-40 right-all">
-                            <a href="/galadana" style="color:#777777;">
-                            Lihat Semua <i class="fas fa-angle-right"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -128,15 +124,13 @@
             <div class="row">
                 <!-- ***** Features Small Item Start ***** -->
                 @foreach($galadana as $g)
-                <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$g->slug}}';" style="cursor: pointer;">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$g->slug}}';" style="cursor: pointer;">
                     <div class="features-populer-item">
                         <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
                             
                         </div>
                         <h5 class="features-title"><b>{{$g->judul}}</b></h5>
-                        <div class="desc-ngitem">
-                        {!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}
-                        </div>
+                        <p>{!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}</p>
                         <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($g->created_at))->locale('id')->diffForHumans()}}</p>
                         <div class="bar">
                             <div class="progress-bar-xs progress">

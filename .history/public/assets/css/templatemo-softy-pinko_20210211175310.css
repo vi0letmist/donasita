@@ -3891,18 +3891,6 @@ Postingan
   font-weight: normal;
   line-height: 1.2;
 }
-.desc-item h3 {
-  display: block;
-  font-size: 1.17em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-.desc-ngitem p, h1, h2, h3, h4, h5, h6{
-  font-size:13px;
-}
 .admin-item-post .post-ava-item img {
   width: 60px;
   border-radius: 50%;
