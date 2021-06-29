@@ -15,7 +15,7 @@
               'csrfToken' => csrf_token(),
           ]); ?>
         </script>
-    <title>Softy Pinko - Bootstrap 4.0 Theme</title>
+        @yield('title')
 <!--
 SOFTY PINKO
 https://templatemo.com/tm-535-softy-pinko
@@ -35,13 +35,13 @@ https://templatemo.com/tm-535-softy-pinko
     <body>
     
     <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="jumper">
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>  
+    </div>   -->
     <!-- ***** Preloader End ***** -->
     
     
@@ -57,10 +57,10 @@ https://templatemo.com/tm-535-softy-pinko
                         </a>
                         <div class="search-wrapper search">
                             <div class="input-holder">
-                                <input type="text" class="search-input" placeholder="Type to search">
+                                <input type="text" class="search-input" placeholder="Ketik untuk mencari">
                                 <button class="search-icon"><span></span></button>
                             </div>
-                            <button class="close"></button>
+                            <!-- <button class="close"></button> -->
                         </div>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->

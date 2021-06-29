@@ -917,8 +917,8 @@ header
 }
 
 .header-area .main-nav .nav li {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .header-area .main-nav .nav li:last-child {
@@ -3887,7 +3887,7 @@ Postingan
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-.desc-item h1, h2, h3, h4, h5, h6 {
+.desc-item h1,.desc-item h2,.desc-item h3,.desc-item h4,.desc-item h5,.desc-item h6 {
   font-weight: normal;
   line-height: 1.2;
 }
@@ -3900,11 +3900,30 @@ Postingan
   margin-inline-end: 0px;
   font-weight: bold;
 }
-.desc-ngitem p, h1, h2, h3, h4, h5, h6{
+.desc-ngitem p,.desc-ngitem h1,.desc-ngitem h2,.desc-ngitem h3,.desc-ngitem h4,.desc-ngitem h5,.desc-ngitem h6{
   font-size:13px;
+}
+.desc-ngitem img{
+  display: none;
+}
+.desc-ngitem em{
+  display: none !important;
+}
+.desc-ngitem strong{
+  display: none !important;
 }
 .admin-item-post .post-ava-item img {
   width: 60px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border:1px #fff solid;
+  -webkit-box-shadow: 2px 2px 15px -2px rgba(84, 84, 84, 1);
+  -moz-box-shadow:2px 2px 15px -2px rgba(84, 84, 84, 1);
+  box-shadow: 2px 2px 15px -2px rgba(84, 84, 84, 1);
+}
+.post-ava-item img {
+  width: 200px;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -3991,13 +4010,13 @@ search
 }
 .search-wrapper .input-holder .search-input{
   width:100%;
-  padding:0 70px 0 20px;
+  padding:0 50px 0 20px;
   opacity:0;
   position:absolute;
   top:0;
   left:0;
   background:transparent;
-  color:#3f6ad8 !important;
+  color:#212529 !important;
   box-sizing:border-box;
   border:none;
   outline:none;

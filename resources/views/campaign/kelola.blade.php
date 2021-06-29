@@ -2,6 +2,9 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
+@section('title')
+    <title>Kelola Penggalangan Dana Anda</title>
+@endsection
 @section('content')
 <style>
     html,body{
@@ -64,6 +67,7 @@
                         </div>
                         <div class="row kelolaAll">
                             <!-- ***** Features Small Item Start ***** -->
+                            @if(!$galadana->isEmpty())
                             @foreach($galadana as $g)
                             <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                                 <div class="features-populer-item">
@@ -83,6 +87,14 @@
                             </div>
                             @endforeach
                             <!-- ***** Features Small Item End ***** -->
+                            @else
+                                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                                    <img src="{{ asset('assets') }}/images/inbox-empty-icon.png" width="200px">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                                    <h2 style="color:#dee2e6">Belum ada data</h2>
+                                </div>
+                            @endif
                         </div>
                     
                     </div>

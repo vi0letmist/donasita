@@ -24,7 +24,7 @@ Route::get('/g/{slug}', 'GaladanaController@post')->name('g', '[a-z]+');
 Route::get('/galadana/{slug}', 'GaladanaController@kategori')->name('galadana', '[a-z]+');
 Route::post('/galadana/load_komen/{id}', 'GaladanaController@load_komen')->name('galadana.load_komen');
 Route::post('/galadana/load_galadana/{id}', 'GaladanaController@load_galadana')->name('galadana.load_galadana');
-
+Route::post('/galadana/load_galadana_search', 'GaladanaController@load_galadana_search')->name('galadana.load_galadana_search');
 
 Route::get('/load-more-data/{slug}', 'CampaignController@index')->name('loadmore', '[a-z]+');
 Route::post('/loadmore/load_data', 'CampaignController@load_data')->name('loadmore.load_data');
@@ -34,6 +34,7 @@ Route::get('tost','GaladanaController@tost');
 Route::get('/g/{slug}/donasi', 'DonateController@index')->name('galadana', '[a-z]+', 'donasi');
 Route::resource('donasi', 'DonateController', ['except' => ['show']]);
 Route::get('/donasi/intruksi/{id}', 'DonateController@intruksi')->name('donasi','intruksi');
+Route::get('search/', 'GaladanaController@search')->name('search');
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {

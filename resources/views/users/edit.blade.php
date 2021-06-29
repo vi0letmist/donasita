@@ -43,6 +43,9 @@
                             </div>
                             <div class="edit-item-body padding-top-20">
                                 <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 center-all post-ava-item" style="margin-bottom:10px;">
+                                        <img src="{{ asset('assets') }}/images/avatars/5.jpg" alt="">
+                                    </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                         <label>Nama:</label>
                                         <fieldset>

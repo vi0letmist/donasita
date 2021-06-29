@@ -9,7 +9,9 @@
                                 
                     </div>
                     <h5 class="features-title"><b>{{$row->judul}}</b></h5>
-                    <p>{!! html_entity_decode(\Illuminate\Support\Str::limit($row->cerita, $limit = 80, $end = '...')) !!}</p>
+                    <div class="desc-ngitem">
+                        {!! html_entity_decode(\Illuminate\Support\Str::limit($row->cerita, $limit = 80, $end = '...')) !!}
+                    </div>
                     <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($row->created_at))->locale('id')->diffForHumans()}}</p>
                     <div class="bar">
                         <div class="progress-bar-xs progress">
@@ -38,7 +40,7 @@
         <img src="{{ asset('assets') }}/images/inbox-empty-icon.png" width="200px">
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 center-all">
-        <h2 style="color:#dee2e6">Belum ada data</h2>
+        <h2 style="color:#dee2e6">Tidak ada data</h2>
     </div>
 @endif
  

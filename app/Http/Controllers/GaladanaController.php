@@ -58,6 +58,57 @@ class GaladanaController extends Controller
                     ->getRawLinks();
         return view('campaign.post', compact('galadana','author','donate', 'sideDonate', 'twitter', 'facebook','reddit','telegram','whatsapp'));
     }
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $galadana = Galadana::query()
+            ->where('judul', 'LIKE', "%{$search}%")
+            ->where('status', '=', 1)
+            ->get();
+        // if($request->ajax())
+        // {
+        //     if($request->input('search')){
+        //         $galadana = Galadana::query()
+        //         ->where('judul', 'LIKE', "%{$search}%")
+        //         ->where('galadana.id','<',$request->id)
+        //         ->orderBy('id', 'DESC')
+        //         ->limit(6)
+        //         ->get();
+        //     }
+        //     else{
+        //         $galadana = Galadana::query()
+        //         ->where('judul', 'LIKE', "%{$search}%")
+        //         ->orderBy('id', 'DESC')->limit(6)->get();
+        //     }
+        // }
+        
+
+        // Return the search view with the resluts compacted
+        return view('search', compact('galadana'));
+    }
+    public function load_galadana_search(Request $request)
+    {
+        $search = $request->input('search');
+        if($request->ajax())
+        {
+            if($request->id){
+                $data = Galadana::query()
+                ->where('judul', 'LIKE', '%'.$request->search."%")
+                ->where('galadana.id','<',$request->id)
+                ->orderBy('id', 'DESC')
+                ->limit(6)
+                ->get();
+            }
+            else{
+                $data = Galadana::query()
+                ->where('judul', 'LIKE', '%'.$request->search."%")
+                ->orderBy('id', 'DESC')->limit(6)->get();
+            }
+        }
+        return view('get-galadana-kategori', compact('data','search'));
+    }
     public function kategori($slug)
     {
         $kategori = Kategori::where('slug', $slug)->first();
@@ -76,6 +127,7 @@ class GaladanaController extends Controller
         {
             if($request->id){
                 $data = Kategori::join('galadana', 'galadana.kategori_id', '=', 'kategori.id')
+                ->where('status', '=', 1)
                 ->where('galadana.kategori_id', '=', $kategori->id)
                 ->where('galadana.id','<',$request->id)
                 ->select('galadana.*')
@@ -85,6 +137,7 @@ class GaladanaController extends Controller
             }
             else{
                 $data = Kategori::join('galadana', 'galadana.kategori_id', '=', 'kategori.id')
+                ->where('status', '=', 1)
                 ->where('galadana.kategori_id', '=', $kategori->id)
                 ->select('galadana.*')->orderBy('id', 'DESC')->limit(6)->get();
             }

@@ -21,13 +21,15 @@
 @if(Auth::check())
     <ul class="nav nav-page-left">
         <li>
-            <div class="search-wrapper search">
-                <div class="input-holder">
-                    <input type="text" class="search-input" placeholder="Type to search">
-                    <button class="search-icon"><span></span></button>
+            <form action="{{route('search')}}" method="GET">
+                <div class="search-wrapper search active">
+                    <div class="input-holder">
+                        <input type="text" class="search-input" name="search" placeholder="Ketik untuk mencari">
+                        <button class="search-icon" type="submit"><span></span></button>
+                    </div>
+                    <!-- <button class="close"></button> -->
                 </div>
-                <button class="close"></button>
-            </div>
+            </form>
         </li>
         <li>
             <div class="dropdown">
@@ -79,13 +81,15 @@
 @else
     <ul class="nav nav-page-left">
         <li>
-            <div class="search-wrapper search">
-                <div class="input-holder">
-                    <input type="text" class="search-input" placeholder="Type to search">
-                    <button class="search-icon"><span></span></button>
+        <form action="{{route('search')}}" method="GET">
+                <div class="search-wrapper search active">
+                    <div class="input-holder">
+                        <input type="text" class="search-input" name="search" placeholder="Ketik untuk mencari">
+                        <button class="search-icon" type="submit"><span></span></button>
+                    </div>
+                    <!-- <button class="close"></button> -->
                 </div>
-                <button class="close"></button>
-            </div>
+            </form>
         </li>
         <li>
             <div class="dropdown">
