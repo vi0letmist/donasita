@@ -21,6 +21,7 @@ class CreateGaladanaTable extends Migration
             $table->text('cerita');
             $table->string('target_capaian');
             $table->string('progres_capaian');
+            $table->datetime('batas_waktu');
             $table->string('status')->nullable();
             $table->integer('user_id');
             $table->integer('kategori_id');

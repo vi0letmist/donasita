@@ -10,6 +10,11 @@
     html,body{
         background: #f2f2fe;
     }
+    .foto_profil img{
+        max-width: 60px;
+        clip-path: circle();
+        border-radius: 50%;
+    }
 </style>
 <div class="container padding-top-60">
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -93,8 +98,8 @@
                 </div>
                 <h6 class="padding-bottom-20">Tentang Pengelola</h6>
                 <div class="donate-sidebar">
-                    <div class="donate-sidebar-header border-bottom-20 padding-left-0 padding-right-0">
-                        <img src="{{ asset('assets') }}/images/avatars/5.jpg" alt="">
+                    <div class="donate-sidebar-header foto_profil border-bottom-20 padding-left-0 padding-right-0">
+                        <img src="{{ asset('assets') }}/images/avatars/{{$author->foto_profil}}" alt="Foto Profil" class="img-fluid">
                         <i class="far fa-envelope padding-left-2"></i>
                         <p style="font-size:12px;font-weight:500">{{$author->name}}</p>
                     </div>

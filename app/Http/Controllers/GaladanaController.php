@@ -41,6 +41,11 @@ class GaladanaController extends Controller
                 ->latest()
                 ->take(3)
                 ->get();
+        $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                ->where('donates.galadana_id','=', $galadana->id)
+                ->select('galadana.*')
+                ->getQuery()
+                ->count();
         $twitter = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
                 ->twitter()
                 ->getRawLinks();
@@ -56,7 +61,7 @@ class GaladanaController extends Controller
         $whatsapp = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
                     ->whatsapp()
                     ->getRawLinks();
-        return view('campaign.post', compact('galadana','author','donate', 'sideDonate', 'twitter', 'facebook','reddit','telegram','whatsapp'));
+        return view('campaign.post', compact('galadana','author','donate', 'sideDonate','sumDonasi', 'twitter', 'facebook','reddit','telegram','whatsapp'));
     }
     public function search(Request $request){
         // Get the search value from the request
@@ -229,6 +234,7 @@ class GaladanaController extends Controller
             $galadana->gambar = 'default.jpg';
         }
         $galadana->cerita = $request->cerita;
+        $galadana->batas_waktu = $request->batas_waktu;
         $galadana->target_capaian = $request->target_capaian;
         $galadana->progres_capaian = 0;
         $galadana->kategori_id = $request->kategori;

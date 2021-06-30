@@ -3,8 +3,9 @@
     'activePage' => 'post',
 ])
 @section('title')
-    <title>Penggalangan Dana yang Ditolak</title>
+    <title>Manajemen User Pengguna</title>
 @endsection
+@section('manajemen-post','active')
 @section('content')
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -14,8 +15,8 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Dashboard Penggalangan Dana yang Ditolak
-                        <div class="page-title-subheading">Halaman ini berisikan semua postingan penggalangan dana yang sudah ditolak.
+                    <div>Manajemen User Pengguna
+                        <div class="page-title-subheading">Halaman ini berisikan mengenai user yang mempunyai role pengguna.
                         </div>
                     </div>
                 </div>
@@ -69,59 +70,22 @@
                             </ul>
                         </div>
                     </div>
-                </div> -->    </div>
+                </div>  -->   </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
                     <div class="card-body"><h5 class="card-title">Table with hover</h5>
-                        <table id="myTable" class="mb-0 table table-hover">
+                        <table id="tableIndex" class="mb-0 table table-hover">
                             <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Judul</th>
-                                <th>Kode Pos/Alamat</th>
-                                <th>Oleh</th>
-                                <th>Status</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>role</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
-                            <tbody>
-                                @php 
-                                    $no=1;
-                                @endphp
-                                @foreach($galadana as $g)
-                                @if($g->status != NULL && $g->status != 1)
-                                <tr>
-                                    <input type="hidden" class="deleteGaladanaId" value="{{ $g->id }}">
-                                    <th scope="row">{{$no++}}</th>
-                                    <td>{{$g->judul}}</td>
-                                    <td>{!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 40, $end = '...')) !!}</td>
-                                    <td>{{$g->users->name}}</td>
-                                    <td>
-                                        @if($g->status == 1)
-                                        <div class="mb-2 mr-2 badge badge-success">Berjalan</div>
-                                        @elseif($g->status == 2)
-                                        <div class="mb-2 mr-2 badge badge-primary">Selesai</div>
-                                        @else
-                                        <div class="mb-2 mr-2 badge badge-danger">Tidak Disetujui</div>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a href="{{route('manajemen-post.edit', $g->slug)}}">
-                                            <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-note btn-icon-wrapper"> </i></button>
-                                        </a>
-                                        <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                                        <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteGaladana"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                                    </td>
-                                </tr>
-                                @endif
-                                @endforeach
-                            
-                            </tbody>
-                        </table>
-                        <table id="nyobaTableIh">
-
                         </table>
                     </div>
                 </div>
@@ -129,3 +93,32 @@
         </div>
     </div>
 @endsection
+@push('js')
+<script>
+     $(document).ready( function () {
+      $('#tableIndex').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ url('user-pengguna') }}",
+            type: 'GET',
+        },
+        columns: [
+           {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
+           { data: 'name', name: 'name' },
+           { data: 'email', name: 'email' },
+           { data: 'role', name: 'role' },
+           { data: 'action', name: 'action', orderable: false, searchable: false }
+        ],
+        order: [[ 4, "desc" ]],
+        columnDefs: [
+            { "width": "25%", "targets": 1 },
+            { "width": "30%", "targets": 2 },
+            { "width": "25%", "targets": 3 },
+            { "width": "20%", "targets": 4 }
+        ]
+       });
+     });
+  
+   </script>
+@endpush

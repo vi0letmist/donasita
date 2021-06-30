@@ -2,6 +2,9 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
+@section('title')
+    <title>Manajemen Kategori</title>
+@endsection
 @section('content')
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -11,15 +14,15 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                    <div>Manajemen Kategori
+                        <div class="page-title-subheading">Halaman ini berisikan informasi mengenai kategori.
                         </div>
                     </div>
                 </div>
                 <div class="page-title-actions">
-                    <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
+                    <!-- <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                         <i class="fa fa-star"></i>
-                    </button>
+                    </button> -->
                     <a href="/manajemen-kategori/create" type="button" class="btn btn-info">
                         <span class="btn-icon-wrapper pr-2 opacity-7">
                             <i class="fa fa-business-time fa-w-20"></i>
@@ -31,7 +34,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Table with hover</h5>
+                    <div class="card-body"><h5 class="card-title">Kategori</h5>
                         <table id="myTable" class="mb-0 table table-hover">
                             <thead>
                             <tr>

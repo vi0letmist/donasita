@@ -64,4 +64,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/persetujuan-post/decline/{id}', 'AdminController@decline')->name('persetujuan-post.decline');
     Route::delete('/galadana/{id}/delete','GaladanaController@delete')->name('galadana.destroy');
     Route::delete('/manajemen-kategori/{id}/hapus','KategoriController@delete')->name('manajemen-kategori.destroy');
+    Route::get('user-pengguna', 'AdminController@userpengguna')->name('user-pengguna');
 });
+// Route::group(['middleware' => Auth::user()->role('pengguna')], function () {
+// });

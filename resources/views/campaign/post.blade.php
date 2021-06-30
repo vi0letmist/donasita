@@ -8,9 +8,39 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="{{ asset('js/share.js') }}"></script>
 @section('content')
+<style>
+    .oren{
+        background-color: #f7b924;
+        border: #f7b924;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 20px;
+    }
+    .ret{
+        background-color: #d92550;
+        border: #d92550;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 20px;
+    }
+    .foto_profil img{
+        max-width: 60px;
+        clip-path: circle();
+        border-radius: 50%;
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20">
+            @if($galadana->status == NULL)
+                <div class="col-lg-12 col-md-12 col-sm-12 oren">
+                    <a>Penggalangan dana anda masih dalam peninjauan</a>
+                </div>
+            @elseif($galadana->status == 0)
+                <div class="col-lg-12 col-md-12 col-sm-12 ret">
+                    <a>Penggalangan dana anda ditolak</a>
+                </div>
+            @endif
             <div class="center-heading">
                 <h1><strong>{{$galadana->judul}}</strong></h1>
             </div>
@@ -22,8 +52,8 @@
                 </div>
                 <div class="admin-item-post">
                     <div class="row border-bottom-10">
-                        <div class="col-lg-2 col-md-2 col-sm-12 post-ava-item" style="margin-bottom:10px;">
-                            <img src="{{ asset('assets') }}/images/avatars/5.jpg" alt="">
+                        <div class="col-lg-2 col-md-2 col-sm-12 foto_profil" style="margin-bottom:10px;">
+                            <img src="{{ asset('assets') }}/images/avatars/{{$galadana->users->foto_profil}}" alt="foto profil" class="img-fluid">
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-12 admin-item">
                             <p>{{$galadana->users->name}} adalah yang mengelola penggalangan dana ini</p>
@@ -34,6 +64,16 @@
                         {!!html_entity_decode ($galadana->cerita) !!}
                     </div>
                     <div class="row">
+                        @if($galadana->status == NULL || $galadana->status == 0)
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-center padding-bottom-40 padding-top-20">
+                            <a href="#" class="donate-button disabled">Donasi Sekarang</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-center padding-bottom-40 padding-top-20">
+                            <button disabled type="button" class="btn share-button disabled" data-toggle="modal" data-target="#bagikanModal">
+                                Bagikan
+                            </button>
+                        </div>
+                        @else
                         <div class="col-lg-6 col-md-6 col-sm-12 text-center padding-bottom-40 padding-top-20">
                             <a href="/g/{{$galadana->slug}}/donasi" class="donate-button">Donasi Sekarang</a>
                         </div>
@@ -42,11 +82,12 @@
                                 Bagikan
                             </button>
                         </div>
+                        @endif
                         <div class="col-lg-12 col-md-12 col-sm-12 border-bottom-20">
                             <h5>Pengelola</h5>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 post-ava-item padding-bottom-40 padding-top-20">
-                            <img src="{{ asset('assets') }}/images/avatars/5.jpg" alt="">
+                        <div class="col-lg-2 col-md-4 col-sm-12 foto_profil padding-bottom-40 padding-top-20">
+                            <img src="{{ asset('assets') }}/images/avatars/{{$galadana->users->foto_profil}}" alt="Foto Profil" class="img-fluid">
                         </div>
                         <div class="col-lg-6 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item">    
                             <p>{{$galadana->users->name}}<br>Pengelola</p>
@@ -84,7 +125,25 @@
                         <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $galadana->progres_capaian / $galadana->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$galadana->progres_capaian / $galadana->target_capaian * 100}}%"></div>
                     </div>
                     <p><strong>{!! number_format((float)$galadana->progres_capaian / $galadana->target_capaian * 100, 1, '.', '') !!}%</strong> tercapai</p>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p><strong>{{$sumDonasi}}</strong> Donasi</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6" style="text-align: right;">
+                            <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($galadana->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
+                        </div>
+                    </div>
                 </div>
+                @if($galadana->status == NULL || $galadana->status == 0)
+                <div class="sidebar-donate-body">
+                    <a href="#" class="donate-button disabled">Donasi Sekarang</a>
+                </div>
+                <div class="sidebar-donate-footer padding-bottom-10">
+                    <button disabled type="button" class="btn share-button disabled" data-toggle="modal" data-target="#bagikanModal">
+                        Bagikan
+                    </button>
+                </div>
+                @else
                 <div class="sidebar-donate-body">
                     <a href="/g/{{$galadana->slug}}/donasi" class="donate-button">Donasi Sekarang</a>
                 </div>
@@ -93,7 +152,7 @@
                         Bagikan
                     </button>
                 </div>
-                
+                @endif
                 <!-- people donation -->
                 @if(!$sideDonate->isEmpty())
                 @foreach($sideDonate as $a)

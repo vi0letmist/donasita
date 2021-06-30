@@ -193,3 +193,8 @@ button::-moz-focus-inner,
 .desc-ngitem strong{
   display: none !important;
 }
+.center-all{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
+    @yield('title')
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
@@ -29,6 +29,13 @@
     -->
 <link href="{{ asset('assets') }}/css/main.css" rel="stylesheet">
 <link href="{{ asset('assets') }}/css/datatables.min.css" rel="stylesheet">
+<style>
+    .foto_profil img{
+        max-width: 60px;
+        clip-path: circle();
+        border-radius: 50%;
+    }
+</style>
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header" tabindex="0">
@@ -64,23 +71,27 @@
                 </span>
             </div>    <div class="app-header__content">
                 <div class="app-header-left">
-                    <div class="search-wrapper">
+                    <!-- <div class="search-wrapper">
                         <div class="input-holder">
                             <input type="text" class="search-input" placeholder="Type to search">
                             <button class="search-icon"><span></span></button>
                         </div>
                         <button class="close"></button>
-                    </div>        </div>
+                    </div>   -->      </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
                                 <div class="widget-content-left">
                                     <div class="btn-group">
+                                        
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                        <div class="foto_profil">
+                                            <img width="42" class="rounded-circle" src="{{ asset('assets') }}/images/avatars/{{Auth::user()->foto_profil}}" alt="foto profil" class="img-fluid">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                            </div>
                                         </a>
+                                        
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <div tabindex="-1" class="dropdown-divider"></div>
@@ -90,6 +101,7 @@
                                                 @csrf
                                             </form>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
@@ -97,14 +109,18 @@
                                         {{Auth::user()->name}}
                                     </div>
                                     <div class="widget-subheading">
+                                        @if(Auth::user()->role == "pengguna")
+                                        Pengguna
+                                        @elseif(Auth::user()->role == "admin")
                                         Admin
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="widget-content-right header-user-info ml-3">
+                                <!-- <div class="widget-content-right header-user-info ml-3">
                                     <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                                         <i class="fa text-white fa-calendar pr-1 pl-1"></i>
                                     </button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>        </div>
@@ -469,6 +485,28 @@
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Manajemen Donasi
                                     </a>
+                                </li>
+                                <li class="app-sidebar__heading">User</li>
+                                <li class="{{ Request::is('user-admin', 'user-pengguna') ? 'mm-active' : '' }}">
+                                    <a href="#">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Manajemen User
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                    </a>
+                                    <ul class="{{ Request::is('user-admin', 'user-pengguna') ? 'mm-show' : '' }}">
+                                    <li>
+                                            <a href="/user-pengguna" class="{{ Request::is('user-pengguna') ? 'mm-active' : '' }}">
+                                                <i class="metismenu-icon"></i>
+                                                Pengguna
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/user-admin" class="{{ Request::is('user-admin') ? 'mm-active' : '' }}">
+                                                <i class="metismenu-icon">
+                                                </i>Admin
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>

@@ -38,6 +38,12 @@
         width: 1.1em;
         margin-left: 3px;
     }
+    .oren{
+        background-color: #f7b924;
+    }
+    .ret{
+        background-color: #d92550;
+    }
 </style>
 <div class="container padding-top-60">
     <div class="row">
@@ -71,6 +77,15 @@
                             @foreach($galadana as $g)
                             <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                                 <div class="features-populer-item">
+                                    @if($g->status == NULL)
+                                    <div>
+                                        <a class="oren">Penggalangan dana anda masih dalam peninjauan</a>
+                                    </div>
+                                    @elseif($g->status == 0)
+                                        <div>
+                                            <a class="ret">Penggalangan dana anda ditolak</a>
+                                        </div>
+                                    @endif
                                     <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
                                         
                                     </div>

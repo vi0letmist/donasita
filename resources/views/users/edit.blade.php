@@ -2,6 +2,9 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
+@section('title')
+    <title>Kelola Informasi Umum</title>
+@endsection
 @section('content')
 <style>
     html,body{
@@ -9,6 +12,11 @@
     }
     .edit-item-body label{
         margin: 0 10px 4px 20px;
+    }
+    .foto_profil img{
+        max-width: 300px;
+        clip-path: circle();
+        border-radius: 50%;
     }
 </style>
 <div class="container padding-top-60">
@@ -43,8 +51,19 @@
                             </div>
                             <div class="edit-item-body padding-top-20">
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 center-all post-ava-item" style="margin-bottom:10px;">
-                                        <img src="{{ asset('assets') }}/images/avatars/5.jpg" alt="">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 center-all foto_profil" style="margin-bottom:10px;">
+                                        <img src="{{ asset('assets') }}/images/avatars/{{$user->foto_profil}}" class="img-fluid" alt="foto profil"></img>
+                                    </div>
+                                    
+                                    <div class="offset-lg-3 col-lg-6 col-md-6 col-sm-6 form-group{{ $errors->has('foto_profil') ? ' has-danger' : '' }}">
+                                        <label>Foto Profil:</label>
+                                        <fieldset>
+                                            <input name="foto_profil" type="file" class="form-control" id="foto_profil" value="{{ old('foto_profil', $user->foto_profil) }}">
+                                        </fieldset>
+                                        @include('alerts.feedback', ['field' => 'foto_profil'])
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                         <label>Nama:</label>
@@ -60,7 +79,7 @@
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'email'])
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                                    <!-- <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                         <label>Password Saat Ini</label>
                                         <fieldset>
                                             <input name="old_password" type="password" class="form-control" placeholder="Password Saat Ini" id="password" required>
@@ -73,7 +92,8 @@
                                             <input name="password" type="password" class="form-control" placeholder="Password Baru" id="password" required>
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'password'])
-                                    </div>
+                                    </div> -->
+                                    <input name="role" type="hidden" class="form-control" id="role" value="{{ old('name',$user->role) }}">
                                     <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                                         <fieldset>
                                             <button type="submit" id="form-submit" class="main-button">Simpan</button>

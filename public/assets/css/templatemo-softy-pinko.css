@@ -452,7 +452,9 @@ a.main-button {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-
+a.main-button.disabled{
+  opacity:0.65;
+}
 a.main-button:hover {
   background-color: #3f6ad8;
 }
@@ -555,7 +557,9 @@ a.donate-button {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-
+a.donate-button.disabled{
+  opacity:0.65;
+}
 a.donate-button:hover {
   background-color: #fff;
   color: #f7b924;
@@ -3439,8 +3443,8 @@ features-populer
 .features-populer-item .donateprog p {
   font-weight: 400;
   text-align: left;
-  padding: 10px 20px 20px 20px;
-  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
   color: #353535;
   letter-spacing: 0.5px;
   line-height: 20px;
@@ -3711,7 +3715,7 @@ donate-sidebar
   display: flex;
   align-items: center;
 }
-.donate-sidebar-header img {
+/* .donate-sidebar-header img {
   width: 60px;
   border-radius: 50%;
   -moz-border-radius: 50%;
@@ -3720,7 +3724,7 @@ donate-sidebar
   -webkit-box-shadow: 2px 2px 15px -2px rgba(84, 84, 84, 1);
   -moz-box-shadow:2px 2px 15px -2px rgba(84, 84, 84, 1);
   box-shadow: 2px 2px 15px -2px rgba(84, 84, 84, 1);
-}
+} */
 .donate-sidebar .icon i {
   font-size: 18px;
   color: #fff;
@@ -3899,6 +3903,9 @@ Postingan
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+}
+.desc-ngitem{
+  padding-bottom: 10px;
 }
 .desc-ngitem p,.desc-ngitem h1,.desc-ngitem h2,.desc-ngitem h3,.desc-ngitem h4,.desc-ngitem h5,.desc-ngitem h6{
   font-size:13px;

@@ -2,11 +2,18 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
+@section('title')
+    <title>Persetujuan Penggalanggan Dana</title>
+@endsection
 @section('content')
     <style>
         .populer{
             width: 100%;
             height: 200px;
+        }
+        .cerita img{
+            max-width: 100% !important;
+            height: auto !important;
         }
     </style>
     <div class="app-main__inner">
@@ -17,12 +24,12 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                    <div>Persetujuan Penggalanggan Dana
+                        <div class="page-title-subheading">Halaman ini berisi semua postingan yang menunggu untuk disetujui maupun ditolak.
                         </div>
                     </div>
                 </div>
-                <div class="page-title-actions">
+                <!-- <div class="page-title-actions">
                     <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                         <i class="fa fa-star"></i>
                     </button>
@@ -72,12 +79,12 @@
                             </ul>
                         </div>
                     </div>
-                </div>    </div>
+                </div>  -->   </div>
         </div>
         <div class="row">
             <!-- ***** Features Small Item Start ***** -->
+            @if(count($galadana) != 0)
             @foreach($galadana as $g)
-            @if($g->status == NULL)
             <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                 <div class="features-populer-item">
                     <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
@@ -100,9 +107,15 @@
                 </div>
             </div>
             <!-- ***** Features Small Item End ***** -->
-            @endif
             @endforeach
-            
+            @else
+                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                    <img src="{{ asset('assets') }}/images/inbox-empty-icon.png" width="200px">
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                    <h2 style="color:#dee2e6">Tidak ada data</h2>
+                </div>
+            @endif
         </div>
     </div>
 
@@ -152,7 +165,7 @@
                                 <strong>Oleh: </strong><br>
                                 {{$g->users->name}}
                             </div>
-                            <div class="form-group">
+                            <div class="form-group cerita">
                                 <strong>Cerita/Penjelasan: </strong><br>
                                 <text>
                                 {!! html_entity_decode($g->cerita) !!}

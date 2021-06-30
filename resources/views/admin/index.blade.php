@@ -2,7 +2,9 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
-
+@section('title')
+    <title>Dashboard</title>
+@endsection
 @section('content')
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -13,11 +15,11 @@
                         </i>
                     </div>
                     <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                        <div class="page-title-subheading">Ini adalah dashboard utama admin pada sistem penggalangan dana untuk pondok pesantren 
                         </div>
                     </div>
                 </div>
-                <div class="page-title-actions">
+                <!-- <div class="page-title-actions">
                     <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                         <i class="fa fa-star"></i>
                     </button>
@@ -67,7 +69,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>    </div>
+                </div> -->   </div> 
         </div>            <div class="row">
         <div class="col-md-6 col-xl-4">
             <div class="card mb-3 widget-content">

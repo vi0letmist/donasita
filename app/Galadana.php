@@ -9,7 +9,7 @@ class Galadana extends Model
     protected $table = 'galadana';
 
     protected $fillable = [
-        'judul', 'gambar','cerita','target_capaian','progres_capaian','status','slug'
+        'judul', 'gambar','cerita','batas_waktu','target_capaian','progres_capaian','status','slug'
     ];
     public function users()
     {

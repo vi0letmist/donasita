@@ -2,6 +2,9 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
+@section('title')
+    <title>Manajemen Donasi</title>
+@endsection
 @section('manajemen-post','active')
 @section('content')
     <div class="app-main__inner">
@@ -12,12 +15,12 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                    <div>Manajemen Donasi
+                        <div class="page-title-subheading">Halaman ini berisikan mengenai donasi-donasi yang sudah terjadi pada sistem ini.
                         </div>
                     </div>
                 </div>
-                <div class="page-title-actions">
+                <!-- <div class="page-title-actions">
                     <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                         <i class="fa fa-star"></i>
                     </button>
@@ -67,12 +70,12 @@
                             </ul>
                         </div>
                     </div>
-                </div>    </div>
+                </div>  -->   </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Table with hover</h5>
+                    <div class="card-body"><h5 class="card-title">Donasi</h5>
                         <table id="tableDonate" class="mb-0 table table-hover">
                             <thead>
                             <tr>

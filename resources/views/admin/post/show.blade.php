@@ -2,7 +2,16 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
+@section('title')
+    <title>Edit Penggalangan Dana</title>
+@endsection
 @section('content')
+<style>
+    .cerita img{
+  max-width: 100% !important;
+  height: auto !important;
+}
+</style>
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
@@ -11,8 +20,8 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                    <div>Lihat Penggalangan Dana
+                        <div class="page-title-subheading">Halaman ini berisikan mengenai detail penggalangan dana beserta histori donasi.
                         </div>
                     </div>
                 </div>
@@ -29,9 +38,9 @@
                 </div>    </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 cerita">
                 <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Control Types</h5>
+                    <div class="card-body"><h5 class="card-title">Detail Penggalangan Dana</h5>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="postimage">
@@ -68,20 +77,24 @@
                                     </text>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <table id="tableDonate" class="mb-0 table table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Nominal</th>
-                                        <th>Komen</th>
-                                        <th>Created at</th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                            </div>
+                            
                         </div>
+                    </div>
+                </div>
+                <div class="main-card mb-3 card">
+                    <div class="card-body">
+                        <h5 class="card-title">Histori donasi</h5>
+                        <table id="tableDonate" class="mb-0 table table-hover">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Nominal</th>
+                                <th>Komen</th>
+                                <th>Created at</th>
+                            </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
             </div>

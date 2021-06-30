@@ -54,14 +54,20 @@
                                         @include('alerts.feedback', ['field' => 'judul'])
                                     </div>
                                     <div class="form-group{{ $errors->has('kategori') ? ' has-danger' : '' }}">
-                                                <select name="kategori" class="form-control{{ $errors->has('kategori') ? ' has-danger' : '' }}" required="" style="border-radius:25px;border:1px solid #eee;min-height:50px">
-                                                @foreach ($kategori as $k)
-                                                    <option value="{{$k->id}}">{{$k->nama}}</option>
-                                                @endforeach
-                                                </select>
-                                                @include('alerts.feedback', ['field' => 'rak'])
-                                            </input>
-                                        </div>
+                                        <select name="kategori" class="form-control{{ $errors->has('kategori') ? ' has-danger' : '' }}" required="" style="border-radius:25px;border:1px solid #eee;min-height:50px">
+                                        @foreach ($kategori as $k)
+                                            <option value="{{$k->id}}">{{$k->nama}}</option>
+                                        @endforeach
+                                        </select>
+                                        @include('alerts.feedback', ['field' => 'rak'])
+                                        </input>
+                                    </div>
+                                    <div class="form-group{{ $errors->has('batas_waktu') ? ' has-danger' : '' }}">
+                                        <fieldset>
+                                            <input oninput="this.className = ''" name="batas_waktu" value="{{ old('batas_waktu') }}" type="date" class="form-control{{ $errors->has('batas_waktu') ? ' is-invalid' : '' }}" id="batas_waktu" placeholder="{{ __('Batas Waktu Penggalangan Dana') }}" required="">
+                                        </fieldset>
+                                        @include('alerts.feedback', ['field' => 'batas_waktu'])
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab">

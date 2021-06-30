@@ -35,6 +35,6 @@ class HomeController extends Controller
         //         ->take(6)
         //         ->getQuery()
         //         ->get();
-        return view('home', compact('latest', 'galadana'));
+        return view('home', compact('latest', 'galadana','donasi'));
     }
 }

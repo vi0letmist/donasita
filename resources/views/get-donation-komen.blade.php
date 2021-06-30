@@ -40,9 +40,15 @@
             <div class="col-lg-8 col-md-8 col-sm-8">
                 <p><strong>Donasi dan bagikan kata-kata penyemangat</strong></p>  
             </div>
+            @if($galadana->status == NULL || $galadana->status == 0)
+            <div class="col-lg-4 col-md-4 col-sm-4 right-text" style="display:flex;align-items:center;">
+                <a href="#" class="main-button disabled">Selanjutnya</a>
+            </div>
+            @else
             <div class="col-lg-4 col-md-4 col-sm-4 right-text" style="display:flex;align-items:center;">
                 <a href="/g/{{$galadana->slug}}/donasi" class="main-button">Selanjutnya</a>
             </div>
+            @endif
         </div>
     </div>
 @endif

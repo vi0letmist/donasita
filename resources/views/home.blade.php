@@ -47,14 +47,19 @@
                             <div class="desc-ngitem">
                             {!! html_entity_decode(\Illuminate\Support\Str::limit($l->cerita, $limit = 80, $end = '...')) !!}
                             </div>
-                            <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($l->created_at))->locale('id')->diffForHumans()}}</p>
+                            <!-- <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($l->created_at))->locale('id')->diffForHumans()}}</p> -->
                             <div class="bar">
                                 <div class="progress-bar-xs progress">
                                     <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $l->progres_capaian / $l->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$l->progres_capaian / $l->target_capaian * 100}}%"></div>
                                 </div>
                             </div>
-                            <div class="donateprog">
-                                <p><b>@currency($l->progres_capaian)</b> dari @currency($l->target_capaian)</p>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 donateprog">
+                                    <p><b>@currency($l->progres_capaian)</b></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 donateprog right-all">
+                                    <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($l->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,14 +145,19 @@
                         <div class="desc-ngitem">
                         {!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}
                         </div>
-                        <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($g->created_at))->locale('id')->diffForHumans()}}</p>
+                        <!-- <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($g->created_at))->locale('id')->diffForHumans()}}</p> -->
                         <div class="bar">
                             <div class="progress-bar-xs progress">
                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $g->progres_capaian / $g->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$g->progres_capaian / $g->target_capaian * 100}}%"></div>
                             </div>
                         </div>
-                        <div class="donateprog">
-                            <p><b>@currency($g->progres_capaian)</b> dari @currency($g->target_capaian)</p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 donateprog">
+                                <p><b>@currency($g->progres_capaian)</b></p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 donateprog right-all">
+                                <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($g->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
+                            </div>
                         </div>
                     </div>
                 </div>

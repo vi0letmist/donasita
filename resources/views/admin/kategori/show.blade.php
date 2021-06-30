@@ -2,6 +2,9 @@
     'namePage' => 'post',
     'activePage' => 'post',
 ])
+@section('title')
+    <title>Lihat Detail Kategori</title>
+@endsection
 @section('content')
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -11,27 +14,27 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                    <div>Detail Kategori
+                        <div class="page-title-subheading">Halaman ini berisikan detail mengenai kategori.
                         </div>
                     </div>
                 </div>
                 <div class="page-title-actions">
-                    <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
+                    <!-- <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                         <i class="fa fa-star"></i>
-                    </button>
-                    <button type="button" aria-haspopup="true" aria-expanded="false" class="btn btn-info">
+                    </button> -->
+                    <a href="/manajemen-kategori/create" type="button" class="btn btn-info">
                         <span class="btn-icon-wrapper pr-2 opacity-7">
                             <i class="fa fa-business-time fa-w-20"></i>
                         </span>
                         Buat Kategori
-                    </button>
+</a>
                 </div>    </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Control Types</h5>
+                    <div class="card-body"><h5 class="card-title">Detail Kategori</h5>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="postimage">
@@ -48,22 +51,25 @@
                                     {{$kategori->slug}}
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <table id="tableIndex" class="mb-0 table table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul</th>
-                                        <th>Cerita</th>
-                                        <th>Oleh</th>
-                                        <th>Status</th>
-                                        <th>Created at</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="main-card mb-3 card">
+                    <div class="card-body">
+                        <h5 class="card-title">Penggalangan dana pada kategori ini</h5>
+                            <table id="tableIndex" class="mb-0 table table-hover">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Judul</th>
+                                <th>Cerita</th>
+                                <th>Oleh</th>
+                                <th>Status</th>
+                                <th>Created at</th>
+                                <th>Aksi</th>
+                            </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
             </div>
