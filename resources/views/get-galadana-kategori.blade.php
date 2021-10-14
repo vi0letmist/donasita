@@ -18,8 +18,13 @@
                             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $row->progres_capaian / $row->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$row->progres_capaian / $row->target_capaian * 100}}%"></div>
                         </div>
                     </div>
-                    <div class="donateprog">
-                        <p><b>@currency($row->progres_capaian)</b> dari @currency($row->target_capaian)</p>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 donateprog">
+                            <p><b>@currency($row->progres_capaian)</b></p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 donateprog right-all">
+                            <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($row->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
+                        </div>
                     </div>
                 </div>
             </div>

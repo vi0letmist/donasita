@@ -132,7 +132,7 @@ class AdminController extends Controller
     {
         $galadana= Galadana::all();
         $galadana = galadana::join('users', 'users.id','=', 'galadana.user_id')
-            ->where('galadana.status', '=', 'NULL')
+            ->whereNull('galadana.status')
             ->select('users.*', 'galadana.*')
             ->orderBy('galadana.created_at','desc')
             ->get();

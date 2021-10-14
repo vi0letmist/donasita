@@ -23,9 +23,11 @@ class CreateGaladanaTable extends Migration
             $table->string('progres_capaian');
             $table->datetime('batas_waktu');
             $table->string('status')->nullable();
-            $table->integer('user_id');
-            $table->integer('kategori_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('kategori_id');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('kategori_id')->references('id')->on('kategori')->onUpdate('cascade');
         });
     }
 

@@ -83,38 +83,38 @@
         </div>
         <div class="row">
             <!-- ***** Features Small Item Start ***** -->
-            @if(count($galadana) != 0)
-            @foreach($galadana as $g)
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
-                <div class="features-populer-item">
-                    <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
-                            
-                    </div>
-                    <h5 class="features-title"><b>{{$g->judul}}</b></h5>
-                    <div class="desc-ngitem">
-                        {!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}
-                    </div>
-                    <p class="lastdonate">oleh {{$g->users->name}}</p>
-                    <a href="/persetujuan-post/approve/{{$g->id}}">
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-success btn-blc"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
-                    </a>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-info btn-blc" data-toggle="modal" data-target="#exampleModal{{$g->id}}">
-                        <i class="pe-7s-info btn-icon-wrapper"> </i>
-                    </button>
-                    <a href="/persetujuan-post/decline/{{$g->id}}">
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger btn-blc"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
-                    </a>
-                </div>
-            </div>
-            <!-- ***** Features Small Item End ***** -->
-            @endforeach
-            @else
+            @if($galadana->isEmpty())
                 <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                     <img src="{{ asset('assets') }}/images/inbox-empty-icon.png" width="200px">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                     <h2 style="color:#dee2e6">Tidak ada data</h2>
                 </div>
+            @else
+                @foreach($galadana as $g)
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                    <div class="features-populer-item">
+                        <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
+                                
+                        </div>
+                        <h5 class="features-title"><b>{{$g->judul}}</b></h5>
+                        <div class="desc-ngitem">
+                            {!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}
+                        </div>
+                        <p class="lastdonate">oleh {{$g->users->name}}</p>
+                        <a href="/persetujuan-post/approve/{{$g->id}}">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-success btn-blc"><i class="pe-7s-check btn-icon-wrapper"> </i></button>
+                        </a>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-info btn-blc" data-toggle="modal" data-target="#exampleModal{{$g->id}}">
+                            <i class="pe-7s-info btn-icon-wrapper"> </i>
+                        </button>
+                        <a href="/persetujuan-post/decline/{{$g->id}}">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger btn-blc"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
+                        </a>
+                    </div>
+                </div>
+                <!-- ***** Features Small Item End ***** -->
+                @endforeach
             @endif
         </div>
     </div>

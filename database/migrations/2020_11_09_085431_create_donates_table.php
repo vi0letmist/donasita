@@ -20,9 +20,10 @@ class CreateDonatesTable extends Migration
             $table->string('nominal');
             $table->text('komen')->nullable();
             $table->boolean('anonim')->nullable()->default(0);
-            $table->string('galadana_id');
+            $table->unsignedBigInteger('galadana_id');
             $table->dateTime('batas_date');
             $table->timestamps();
+            $table->foreign('galadana_id')->references('id')->on('galadana')->onUpdate('cascade');
         });
     }
 
