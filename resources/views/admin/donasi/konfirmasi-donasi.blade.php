@@ -84,6 +84,7 @@
                                 <th>Nominal</th>
                                 <th>Komen</th>
                                 <th>Created at</th>
+                                <th>Aksi</th>
                             </tr>
                             </thead>
                         </table>
@@ -100,7 +101,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-            url: "{{ route('manajemen-donasi') }}",
+            url: "{{ route('konfirmasi-donasi') }}",
             type: 'GET',
         },
         columns: [
@@ -109,6 +110,7 @@
            { data: 'nominal', name: 'nominal', searchable: false },
            { data: 'komen', name: 'komen', searchable: false },
            { data: 'created_at', name: 'created_at', searchable: false },
+           { data: 'action', name: 'action', orderable: false, searchable: false }
         ],
         order: [[ 4, "desc" ]],
         columnDefs: [

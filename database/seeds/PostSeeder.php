@@ -36,7 +36,7 @@ class PostSeeder extends Seeder
 
             <p><img src="https://img.kitabisa.cc/size/1000/06a1f45a-22c9-4b18-9f74-1f22e9a9e2b0.jpg" />sumber:&nbsp;https://kitabisa.com/campaign/paketisolasimandiriwarga</p>',
             'target_capaian' => '300000000',
-            'progres_capaian' => '0',
+            'progres_capaian' => '20000000',
             'batas_waktu' => Carbon::create('2022','01','01'),
             'status' => '1',
             'user_id' => '2',
@@ -76,7 +76,7 @@ class PostSeeder extends Seeder
 
             <p>sumber: <a href="https://kitabisa.com/campaign/banturenovpesantren">https://kitabisa.com/campaign/banturenovpesantren</a></p>',
             'target_capaian' => '20000000',
-            'progres_capaian' => '0',
+            'progres_capaian' => '20000000',
             'batas_waktu' => Carbon::create('2021','12','03'),
             'status' => '1',
             'user_id' => '2',
@@ -125,8 +125,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bangunmasjiddikampung">https://kitabisa.com/campaign/bangunmasjiddikampung</a></p>',
             'target_capaian' => '250000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','08','27'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','27'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '4'
@@ -167,8 +167,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bisabantugempamaluku">https://kitabisa.com/campaign/bisabantugempamaluku</a></p>',
             'target_capaian' => '200000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','10','18'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','18'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '5'
@@ -207,7 +207,7 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bencanajabodetabek">https://kitabisa.com/campaign/bencanajabodetabek</a></p>',
             'target_capaian' => '200000000',
-            'progres_capaian' => '0',
+            'progres_capaian' => '20000000',
             'batas_waktu' => Carbon::create('2021','12','31'),
             'status' => '1',
             'user_id' => '2',
@@ -243,7 +243,7 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/donasihijau">https://kitabisa.com/campaign/donasihijau</a></p>',
             'target_capaian' => '600000000',
-            'progres_capaian' => '0',
+            'progres_capaian' => '20000000',
             'batas_waktu' => Carbon::create('2021','10','30'),
             'status' => '1',
             'user_id' => '2',
@@ -285,8 +285,8 @@ class PostSeeder extends Seeder
 
             <p><img alt="4c485b4b-03c0-42b4-9f81-375a759ad41d.jpg" src="https://img.kitabisa.cc/size/1000/4c485b4b-03c0-42b4-9f81-375a759ad41d.jpg" />sumber:&nbsp;<a href="https://kitabisa.com/campaign/bangunmasjidhancurkarenagempasulbar">https://kitabisa.com/campaign/bangunmasjidhancurkarenagempasulbar</a></p>',
             'target_capaian' => '583200000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','16'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','16'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '5'
@@ -329,8 +329,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bantupengungsigempamaluku">https://kitabisa.com/campaign/bantupengungsigempamaluku</a></p>',
             'target_capaian' => '350005050',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','30'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','30'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '5'
@@ -363,8 +363,8 @@ class PostSeeder extends Seeder
 
             <p><img alt="7869cdd1-7090-4242-84f9-e300226aa7c1.jpg" src="https://img.kitabisa.cc/size/1000/7869cdd1-7090-4242-84f9-e300226aa7c1.jpg" />sumber:&nbsp;<a href="https://kitabisa.com/campaign/jeparadilandabanjir">https://kitabisa.com/campaign/jeparadilandabanjir</a></p>',
             'target_capaian' => '584864000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','07','30'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','30'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '5'
@@ -389,8 +389,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/peduligempasulbar">https://kitabisa.com/campaign/peduligempasulbar</a></p>',
             'target_capaian' => '1611188010',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','10','28'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','28'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '5'
@@ -485,7 +485,7 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bantukalselprayforkalsel">https://kitabisa.com/campaign/bantukalselprayforkalsel</a></p>',
             'target_capaian' => '300000000',
-            'progres_capaian' => '0',
+            'progres_capaian' => '20000000',
             'batas_waktu' => Carbon::create('2022','02','01'),
             'status' => '1',
             'user_id' => '2',
@@ -517,8 +517,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/aisgarut">https://kitabisa.com/campaign/aisgarut</a></p>',
             'target_capaian' => '333000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','20'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','20'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '4'
@@ -553,8 +553,8 @@ class PostSeeder extends Seeder
 
             <p><img alt="e8eb2914-21b1-4ddd-a25e-446a70c884c9.jpg" src="https://img.kitabisa.cc/size/1000/e8eb2914-21b1-4ddd-a25e-446a70c884c9.jpg" /><img alt="df7a6bfc-46e0-42c1-9d4a-0ad97ff20e37.jpg" src="https://img.kitabisa.cc/size/1000/df7a6bfc-46e0-42c1-9d4a-0ad97ff20e37.jpg" />sumber:&nbsp;<a href="https://kitabisa.com/campaign/bantubangunpesantren">https://kitabisa.com/campaign/bantubangunpesantren</a></p>',
             'target_capaian' => '700000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','08','20'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','20'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '4'
@@ -576,8 +576,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/donasitahfidzqu">https://kitabisa.com/campaign/donasitahfidzqu</a></p>',
             'target_capaian' => '300000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','20'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','20'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '1'
@@ -600,8 +600,8 @@ class PostSeeder extends Seeder
 
             <p><img alt="0e845ad8-d83b-404f-ac75-0632eb4c6a3b.jpg" src="https://img.kitabisa.cc/size/1000/0e845ad8-d83b-404f-ac75-0632eb4c6a3b.jpg" />sumber:&nbsp;<a href="https://kitabisa.com/campaign/bantugurungajipelosokgarut">https://kitabisa.com/campaign/bantugurungajipelosokgarut</a></p>',
             'target_capaian' => '50000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','07','28'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','10','28'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '1'
@@ -991,8 +991,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/sekolahmanusia">https://kitabisa.com/campaign/sekolahmanusia</a></p>',
             'target_capaian' => '300000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','24'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','24'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '1'
@@ -1083,7 +1083,7 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bantu606santri">https://kitabisa.com/campaign/bantu606santri</a></p>',
             'target_capaian' => '1000000000',
-            'progres_capaian' => '0',
+            'progres_capaian' => '20000000',
             'batas_waktu' => Carbon::create('2021','12','20'),
             'status' => '1',
             'user_id' => '2',
@@ -1161,8 +1161,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bantupendidikan">https://kitabisa.com/campaign/bantupendidikan</a></p>',
             'target_capaian' => '100000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','07','20'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','20'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '1'
@@ -1175,8 +1175,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/bantuanakpantintt">https://kitabisa.com/campaign/bantuanakpantintt</a></p>',
             'target_capaian' => '500000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','28'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','28'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '1'
@@ -1197,8 +1197,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/savebekantan">https://kitabisa.com/campaign/savebekantan</a></p>',
             'target_capaian' => '250000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','08','20'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','20'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '2'
@@ -1249,8 +1249,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/savenusakambangan">https://kitabisa.com/campaign/savenusakambangan</a></p>',
             'target_capaian' => '100000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','10','10'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','10'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '2'
@@ -1287,8 +1287,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/canborneo">https://kitabisa.com/campaign/canborneo</a></p>',
             'target_capaian' => '500000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','08','21'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','21'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '2'
@@ -1336,8 +1336,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/donasipenjagahutan">https://kitabisa.com/campaign/donasipenjagahutan</a></p>',
             'target_capaian' => '100000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','10','24'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','24'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '2'
@@ -1421,8 +1421,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/pakmin">https://kitabisa.com/campaign/pakmin</a></p>',
             'target_capaian' => '256000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','27'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','27'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '2'
@@ -1495,8 +1495,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/pohonuntukmasadepan">https://kitabisa.com/campaign/pohonuntukmasadepan</a></p>',
             'target_capaian' => '200000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','10','22'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','11','22'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '2'
@@ -1553,8 +1553,8 @@ class PostSeeder extends Seeder
 
             <p>sumber:&nbsp;<a href="https://kitabisa.com/campaign/selamatkanpenyu">https://kitabisa.com/campaign/selamatkanpenyu</a></p>',
             'target_capaian' => '100000000',
-            'progres_capaian' => '0',
-            'batas_waktu' => Carbon::create('2021','09','12'),
+            'progres_capaian' => '20000000',
+            'batas_waktu' => Carbon::create('2021','12','12'),
             'status' => '1',
             'user_id' => '2',
             'kategori_id' => '2'

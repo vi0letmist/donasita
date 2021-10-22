@@ -40,6 +40,72 @@ class AdminController extends Controller
             }
         return view('admin.index', compact('galadana','donasi','donatur','label','jumlah_galadana'));
     }
+
+    public function manageDonasi()
+    {
+        DB::statement(DB::raw('set @rownum=0'));
+        $donasi = Donate::where('donates.status','=',2)
+                ->select([
+                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
+                'donates.*'
+            ])->get();
+        if(request()->ajax()) {
+            return DataTables::of($donasi)
+            ->addIndexColumn()
+            ->editColumn('nominal', function($donasi){
+                $rp = 'Rp';
+                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
+                return $nomin;
+            })
+            ->editColumn('created_at', function($donasi){
+                $date = \Carbon\Carbon::parse($donasi->created_at)->locale('id')->isoFormat('LLL');
+                return $date;
+            })
+            ->addColumn('komen', function($donasi){
+                $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
+                return $komen;
+            })
+            ->rawColumns(['komen'])
+            ->make(true);
+        }
+        return view ('admin.donasi.index');
+    }
+    public function konfirmasiDonasi()
+    {
+        DB::statement(DB::raw('set @rownum=0'));
+        $donasi = Donate::where('donates.status','=',1)
+                ->select([
+                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
+                'donates.*'
+            ])->get();
+        if(request()->ajax()) {
+            return DataTables::of($donasi)
+            ->addIndexColumn()
+            ->editColumn('nominal', function($donasi){
+                $rp = 'Rp';
+                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
+                return $nomin;
+            })
+            ->editColumn('created_at', function($donasi){
+                $date = \Carbon\Carbon::parse($donasi->created_at)->locale('id')->isoFormat('LLL');
+                return $date;
+            })
+            ->addColumn('komen', function($donasi){
+                $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
+                return $komen;
+            })
+            ->addColumn('action', function($donasi){
+                $showUrl = route('manajemen-donasi.show', $donasi->id);
+                $btn = '
+                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal{{$donasi->id}}"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                ';
+                return $btn;
+            })
+            ->rawColumns(['komen', 'action'])
+            ->make(true);
+        }
+        return view ('admin.donasi.konfirmasi-donasi');
+    }
     public function managepost()
     {
         DB::statement(DB::raw('set @rownum=0'));
@@ -183,6 +249,26 @@ class AdminController extends Controller
             ->make(true);
         }
         return view('admin.post.show', compact('galadana'));
+    }
+    public function showDonasi($id)
+    {
+        $donasi = Donate::where('id', $id)->first();
+        $galadana = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                    ->where('galadana.id','=',$donasi->galadana_id)
+                    ->select('galadana.*')
+                    ->getQuery()
+                    ->first();
+        $author = User::join('galadana', 'galadana.user_id', '=', 'users.id')
+                ->where('users.id','=', $galadana->user_id)
+                ->select('users.*')
+                ->getQuery()
+                ->first();
+        $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                ->where('galadana.id','=',$donasi->galadana_id)
+                ->select('galadana.*')
+                ->getQuery()
+                ->count();
+        return view('admin.donasi.show', compact('donasi','galadana','author', 'sumDonasi'));
     }
     public function approvalpost()
     {

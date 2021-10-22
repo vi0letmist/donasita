@@ -506,6 +506,12 @@
                                         Manajemen Donasi
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="/konfirmasi-donasi">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Konfirmasi Donasi
+                                    </a>
+                                </li>
                                 <li class="app-sidebar__heading">User</li>
                                 <li class="{{ Request::is('user-admin', 'user-pengguna') ? 'mm-active' : '' }}">
                                     <a href="#">

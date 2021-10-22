@@ -21,27 +21,15 @@
         <div class="row">
             <div class="offset-lg-1 col-lg-7 col-md-12 col-sm-12 padding-left-1 padding-right-1">
                 <div class="create-item">
-                    <h4>Bukti Pembayaran</h4>
+                    <h4>Konfirmasi Donasi Pembayaran</h4>
                     <!-- ***** Contact Form Start ***** -->
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-top-20 padding-left-1 padding-right-1">
-                        <div class="intruksi-form">
-                            <p class="text-center padding-bottom-10">Upload Bukti Pembayaran:</p>
-                            <form id="buktiForm" method="POST" action="{{ route('donasi.uploadBukti', $donasi->id) }}" enctype="multipart/form-data">
-                            @csrf
-                                <div class="file-upload">
-                                    <input style="padding-top: 10px;" type="file" class="form-control btn btn-sm" name="bukti_pembayaran" value="{{old('name', $donasi->bukti_pembayaran)}}" onchange="readURL(this);" accept="image/*">
-                                    <div class="file-upload-content">
-                                        <img class="file-upload-image" src="#" alt="your image" />
-                                        <div class="image-title-wrap">
-                                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="overflow:center;" class="text-center">
-                                    <button type="submit" id="form-submit" class="main-button">Kirim Bukti Pembayaran</button>
-                                </div>
-                            </form>
-
+                        <div class="intruksi-form" style="text-align:center;">
+                            <i class="fas fa-heart icon-gradient bg-tempting-azure" style="font-size:8rem;"></i>
+                            <h5 class="padding-top-20 padding-bottom-20 text-center">Terimakasih telah melakukan donasi menggunakan PeduliSantri<br>
+                                donasi anda akan ditinjau terlebih dahulu
+                            </h5>
+                            <a href="/g/{{$galadana->slug}}" class="main-button">Menuju penggalangan dana yang anda donasi</a>
                         </div>
                     </div>
                     <!-- ***** Contact Form End ***** -->

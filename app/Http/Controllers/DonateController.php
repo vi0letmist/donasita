@@ -34,34 +34,6 @@ class DonateController extends Controller
                 ->count();
         return view('donate.donasi', compact('galadana','author','sumDonasi'));
     }
-    public function adminIndex()
-    {
-        DB::statement(DB::raw('set @rownum=0'));
-        $donasi = Donate::select([
-                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-                'donates.*'
-            ])->get();
-        if(request()->ajax()) {
-            return DataTables::of($donasi)
-            ->addIndexColumn()
-            ->editColumn('nominal', function($donasi){
-                $rp = 'Rp';
-                $nomin = $rp.number_format($donasi->nominal, 0, ',', '.');
-                return $nomin;
-            })
-            ->editColumn('created_at', function($donasi){
-                $date = \Carbon\Carbon::parse($donasi->created_at)->locale('id')->isoFormat('LLL');
-                return $date;
-            })
-            ->addColumn('komen', function($donasi){
-                $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
-                return $komen;
-            })
-            ->rawColumns(['komen'])
-            ->make(true);
-        }
-        return view ('admin.donasi.index');
-    }
     public function intruksi($id)
     {
         $donasi = Donate::where('id', $id)->first();
@@ -117,6 +89,26 @@ class DonateController extends Controller
                 ->count();
         return view('donate.bukti-pembayaran', compact('donasi','galadana','author', 'sumDonasi'));
     }
+    public function konfirmasiDonasi($id)
+    {
+        $donasi = Donate::where('id', $id)->first();
+        $galadana = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                    ->where('galadana.id','=',$donasi->galadana_id)
+                    ->select('galadana.*')
+                    ->getQuery()
+                    ->first();
+        $author = User::join('galadana', 'galadana.user_id', '=', 'users.id')
+                ->where('users.id','=', $galadana->user_id)
+                ->select('users.*')
+                ->getQuery()
+                ->first();
+        $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                ->where('galadana.id','=',$donasi->galadana_id)
+                ->select('galadana.*')
+                ->getQuery()
+                ->count();
+        return view('donate.konfirmasi-donasi', compact('donasi','galadana','author', 'sumDonasi'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -165,6 +157,7 @@ class DonateController extends Controller
             'bukti_pembayaran' => 'required',
         ]);
         $donasi = Donate::findOrFail($id);
+        $donasi->status = 1;
         if ($request->bukti_pembayaran != null) {
             $target = base_path('public/images');
 
