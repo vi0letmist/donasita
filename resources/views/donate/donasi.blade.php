@@ -50,7 +50,7 @@
                                             @include('alerts.feedback', ['field' => 'nama'])
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-lg-6 col-md-12 col-sm-12 padding-left-1 padding-right-4">
                                         <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                             <fieldset>
@@ -60,6 +60,9 @@
                                         </div>
                                     </div>
                                     @else
+                                    <div class="col-lg-12 col-md-12 col-sm-12 padding-left-4 padding-right-1 center-all" style="padding:20px">
+                                        <a href="/login">Masuk </a> &ensp;atau lengkapi data dibawah ini
+                                    </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12 padding-left-4 padding-right-1">
                                         <div class="form-group{{ $errors->has('nama') ? ' has-danger' : '' }}">
                                             <fieldset>
@@ -68,7 +71,7 @@
                                             @include('alerts.feedback', ['field' => 'nama'])
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-lg-6 col-md-12 col-sm-12 padding-left-1 padding-right-4">
                                         <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                             <fieldset>
@@ -136,8 +139,8 @@
                         <p style="font-size:12px;font-weight:500">{{$author->name}}</p>
                     </div>
                     <div class="donate-sidebar-body padding-top-20">
-                        <div class="sidebar-donate-header"> 
-                            <small>orang ini akan menerima sumbangan anda secara langsung. 
+                        <div class="sidebar-donate-header">
+                            <small>orang ini akan menerima sumbangan anda secara langsung.
                                 Semua pembayaran bersifat final dan tidak dapat dikembalikan.</small>
                         </div>
                     </div>

@@ -10,6 +10,7 @@ use App\Galadana;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
+use Jorenvh\Share\ShareFacade;
 
 class DonateController extends Controller
 {
@@ -79,7 +80,42 @@ class DonateController extends Controller
                 ->select('galadana.*')
                 ->getQuery()
                 ->count();
-        return view('donate.intruksi', compact('donasi','galadana','author', 'sumDonasi'));
+        $twitter = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
+                ->twitter()
+                ->getRawLinks();
+        $facebook = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
+                    ->facebook()
+                    ->getRawLinks();
+        $reddit = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
+                    ->reddit()
+                    ->getRawLinks();
+        $telegram = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
+                    ->telegram()
+                    ->getRawLinks();
+        $whatsapp = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
+                    ->whatsapp()
+                    ->getRawLinks();
+        return view('donate.intruksi', compact('donasi','galadana','author', 'sumDonasi', 'twitter','facebook', 'reddit', 'telegram', 'whatsapp'));
+    }
+    public function buktiPembayaran($id)
+    {
+        $donasi = Donate::where('id', $id)->first();
+        $galadana = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                    ->where('galadana.id','=',$donasi->galadana_id)
+                    ->select('galadana.*')
+                    ->getQuery()
+                    ->first();
+        $author = User::join('galadana', 'galadana.user_id', '=', 'users.id')
+                ->where('users.id','=', $galadana->user_id)
+                ->select('users.*')
+                ->getQuery()
+                ->first();
+        $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                ->where('galadana.id','=',$donasi->galadana_id)
+                ->select('galadana.*')
+                ->getQuery()
+                ->count();
+        return view('donate.bukti-pembayaran', compact('donasi','galadana','author', 'sumDonasi'));
     }
 
     /**
@@ -104,13 +140,15 @@ class DonateController extends Controller
             'nama' => 'required',
             'email' => 'required',
             'nominal' => 'required',
-            'komen'=> 'nullable'
+            'komen'=> 'nullable',
+            'bukti_pembayaran' => 'nullable'
         ]);
         $donasi = new Donate();
         $donasi->nominal = $request->nominal;
         $donasi->nama = $request->nama;
         $donasi->email = $request->email;
         $donasi->komen = $request->komen;
+        $donasi->status = 0;
         $donasi->anonim = $request->anonim;
         $donasi->galadana_id = $request->galadana_id;
         $donasi->batas_date = date('Y-m-d H:i:s', strtotime('+3 days'));
@@ -120,6 +158,29 @@ class DonateController extends Controller
         $galadana->progres_capaian = ($galadana->progres_capaian + $donasi->nominal);
         $galadana->update();
         return redirect('donasi/intruksi/'. $donasi->id);
+    }
+    public function uploadBukti(Request $request, $id)
+    {
+        $this->validate($request, [
+            'bukti_pembayaran' => 'required',
+        ]);
+        $donasi = Donate::findOrFail($id);
+        if ($request->bukti_pembayaran != null) {
+            $target = base_path('public/images');
+
+            //code for remove old file
+            if($donasi->donasi != ''  && $donasi->bukti_pembayaran != null){
+                 $file_old = $target.$donasi->bukti_pembayaran;
+                 unlink($file_old);
+            }
+            $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('bukti_pembayaran')->getClientOriginalExtension();
+            $donasi->bukti_pembayaran = $cover;
+            $request->file('bukti_pembayaran')->move($target, $cover);
+        }
+
+        $donasi->update();
+
+        return redirect('/donasi/konfirmasi-donasi/'. $donasi->id)->withStatus(__('Bukti Pembayaran Berhasil di upload'));
     }
 
     /**

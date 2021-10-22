@@ -71,7 +71,12 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 intruksi-rek-2">
                                 <p>Transfer sebelum <b>{{ \Carbon\Carbon::parse($donasi->batas_date)->locale('id')->isoFormat('LLL') }}</b> atau donasi kamu otomatis dibatalkan oleh sistem</p>
                             </div>
-                            <a class="share-button text-center">Bagikan</a>
+                            <div class="padding-bottom-10">
+                                <a href="/donasi/bukti-pembayaran/{{$donasi->id}}" class="donate-button">Upload Bukti Pembayaran</a>
+                            </div>
+                            <button type="button" class="btn share-button" data-toggle="modal" data-target="#bagikanModal">
+                                Bagikan
+                            </button>
                         </div>
                     </div>
                     <!-- ***** Contact Form End ***** -->
@@ -104,13 +109,107 @@
                         <p style="font-size:12px;font-weight:500">{{$author->name}}</p>
                     </div>
                     <div class="donate-sidebar-body padding-top-20">
-                        <div class="sidebar-donate-header"> 
-                            <small>orang ini akan menerima sumbangan anda secara langsung. 
+                        <div class="sidebar-donate-header">
+                            <small>orang ini akan menerima sumbangan anda secara langsung.
                                 Semua pembayaran bersifat final dan tidak dapat dikembalikan.</small>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<!-- Modal bagikan-->
+<div class="modal fade" id="bagikanModal" tabindex="-1" role="dialog" aria-labelledby="bagikanModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10">
+                    <h3 class="modal-title weight-900" id="bagikanModalLabel">Membantu dengan cara bagikan</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-area-lg">
+                <div class="modal-body scrollbar-container ps--active-y">
+                    <div id="social-links">
+                        <ul>
+                            <li>
+                                <a href="{{$facebook}}" class="social-button " id="" title="">
+                                    <div class="fb-svg-container">
+                                        <img src="{{ asset('assets') }}/svg/facebook.svg" alt="facebook">
+                                    </div>
+                                    <div>
+                                    Facebook
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{$twitter}}" class="social-button " id="" title="">
+                                    <div class="twitter-svg-container">
+                                        <img src="{{ asset('assets') }}/svg/twitter.svg" alt="twitter">
+                                    </div>
+                                    <div>
+                                    Twitter
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{$reddit}}" class="social-button " id="" title="">
+                                    <div class="reddit-svg-container">
+                                        <img src="{{ asset('assets') }}/svg/reddit.svg" alt="reddit">
+                                    </div>
+                                    <div>
+                                    Reddit
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{$telegram}}" class="social-button " id="" title="">
+                                    <div class="telegram-svg-container">
+                                        <img src="{{ asset('assets') }}/svg/telegram.svg" alt="telegram">
+                                    </div>
+                                    <div>
+                                    Telegram
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{$whatsapp}}" class="social-button " id="" title="">
+                                    <div class="whatsapp-svg-container">
+                                        <img src="{{ asset('assets') }}/svg/whatsapp.svg" alt="whatsapp">
+                                    </div>
+                                    <div>
+                                    Whatsapp
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 border-top-20">
+                        <h5>Salin Tautan</h5>
+                        <div class="row padding-top-10">
+                            <div class="col-lg-9 col-md-9 col-sm-9 inputSalin">
+                                <input type="text" value="g/{{$galadana->slug}}" id="pilih" readonly />
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <button type="button" class="main-button" onclick="copy_text()">Salin</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+
+            </div> -->
         </div>
     </div>
 </div>

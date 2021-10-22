@@ -18,6 +18,8 @@ class CreateDonatesTable extends Migration
             $table->string('nama');
             $table->string('email');
             $table->string('nominal');
+            $table->string('status');
+            $table->string('bukti_pembayaran')->nullable();
             $table->text('komen')->nullable();
             $table->boolean('anonim')->nullable()->default(0);
             $table->unsignedBigInteger('galadana_id');

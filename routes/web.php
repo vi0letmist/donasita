@@ -34,6 +34,7 @@ Route::get('tost','GaladanaController@tost');
 Route::get('/g/{slug}/donasi', 'DonateController@index')->name('galadana', '[a-z]+', 'donasi');
 Route::resource('donasi', 'DonateController', ['except' => ['show']]);
 Route::get('/donasi/intruksi/{id}', 'DonateController@intruksi')->name('donasi','intruksi');
+Route::get('/donasi/bukti-pembayaran/{id}', 'DonateController@buktiPembayaran')->name('donasi','bukti-pembayaran');
 Route::get('search/', 'GaladanaController@search')->name('search');
 Auth::routes();
 
@@ -54,6 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/layout', 'AdminController@layout')->name('layout');
     Route::get('manajemen-donasi', 'DonateController@adminIndex')->name('manajemen-donasi');
     Route::get('manajemen-post', 'AdminController@managepost')->name('manajemen-post');
+    Route::get('post-status-2', 'AdminController@poststatus2')->name('post-status-2');
     Route::get('manajemen-post/{slug}/edit', 'AdminController@edit')->name('manajemen-post.edit');
     Route::get('manajemen-post/{slug}/show', 'AdminController@show')->name('manajemen-post.show');
     Route::put('manajemen-post/{slug}', ['as' => 'manajemen-post.update', 'uses' => 'AdminController@update']);

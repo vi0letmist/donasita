@@ -73,22 +73,68 @@
                 </div> -->    </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Penggalangan Dana</h5>
-                        <table id="tableIndex" class="mb-0 table table-hover">
-                            <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Cerita</th>
-                                <th>Oleh</th>
-                                <th>Status</th>
-                                <th>Created at</th>
-                                <th>Aksi</th>
-                            </tr>
-                            </thead>
-                        </table>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-status-1">
+                            <span>Card Tabs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-status-2">
+                            <span>Animated Lines</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-2">
+                            <span>Basic</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="tab-content">
+                    <div class="tab-pane tabs-animation fade show active" id="tab-content-status-1" role="tabpanel">
+                        <div class="col-lg-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Penggalangan Dana</h5>
+                                    <table id="tableIndex" class="mb-0 table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Judul</th>
+                                            <th>Cerita</th>
+                                            <th>Oleh</th>
+                                            <th>Status</th>
+                                            <th>Created at</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tabs-animation fade" id="tab-content-status-2" role="tabpanel">
+                        <div class="col-lg-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Penggalangan Dana</h5>
+                                    <table id="tableIndex2" class="mb-0 table table-hover" style="min-width:923px;">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Judul</th>
+                                            <th>Cerita</th>
+                                            <th>Oleh</th>
+                                            <th>Status</th>
+                                            <th>Created at</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,6 +154,33 @@
         columns: [
            {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
            { data: 'judul', name: 'judul' },
+           { data: 'cerita', name: 'cerita', searchable: false },
+           { data: 'name', name: 'name', searchable: false },
+           { data: 'status', name: 'status', orderable: false, searchable: false },
+           { data: 'created_at', name: 'created_at', searchable: false },
+           { data: 'action', name: 'action', orderable: false, searchable: false }
+        ],
+        order: [[ 5, "desc" ]],
+        columnDefs: [
+            { "width": "2%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "25%", "targets": 2 },
+            { "width": "12%", "targets": 3 },
+            { "width": "8%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
+            { "width": "20%", "targets": 6 }
+        ]
+       });
+       $('#tableIndex2').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ url('post-status-2') }}",
+            type: 'GET',
+        },
+        columns: [
+           {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
+           { data: 'judul', name: 'judul' },
            { data: 'cerita', name: 'cerita' },
            { data: 'name', name: 'name' },
            { data: 'status', name: 'status', orderable: false, searchable: false },
@@ -116,15 +189,16 @@
         ],
         order: [[ 5, "desc" ]],
         columnDefs: [
+            { "width": "2%", "targets": 0 },
             { "width": "20%", "targets": 1 },
             { "width": "25%", "targets": 2 },
-            { "width": "8%", "targets": 3 },
-            { "width": "5%", "targets": 4 },
-            { "width": "13%", "targets": 5 },
-            { "width": "17%", "targets": 6 }
+            { "width": "12%", "targets": 3 },
+            { "width": "8%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
+            { "width": "20%", "targets": 6 }
         ]
        });
      });
-  
+
    </script>
 @endpush

@@ -16,7 +16,7 @@
             background-image: url(../images/{{$kategori->gambar}});
             background-repeat: no-repeat;
             background-position: 85% 50%;
-            background-size: contain; 
+            background-size: contain;
             height: 100vh;
         }
         .populer{
@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="offset-xl-1 col-xl-6 offset-lg-1 col-lg-8 col-md-12 col-sm-12">
                         <h1><strong>Dapatkan Bantuan Untuk </strong><br><strong>Penggalangan Dana {{$kategori->nama}}</strong></h1>
-                        <p>Dengan *Nama App*, Anda bisa mendapatkan bantuan dalam biaya {{$kategori->nama}}</p>   
+                        <p>Dengan PeduliSantri, Anda bisa mendapatkan bantuan dalam biaya {{$kategori->nama}}</p>
                         <a href="/galadana/create" class="main-button-slider">Mulai Galadana</a>
                     </div>
                 </div>
@@ -44,10 +44,10 @@
     <!-- ***** Welcome Area End ***** -->
 
     <!-- ***** Features Small Start ***** -->
-    
+
     <!-- ***** Features Small End ***** -->
 
-    
+
     <!-- ***** Discover near Start ***** -->
     <section class="section padding-bottom-60 colored">
         <div class="container">
@@ -64,12 +64,12 @@
         </div>
     </section>
     <!-- ***** Discover near End ***** -->
-    
+
    @endsection
 @push('js')
    <script>
 $(document).ready(function(){
- 
+
  var _token = $('input[name="_token"]').val();
 
  load_more('', _token);

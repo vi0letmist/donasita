@@ -46,19 +46,19 @@ class GaladanaController extends Controller
                 ->select('galadana.*')
                 ->getQuery()
                 ->count();
-        $twitter = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
+        $twitter = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
                 ->twitter()
                 ->getRawLinks();
-        $facebook = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
+        $facebook = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
                     ->facebook()
                     ->getRawLinks();
-        $reddit = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
+        $reddit = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
                     ->reddit()
                     ->getRawLinks();
-        $telegram = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
+        $telegram = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
                     ->telegram()
                     ->getRawLinks();
-        $whatsapp = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->title)
+        $whatsapp = ShareFacade::page('http://localhost:8000/g/'.$galadana->slug, $galadana->judul)
                     ->whatsapp()
                     ->getRawLinks();
         return view('campaign.post', compact('galadana','author','donate', 'sideDonate','sumDonasi', 'twitter', 'facebook','reddit','telegram','whatsapp'));
@@ -88,7 +88,7 @@ class GaladanaController extends Controller
         //         ->orderBy('id', 'DESC')->limit(6)->get();
         //     }
         // }
-        
+
 
         // Return the search view with the resluts compacted
         return view('search', compact('galadana'));
@@ -187,7 +187,7 @@ class GaladanaController extends Controller
         $galadana = Galadana::where('slug', $slug)
             ->where('user_id', Auth::user()->id)
             ->first();
-            
+
         DB::statement(DB::raw('set @rownum=0'));
         $donasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
             ->where('donates.galadana_id', '=', $galadana->id)
@@ -270,8 +270,8 @@ class GaladanaController extends Controller
             $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
             $galadana->gambar = $cover;
             $request->file('gambar')->move($target, $cover);
-        } 
-       
+        }
+
         $galadana->update();
 
         return redirect('/kelola/galadana')->withStatus(__('Penggalangan dana berhasil diupdate'));
@@ -295,11 +295,11 @@ class GaladanaController extends Controller
             ->addColumn('status', function($galadana){
                 if($galadana->status == 1){
                 $status = '<div class="mb-2 mr-2 badge badge-success">Berjalan</div>';
-                    return $status;    
+                    return $status;
                 }
                 elseif($galadana->status == 2){
                     $status = '<div class="mb-2 mr-2 badge badge-primary">Selesai</div>';
-                    return $status; 
+                    return $status;
                 }
                 elseif($galadana->status == 0){
                 $status = '<div class="mb-2 mr-2 badge badge-danger">Tidak Disetujui</div>';
@@ -317,7 +317,7 @@ class GaladanaController extends Controller
             ->rawColumns(['cerita', 'status', 'action'])
             ->make(true);
         }
-        
+
         return view('test');
     }
     public function delete($id)

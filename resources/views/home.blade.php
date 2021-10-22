@@ -1,9 +1,9 @@
 @extends('layouts.fixed-navbar', [
-    'namePage' => '*namaapp*: aplikasi penggalangan dana',
+    'namePage' => 'PeduliSantri: aplikasi penggalangan dana',
     'activePage' => 'home',
 ])
 @section('title')
-    <title>*namaapp*: Aplikasi Penggalangan Dana</title>
+    <title>PeduliSantri: Aplikasi Penggalangan Dana</title>
 @endsection
 @section('content')
     <style>
@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
                         <h1>Galang dana untuk orang yang anda <strong>sayangi</strong><br>dan membantu <strong>mereka</strong></h1>
-                        <p>*nama app* adalah aplikasi yang berguna untuk mempertemukan mereka yang membutuhkan bantuan dengan para dermawan</p>
+                        <p>PeduliSantri adalah aplikasi yang berguna untuk mempertemukan mereka yang membutuhkan bantuan dengan para dermawan</p>
                         <a href="#features" class="main-button-slider">Telusuri Lebih Jauh</a>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$l->slug}}';" style="cursor: pointer;">
                         <div class="features-populer-item">
                             <div class="populer" style="background-image: url(../images/{{$l->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
-                                
+
                             </div>
                             <h5 class="features-title"><b>{{$l->judul}}</b></h5>
                             <div class="desc-ngitem">
@@ -113,12 +113,12 @@
                         <h2 class="section-title">We can help you to grow your business</h2>
                     </div> -->
                     <div class="left-text">
-                        <p>Syukurlah, kita semua memiliki kekuatan untuk melakukan sesuatu dan membuat perbedaan. Di sini, di *namaapp*, kami
+                        <p>Syukurlah, kita semua memiliki kekuatan untuk melakukan sesuatu dan membuat perbedaan. Di sini, di PeduliSantri, kami
                         memberdayakan individu, organisasi, dan komunitas untuk melangkah maju dalam menghadapi wabah COVID-19 dan
                         membantu mereka yang paling membutuhkannya.</p>
-                        <p>Mulai *namaapp* untuk mengumpulkan uang untuk membantu diri sendiri dan orang lain selama masa sulit ini. Baca posting blog kami
+                        <p>Mulai PeduliSantri untuk mengumpulkan uang untuk membantu diri sendiri dan orang lain selama masa sulit ini. Baca posting blog kami
                         Penggalangan Dana untuk Coronavirus Relief: Bagaimana Anda Dapat Membantu Perjuangan untuk informasi lebih lanjut.</p>
-                        <a href="#" class="main-button">Mulai *namaapp*</a>
+                        <a href="#" class="main-button">Mulai PeduliSantri</a>
                     </div>
                 </div>
                 <!-- <div class="col-lg-1"></div> -->
@@ -139,7 +139,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$g->slug}}';" style="cursor: pointer;">
                     <div class="features-populer-item">
                         <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
-                            
+
                         </div>
                         <h5 class="features-title"><b>{{$g->judul}}</b></h5>
                         <div class="desc-ngitem">

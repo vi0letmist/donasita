@@ -64,11 +64,11 @@ class AdminController extends Controller
             ->addColumn('status', function($galadana){
                 if($galadana->status == 1){
                 $status = '<div class="mb-2 mr-2 badge badge-success">Berjalan</div>';
-                    return $status;    
+                    return $status;
                 }
                 elseif($galadana->status == 2){
                     $status = '<div class="mb-2 mr-2 badge badge-primary">Selesai</div>';
-                    return $status; 
+                    return $status;
                 }
                 elseif($galadana->status == 0){
                 $status = '<div class="mb-2 mr-2 badge badge-danger">Tidak Disetujui</div>';
@@ -91,6 +91,62 @@ class AdminController extends Controller
             ->make(true);
         }
         return view ('admin.post.index');
+    }
+    public function poststatus2()
+    {
+        DB::statement(DB::raw('set @rownum=0'));
+        $galadana = galadana::join('users', 'users.id','=', 'galadana.user_id')
+            ->where('galadana.status', '=', 2)
+            ->select([
+                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
+                'galadana.*','users.name'
+            ]);
+        if(request()->ajax()) {
+            return DataTables::of($galadana)
+            ->filter(function ($query){
+                if (request()->has('judul')){
+                    $query->where('judul','like',"%" . request('judul') . "%");
+                }
+            })
+            ->addIndexColumn()
+            ->editColumn('created_at', function($galadana){
+                $date = \Carbon\Carbon::parse($galadana->created_at)->locale('id')->isoFormat('LLL');
+                return $date;
+            })
+            ->addColumn('cerita', function($galadana){
+                $input = '<input type="hidden" class="deleteGaladanaId" value="'.$galadana->id.'">';
+                $cerita = $input.'<div class="desc-ngitem">'.(\Illuminate\Support\Str::limit(html_entity_decode($galadana->cerita), $limit = 40, $end = "...")).'</div>';
+                return $cerita;
+            })
+            ->addColumn('status', function($galadana){
+                if($galadana->status == 1){
+                $status = '<div class="mb-2 mr-2 badge badge-success">Berjalan</div>';
+                    return $status;
+                }
+                elseif($galadana->status == 2){
+                    $status = '<div class="mb-2 mr-2 badge badge-primary">Selesai</div>';
+                    return $status;
+                }
+                elseif($galadana->status == 0){
+                $status = '<div class="mb-2 mr-2 badge badge-danger">Tidak Disetujui</div>';
+                return $status;
+                }
+            })
+            ->addColumn('action', function($galadana){
+                $editUrl = route('manajemen-post.edit', $galadana->slug);
+                $showUrl = route('manajemen-post.show', $galadana->slug);
+                $btn = '<a href="'.$editUrl.'">
+                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-note btn-icon-wrapper"> </i></button>
+                </a>';
+                $btn = $btn.'<a href="'.$showUrl.'">
+                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                </a>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteGaladana"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>';
+                return $btn;
+            })
+            ->rawColumns(['cerita', 'status', 'action'])
+            ->make(true);
+        }
     }
     public function edit($slug)
     {
@@ -183,8 +239,8 @@ class AdminController extends Controller
             $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
             $galadana->gambar = $cover;
             $request->file('gambar')->move($target, $cover);
-        } 
-       
+        }
+
         $galadana->update();
 
         return redirect('/manajemen-post')->withStatus(__('Penggalangan dana berhasil diupdate'));
@@ -197,7 +253,7 @@ class AdminController extends Controller
             ]))
             ->addIndexColumn()
             ->addColumn('action', function($data){
-                   
+
                    $editUrl = url('edit-todo/'.$data->id);
                    $btn = '<a href="'.$editUrl.'" data-toggle="tooltip" data-original-title="Edit" class="edit btn btn-primary btn-sm">Edit</a>';
 

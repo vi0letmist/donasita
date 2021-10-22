@@ -22,16 +22,16 @@ Table of contents
 12. preloader
 
 --------------------------------------------- */
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
@@ -101,10 +101,10 @@ ul {
   margin-bottom: 0px;
 }
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -752,10 +752,10 @@ button.share-button:hover {
   background-color: #f7b924;
   color: #353535;
 }
-/* 
+/*
 ---------------------------------------------
 contact-button
---------------------------------------------- 
+---------------------------------------------
 */
 a.contact-button {
   display: flex;
@@ -781,10 +781,10 @@ a.contact-button:hover {
   background-color: #3ac47d;
   color: #353535;
 }
-/* 
+/*
 ---------------------------------------------
 seeall-button
---------------------------------------------- 
+---------------------------------------------
 */
 a.seeall-button {
   display: flex;
@@ -858,10 +858,10 @@ button.seeall-gal-button:hover {
   background-color: #3ac47d;
   color: #353535;
 }
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 .header-area {
   position: sticky;
@@ -1130,10 +1130,10 @@ header
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 header 2
---------------------------------------------- 
+---------------------------------------------
 */
 .header-area2 {
   position: fixed;
@@ -1360,7 +1360,8 @@ header 2
     display: block !important;
   }
   .header-area2 .main-nav {
-    overflow: hidden;
+    /* overflow: hidden; */
+    padding-bottom: 10px;
   }
   .header-area2 .main-nav .nav {
     float: none;
@@ -1402,10 +1403,10 @@ header 2
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 welcome
---------------------------------------------- 
+---------------------------------------------
 */
 .welcome-area {
   overflow: hidden;
@@ -1416,7 +1417,7 @@ welcome
   background-image: url(../images/banner-bg.png);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; 
+  background-size: cover;
   height: 100vh;
 }
 
@@ -1512,10 +1513,10 @@ welcome
     margin-bottom: 40px;
   }
 }
-/* 
+/*
 ---------------------------------------------
 welcome galang dana
---------------------------------------------- 
+---------------------------------------------
 */
 
 
@@ -1614,10 +1615,10 @@ welcome galang dana
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 features
---------------------------------------------- 
+---------------------------------------------
 */
 .features-small-item {
   cursor: pointer;
@@ -1704,10 +1705,10 @@ features
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 parallax & home seperator
---------------------------------------------- 
+---------------------------------------------
 */
 .mini {
   min-height: 215px;
@@ -1973,19 +1974,19 @@ parallax & home seperator
     margin-top: 0px;
   }
 }
-/* 
+/*
 ---------------------------------------------
 item-post
---------------------------------------------- 
+---------------------------------------------
 */
 #item-post{
   top:0;
 }
 
-/* 
+/*
 ---------------------------------------------
 team
---------------------------------------------- 
+---------------------------------------------
 */
 .team-item {
   background: #fff;
@@ -2068,10 +2069,10 @@ team
   line-height: 26px;
 }
 
-/* 
+/*
 ---------------------------------------------
 pricing
---------------------------------------------- 
+---------------------------------------------
 */
 .pricing-item {
   background: #FFFFFF;
@@ -2185,10 +2186,10 @@ pricing
   margin-top: 50px;
 }
 
-/* 
+/*
 ---------------------------------------------
 blog
---------------------------------------------- 
+---------------------------------------------
 */
 .blog-post-thumb {
   text-align: center;
@@ -2260,10 +2261,10 @@ blog
 }
 
 
-/* 
+/*
 ---------------------------------------------
 contact
---------------------------------------------- 
+---------------------------------------------
 */
 
 #contact-us {
@@ -2349,10 +2350,10 @@ contact
   resize: none;
   padding: 20px;
 }
-/* 
+/*
 ---------------------------------------------
 Create-form
---------------------------------------------- 
+---------------------------------------------
 */
 
 #create-us {
@@ -2478,10 +2479,10 @@ Create-form
   padding-left: 1rem;
   padding-right: 1rem;
 }
-/* 
+/*
 ---------------------------------------------
 regForm
---------------------------------------------- 
+---------------------------------------------
 */
 #regForm input,
 #regForm textarea {
@@ -2869,10 +2870,10 @@ intruksi
   text-align: right;
   padding-right: 30px;
 }
-/* 
+/*
 ---------------------------------------------
 footer
---------------------------------------------- 
+---------------------------------------------
 */
 footer {
   border-top: 1px solid #dee2e6;
@@ -2947,12 +2948,15 @@ footer .copyright {
   footer .footer-nav {
     margin-bottom: 30px;
   }
+  .galu{
+      padding:20px
+  }
 }
 
-/* 
+/*
 ---------------------------------------------
 preloader
---------------------------------------------- 
+---------------------------------------------
 */
 #preloader {
   overflow: hidden;
@@ -3032,10 +3036,10 @@ preloader
     opacity: 0;
   }
 }
-/* 
+/*
 ---------------------------------------------
 post
---------------------------------------------- 
+---------------------------------------------
 */
 .post-item {
   background: #FFFFFF;
@@ -3153,10 +3157,10 @@ post
   margin-top: 50px;
 }
 
-/* 
+/*
 ---------------------------------------------
-sidebar donate 
---------------------------------------------- 
+sidebar donate
+---------------------------------------------
 */
 #sidebar{
   display: fixed !important;
@@ -3192,7 +3196,7 @@ sidebar donate
   content: "\2022";
   color: #adadad;
   font-weight: 900;
-  display: inline-block; 
+  display: inline-block;
   width: 1.1em;
   margin-left: 0.750em;
 }
@@ -3348,10 +3352,10 @@ sidebar donate
 .tick ul li::before{
   content: '✓';
 }
-/* 
+/*
 ---------------------------------------------
 features-populer
---------------------------------------------- 
+---------------------------------------------
 */
 .features-populer-item {
   cursor: pointer;
@@ -3486,10 +3490,10 @@ features-populer
     margin-top: 0px;
   }
 }
-/* 
+/*
 ---------------------------------------------
 login-item
---------------------------------------------- 
+---------------------------------------------
 */
 .login-item {
   display: block;
@@ -3509,10 +3513,10 @@ login-item
   overflow-wrap: break-word;
   padding: 30px 30px;
 }
-/* 
+/*
 ---------------------------------------------
 features-populer-kategori
---------------------------------------------- 
+---------------------------------------------
 */
 .features-populer-item-kategori {
   cursor: pointer;
@@ -3626,10 +3630,10 @@ features-populer-kategori
   margin: auto;
   border-radius: 20px;
 }
-/* 
+/*
 ---------------------------------------------
 navigation-page
---------------------------------------------- 
+---------------------------------------------
 */
 .nav-page {
   display: grid;
@@ -3652,6 +3656,15 @@ navigation-page
   justify-content: flex-end;
   grid-area: headerright;
 }
+@media (max-width:991px){
+    .nav-page {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-areas: "headercenter headerright";
+        grid-template-columns: 0 1fr;
+        grid-template-rows: auto;
+      }
+}
 .list-unstyled {
   list-style-type: none;
   margin-bottom: 0;
@@ -3668,10 +3681,10 @@ navigation-page
   display: -ms-flexbox!important;
   display: flex!important;
 }
-/* 
+/*
 ---------------------------------------------
 donate-sidebar
---------------------------------------------- 
+---------------------------------------------
 */
 .donate-sidebar {
   cursor: pointer;
@@ -3830,10 +3843,10 @@ donate-sidebar
   right: 0px;
   margin: auto;
 }
-/* 
+/*
 ---------------------------------------------
 Postingan
---------------------------------------------- 
+---------------------------------------------
 */
 .post-pict-item img{
   max-width: 100%;
@@ -3972,10 +3985,10 @@ Postingan
   height:32px;
   align-items: center;
 }
-/* 
+/*
 ---------------------------------------------
 search
---------------------------------------------- 
+---------------------------------------------
 */
 .search-wrapper .input-holder .search-icon{
   background:rgba(0,0,0,0.1)
