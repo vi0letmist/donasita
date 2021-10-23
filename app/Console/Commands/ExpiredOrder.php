@@ -4,8 +4,9 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Galadana;
+use App\Donate;
 
-class ExpiredGaladana extends Command
+class ExpiredOrder extends Command
 {
     /**
      * The name and signature of the console command.
@@ -19,7 +20,7 @@ class ExpiredGaladana extends Command
      *
      * @var string
      */
-    protected $description = 'Check expired galadana';
+    protected $description = 'Check expired order';
 
     /**
      * Create a new command instance.
@@ -39,5 +40,6 @@ class ExpiredGaladana extends Command
     public function handle()
     {
         $expired = Galadana::where('batas_waktu',"<",now())->update(['status'=> '2'])->EveryMinute();
+        $expired = Donate::where('batas_date',"<",now())->update(['status'=> '3'])->EveryMinute();
     }
 }

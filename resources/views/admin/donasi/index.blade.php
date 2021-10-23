@@ -73,20 +73,86 @@
                 </div>  -->   </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Donasi</h5>
-                        <table id="tableDonate" class="mb-0 table table-hover">
-                            <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Nominal</th>
-                                <th>Komen</th>
-                                <th>Created at</th>
-                            </tr>
-                            </thead>
-                        </table>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-status-2">
+                            <span>Card Tabs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-status-1">
+                            <span>Animated Lines</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-3">
+                            <span>Basic</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="tab-content">
+                    <div class="tab-pane tabs-animation fade show active" id="tab-content-status-2" role="tabpanel">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Donasi yang berhasil</h5>
+                                    <table id="tableDonate" class="mb-0 table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Nominal</th>
+                                            <th>Komen</th>
+                                            <th>Status</th>
+                                            <th>Created at</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tabs-animation fade" id="tab-content-status-1" role="tabpanel">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Donasi yang menunggu konfirmasi</h5>
+                                    <table id="tableDonate" class="mb-0 table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Nominal</th>
+                                            <th>Komen</th>
+                                            <th>Status</th>
+                                            <th>Created at</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tabs-animation fade" id="tab-content-status-3" role="tabpanel">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Donasi yang menunggu konfirmasi</h5>
+                                    <table id="tableDonate" class="mb-0 table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Nominal</th>
+                                            <th>Komen</th>
+                                            <th>Status</th>
+                                            <th>Created at</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,14 +174,64 @@
            { data: 'nama', name: 'nama' },
            { data: 'nominal', name: 'nominal', searchable: false },
            { data: 'komen', name: 'komen', searchable: false },
+           { data: 'status', name: 'status', searchable: false },
            { data: 'created_at', name: 'created_at', searchable: false },
         ],
         order: [[ 4, "desc" ]],
         columnDefs: [
-            { "width": "30%", "targets": 1 },
+            { "width": "20%", "targets": 1 },
             { "width": "20%", "targets": 2 },
             { "width": "30%", "targets": 3 },
-            { "width": "20%", "targets": 4 },
+            { "width": "15%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
+        ]
+       });
+       $('#tableDonate2').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ route('manajemen-donasi-2') }}",
+            type: 'GET',
+        },
+        columns: [
+           {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
+           { data: 'nama', name: 'nama' },
+           { data: 'nominal', name: 'nominal', searchable: false },
+           { data: 'komen', name: 'komen', searchable: false },
+           { data: 'status', name: 'status', searchable: false },
+           { data: 'created_at', name: 'created_at', searchable: false },
+        ],
+        order: [[ 4, "desc" ]],
+        columnDefs: [
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "30%", "targets": 3 },
+            { "width": "15%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
+        ]
+       });
+       $('#tableDonate3').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ route('manajemen-donasi-3') }}",
+            type: 'GET',
+        },
+        columns: [
+           {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
+           { data: 'nama', name: 'nama' },
+           { data: 'nominal', name: 'nominal', searchable: false },
+           { data: 'komen', name: 'komen', searchable: false },
+           { data: 'status', name: 'status', searchable: false },
+           { data: 'created_at', name: 'created_at', searchable: false },
+        ],
+        order: [[ 4, "desc" ]],
+        columnDefs: [
+            { "width": "20%", "targets": 1 },
+            { "width": "20%", "targets": 2 },
+            { "width": "30%", "targets": 3 },
+            { "width": "15%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
         ]
        });
      });

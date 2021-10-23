@@ -59,7 +59,7 @@
                             <p>{{$galadana->users->name}} adalah yang mengelola penggalangan dana ini</p>
                         </div>
                     </div>
-                    
+
                     <div class="desc-item">
                         {!!html_entity_decode ($galadana->cerita) !!}
                     </div>
@@ -89,10 +89,10 @@
                         <div class="col-lg-2 col-md-4 col-sm-12 foto_profil padding-bottom-40 padding-top-20">
                             <img src="{{ asset('assets') }}/images/avatars/{{$galadana->users->foto_profil}}" alt="Foto Profil" class="img-fluid">
                         </div>
-                        <div class="col-lg-6 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item">    
+                        <div class="col-lg-6 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item">
                             <p>{{$galadana->users->name}}<br>Pengelola</p>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item right-text">    
+                        <div class="col-lg-4 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item right-text">
                             <a href="#" class="contact-button">Kontak</a>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -176,9 +176,9 @@
                                             <span class="weight-900">@currency($a->nominal)<!-- -->&nbsp;</span>
                                         </li>
                                         <li>
-                                            <span class="lastdonate dot">{{\Carbon\Carbon::createFromTimeStamp(strtotime($a->created_at))->locale('id')->diffForHumans()}}</span>
+                                            <span class="lastdonate dot">{{\Carbon\Carbon::createFromTimeStamp(strtotime($a->updated_at))->locale('id')->diffForHumans()}}</span>
                                         </li>
-                                    </ul>      
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -219,7 +219,7 @@
 <div class="modal fade" id="seeallModal" tabindex="-1" role="dialog" aria-labelledby="seeallModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">    
+            <div class="modal-header">
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-sm-10">
                         <h5 class="modal-title weight-900" id="seeallModalLabel">Donasi</h5>
@@ -258,9 +258,9 @@
                                                 <span class="weight-900">@currency($a->nominal)<!-- -->&nbsp;</span>
                                             </li>
                                             <li>
-                                                <span class="lastdonate dot">14 jam yang lalu</span>
+                                                <span class="lastdonate dot">{{\Carbon\Carbon::createFromTimeStamp(strtotime($a->updated_at))->locale('id')->diffForHumans()}}</span>
                                             </li>
-                                        </ul>      
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@
                 </div>
             </div>
             <!-- <div class="modal-footer">
-               
+
             </div> -->
         </div>
     </div>
@@ -280,10 +280,10 @@
 <div class="modal fade" id="bagikanModal" tabindex="-1" role="dialog" aria-labelledby="bagikanModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">    
+            <div class="modal-header">
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-sm-10">
-                        
+
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -365,13 +365,13 @@
                 </div>
             </div>
             <!-- <div class="modal-footer">
-               
+
             </div> -->
         </div>
     </div>
 </div>
 <script>
-$(document).ready(function () { 
+$(document).ready(function () {
     var top = $('#sidebar').offset().top - parseFloat($('#sidebar').css('marginTop').replace(/auto/, 0));
     $(window).scroll(function (event) {
         var y = $(this).scrollTop();
@@ -394,7 +394,7 @@ $(document).ready(function () {
 </script>
 <script>
 $(document).ready(function(){
- 
+
  var _token = $('input[name="_token"]').val();
 
  load_more('', _token);

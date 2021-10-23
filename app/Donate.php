@@ -15,4 +15,7 @@ class Donate extends Model
     public function galadana(){
         return $this->belongsTo(Galadana::class, 'galadana_id', 'id');
     }
+    public function users(){
+        return $this->belongsTo(User::class, 'galadana.user_id', 'id');
+    }
 }

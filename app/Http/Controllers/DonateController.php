@@ -146,9 +146,6 @@ class DonateController extends Controller
         $donasi->batas_date = date('Y-m-d H:i:s', strtotime('+3 days'));
         $donasi->save();
 
-        $galadana = Galadana::find($donasi->galadana_id);
-        $galadana->progres_capaian = ($galadana->progres_capaian + $donasi->nominal);
-        $galadana->update();
         return redirect('donasi/intruksi/'. $donasi->id);
     }
     public function uploadBukti(Request $request, $id)

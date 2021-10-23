@@ -56,8 +56,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'AdminController@index')->name('dashboard');
     Route::get('/layout', 'AdminController@layout')->name('layout');
     Route::get('manajemen-donasi', 'AdminController@manageDonasi')->name('manajemen-donasi');
-    Route::get('manajemen-donasi/show/{id}', 'AdminController@showDonasi')->name('manajemen-donasi.show');
     Route::get('konfirmasi-donasi', 'AdminController@konfirmasiDonasi')->name('konfirmasi-donasi');
+    Route::get('/konfirmasi-donasi/approve/{id}', 'AdminController@approveDonasi')->name('konfirmasi-donasi.approve');
+    Route::get('/konfirmasi-donasi/decline/{id}', 'AdminController@declineDonasi')->name('konfirmasi-donasi.decline');
+    Route::get('manajemen-donasi-2', 'AdminController@manageDonasi2')->name('manajemen-donasi-2');
+    Route::get('manajemen-donasi-3', 'AdminController@manageDonasi3')->name('manajemen-donasi-3');
     Route::get('manajemen-post', 'AdminController@managepost')->name('manajemen-post');
     Route::get('post-status-2', 'AdminController@poststatus2')->name('post-status-2');
     Route::get('manajemen-post/{slug}/edit', 'AdminController@edit')->name('manajemen-post.edit');

@@ -30,12 +30,14 @@ class GaladanaController extends Controller
                 ->first();
         $donate = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
                 ->where('donates.galadana_id','=', $galadana->id)
+                ->where('donates.status','=', 2)
                 ->select('donates.*')
                 ->latest()
                 ->getQuery()
                 ->get();
         $sideDonate = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
                 ->where('donates.galadana_id','=', $galadana->id)
+                ->where('donates.status','=', 2)
                 ->select('donates.*')
                 ->getQuery()
                 ->latest()
@@ -157,6 +159,7 @@ class GaladanaController extends Controller
             if($request->id){
                 $data = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
                 ->where('donates.id','<',$request->id)
+                ->where('donates.status', '=', 2)
                 ->select('donates.*')
                 ->orderBy('id', 'DESC')
                 ->limit(5)
@@ -165,6 +168,7 @@ class GaladanaController extends Controller
             else{
                 $data = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
                 ->where('donates.galadana_id', '=', $galadana->id)
+                ->where('donates.status', '=', 2)
                 ->select('donates.*')->orderBy('id', 'DESC')->limit(5)->get();
             }
         }

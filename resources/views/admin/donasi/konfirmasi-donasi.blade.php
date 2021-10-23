@@ -3,7 +3,7 @@
     'activePage' => 'post',
 ])
 @section('title')
-    <title>Manajemen Donasi</title>
+    <title>Konfirmasi Donasi</title>
 @endsection
 @section('manajemen-post','active')
 @section('content')
@@ -94,6 +94,7 @@
         </div>
     </div>
 @endsection
+
 @push('js')
 <script>
      $(document).ready( function () {
@@ -123,3 +124,62 @@
      });
    </script>
 @endpush
+@foreach($donasi as $d)
+<!-- Modal -->
+<div class="modal fade" id="exampleModal{{$d->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-lg-2 offset-lg-10 col-md-2 offset-md-10 col-sm-2 offset-sm-10">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-area-lg">
+                <div class="modal-body scrollbar-container ps--active-y">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 no-padding">
+                            <div class="postimage">
+                                <img src="{{URL::asset('/images/' . $d->bukti_pembayaran)}}" alt="bukti_pembayaran">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <strong>Nama Donatur: </strong><br>
+                                {{$d->nama}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Email: </strong><br>
+                                {{$d->email}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Nominal Donasi: </strong><br>
+                                @currency($d->nominal)
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <strong>Judul Penggalangan Dana: </strong><br>
+                                {{$d->judul}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Pengelola Penggalangan dana: </strong><br>
+                                {{$d->name}}
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                            <a href="/konfirmasi-donasi/approve/{{$d->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
+                            <a href="/konfirmasi-donasi/decline/{{$d->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+            </div> -->
+        </div>
+    </div>
+</div>
+@endforeach
