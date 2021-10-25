@@ -118,7 +118,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body"><h5 class="card-title">Donasi yang menunggu konfirmasi</h5>
-                                    <table id="tableDonate" class="mb-0 table table-hover">
+                                    <table id="tableDonate2" class="mb-0 table table-hover">
                                         <thead>
                                         <tr>
                                             <th>No</th>
@@ -138,7 +138,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body"><h5 class="card-title">Donasi yang menunggu konfirmasi</h5>
-                                    <table id="tableDonate" class="mb-0 table table-hover">
+                                    <table id="tableDonate3" class="mb-0 table table-hover">
                                         <thead>
                                         <tr>
                                             <th>No</th>

@@ -156,6 +156,13 @@ class DonateController extends Controller
         $donasi = Donate::findOrFail($id);
         $donasi->status = 1;
         if ($request->bukti_pembayaran != null) {
+            $cover = Str::random(30) . $donasi->id . '.' . $request->file('bukti_pembayaran')->getClientOriginalExtension();
+            $donasi->bukti_pembayaran = $cover;
+        } else {
+            $donasi->bukti_pembayaran = 'default.jpg';
+        }
+
+        if ($request->bukti_pembayaran != null) {
             $target = base_path('public/images');
 
             //code for remove old file
@@ -163,8 +170,6 @@ class DonateController extends Controller
                  $file_old = $target.$donasi->bukti_pembayaran;
                  unlink($file_old);
             }
-            $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('bukti_pembayaran')->getClientOriginalExtension();
-            $donasi->bukti_pembayaran = $cover;
             $request->file('bukti_pembayaran')->move($target, $cover);
         }
 

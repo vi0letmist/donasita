@@ -30,9 +30,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $galadana = Galadana::all()->count();
-        $donasi = Donate::sum('donates.nominal');
-        $donatur = Donate::all()->count();
+        $galadana = Galadana::where('status', '=', 1)->count();
+        $donasi = Donate::where('status', '=', 2)->sum('donates.nominal');
+        $donatur = Donate::where('status', '=', 2)->count();
         $label  = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
         for($bulan=1;$bulan < 13;$bulan++){
             $chartuser     = collect(Galadana::whereMonth('created_at',$bulan)->count())->first();
@@ -179,7 +179,6 @@ class AdminController extends Controller
             ->rawColumns(['komen', 'status'])
             ->make(true);
         }
-        return view ('admin.donasi.index');
     }
     public function konfirmasiDonasi()
     {
