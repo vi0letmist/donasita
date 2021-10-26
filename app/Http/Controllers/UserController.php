@@ -43,7 +43,8 @@ class UserController extends Controller
             $request->file('foto_profil')->move($target, $cover);
         }
         $user->role = $request->role;
-       
+        $user->no_hp = $request->no_hp;
+
         $user->update();
 
         return redirect()->back()->withStatus(__('Informasi Kamu berhasil diupdate'));

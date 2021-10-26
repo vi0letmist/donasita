@@ -54,7 +54,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 center-all foto_profil" style="margin-bottom:10px;">
                                         <img src="{{ asset('assets') }}/images/avatars/{{$user->foto_profil}}" class="img-fluid" alt="foto profil"></img>
                                     </div>
-                                    
+
                                     <div class="offset-lg-3 col-lg-6 col-md-6 col-sm-6 form-group{{ $errors->has('foto_profil') ? ' has-danger' : '' }}">
                                         <label>Foto Profil:</label>
                                         <fieldset>

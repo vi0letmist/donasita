@@ -758,28 +758,52 @@ contact-button
 ---------------------------------------------
 */
 a.contact-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: bold;
-  border-radius: 20px;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-width: 0.175em;
-  border-style: solid;
-  border-color: #3ac47d;
-  color: #353535;
-  letter-spacing: 0.25px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-width: 0.175em;
+    border-style: solid;
+    border-color: #3ac47d;
+    color: #353535;
+    letter-spacing: 0.25px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
 }
 
 a.contact-button:hover {
   background-color: #3ac47d;
   color: #353535;
+}
+button.contact-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-width: 0.175em;
+    border-style: solid;
+    border-color: #3ac47d;
+    color: #353535;
+    letter-spacing: 0.25px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+button.contact-button:hover {
+    background-color: #3ac47d;
+    color: #353535;
 }
 /*
 ---------------------------------------------
@@ -3448,7 +3472,7 @@ features-populer
   font-weight: 400;
   text-align: left;
   padding: 10px 20px 10px 20px;
-  font-size: 16px;
+  font-size: 15px;
   color: #353535;
   letter-spacing: 0.5px;
   line-height: 20px;

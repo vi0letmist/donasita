@@ -93,7 +93,9 @@
                             <p>{{$galadana->users->name}}<br>Pengelola</p>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item right-text">
-                            <a href="#" class="contact-button">Kontak</a>
+                            <button type="button" class="btn contact-button" data-toggle="modal" data-target="#kontakModal">
+                                Kontak
+                            </button>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <h5>Komentar</h5>
@@ -360,6 +362,43 @@
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <button type="button" class="main-button" onclick="copy_text()">Salin</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+
+            </div> -->
+        </div>
+    </div>
+</div>
+<!-- Modal Kontak-->
+<div class="modal fade" id="kontakModal" tabindex="-1" role="dialog" aria-labelledby="kontakModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10">
+                    <h3 class="modal-title weight-900" id="bagikanModalLabel">Kontak</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-area-lg">
+                <div class="modal-body scrollbar-container ps--active-y">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-sm-12 foto_profil padding-bottom-40 padding-top-20">
+                            <img src="{{ secure_asset('assets') }}/images/avatars/{{$galadana->users->foto_profil}}" alt="Foto Profil" class="img-fluid">
+                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-6  padding-bottom-40 padding-top-20 admin-item">
+                            <p>{{$galadana->users->name}}<br>Pengelola</p>
                         </div>
                     </div>
                 </div>

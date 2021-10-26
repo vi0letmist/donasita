@@ -113,7 +113,9 @@
                                         </a>
 
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                            <a href="/profil">
+                                                <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                            </a>
                                             <div tabindex="-1" class="dropdown-divider"></div>
                                             <button type="button" tabindex="0" class="dropdown-item" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">Keluar</button>
@@ -508,7 +510,7 @@
                                 </li>
                                 <li>
                                     <a href="/konfirmasi-donasi">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        <i class="metismenu-icon pe-7s-check"></i>
                                         Konfirmasi Donasi
                                     </a>
                                 </li>
@@ -545,7 +547,7 @@
                                 <div class="app-footer-left">
                                     <ul class="nav">
                                         <li class="nav-item">
-                                            <p>Copyright &copy; 2020 Softy Pinko Company - Design: TemplateMo</p>
+                                            <p>Copyright &copy; 2021 PeduliSantri - Jaffar Jatmiko Jati</p>
                                         </li>
                                     </ul>
                                 </div>

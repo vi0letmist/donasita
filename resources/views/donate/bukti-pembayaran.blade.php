@@ -15,6 +15,12 @@
         clip-path: circle();
         border-radius: 50%;
     }
+    .file-upload {
+        background-color: #ffffff;
+        width: 380px;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
 </style>
 <div class="container padding-top-60">
     <div class="col-lg-12 col-md-12 col-sm-12">

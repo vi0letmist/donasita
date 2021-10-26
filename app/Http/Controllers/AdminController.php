@@ -41,6 +41,19 @@ class AdminController extends Controller
         return view('admin.index', compact('galadana','donasi','donatur','label','jumlah_galadana'));
     }
 
+    public function profile()
+    {
+        $galadana = Galadana::where('status', '=', 1)->count();
+        $donasi = Donate::where('status', '=', 2)->sum('donates.nominal');
+        $donatur = Donate::where('status', '=', 2)->count();
+        $label  = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+        for($bulan=1;$bulan < 13;$bulan++){
+            $chartuser     = collect(Galadana::whereMonth('created_at',$bulan)->count())->first();
+            $jumlah_galadana[] = $chartuser;
+            }
+        return view('admin.profile', compact('galadana','donasi','donatur','label','jumlah_galadana'));
+    }
+
     public function manageDonasi()
     {
         DB::statement(DB::raw('set @rownum=0'));

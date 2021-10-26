@@ -6,7 +6,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$row->slug}}';" style="cursor: pointer;">
                 <div class="features-populer-item">
                     <div class="populer" style="background-image: url(../images/{{$row->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
-                                
+
                     </div>
                     <h5 class="features-title"><b>{{$row->judul}}</b></h5>
                     <div class="desc-ngitem">
@@ -19,10 +19,12 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 donateprog">
-                            <p><b>@currency($row->progres_capaian)</b></p>
+                        <div class="col-lg-7 col-md-12 col-sm-12 donateprog">
+                            <p><b>@currency($row->progres_capaian)</b><br>
+                            dari <b>@currency($row->target_capaian)</b>
+                            </p>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 donateprog right-all">
+                        <div class="col-lg-5 col-md-12 col-sm-12 donateprog right-all">
                             <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($row->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
                         </div>
                     </div>
@@ -48,4 +50,3 @@
         <h2 style="color:#dee2e6">Tidak ada data</h2>
     </div>
 @endif
- 

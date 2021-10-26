@@ -54,10 +54,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 donateprog">
-                                    <p><b>@currency($l->progres_capaian)</b></p>
+                                <div class="col-lg-7 col-md-12 col-sm-12 donateprog">
+                                    <p><b>@currency($l->progres_capaian)</b><br>
+                                    dari <b>@currency($l->target_capaian)</b>
+                                    </p>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 donateprog right-all">
+                                <div class="col-lg-5 col-md-12 col-sm-12 donateprog right-all">
                                     <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($l->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
                                 </div>
                             </div>
@@ -152,10 +154,12 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 donateprog">
-                                <p><b>@currency($g->progres_capaian)</b></p>
+                            <div class="col-lg-7 col-md-12 col-sm-12 donateprog">
+                                <p><b>@currency($g->progres_capaian)</b><br>
+                                dari <b>@currency($g->target_capaian)</b>
+                                </p>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 donateprog right-all">
+                            <div class="col-lg-5 col-md-12 col-sm-12 donateprog right-all">
                                 <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($g->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
                             </div>
                         </div>
