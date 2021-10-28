@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('manajemen-kategori/{slug}/ubah', 'KategoriController@edit')->name('manajemen-kategori.edit');
     Route::put('manajemen-kategori/{slug}', ['as' => 'manajemen-kategori.update', 'uses' => 'KategoriController@update']);
     Route::get('manajemen-kategori/{slug}/lihat', 'KategoriController@show')->name('manajemen-kategori.show','[a-z]+');
-    Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+    Route::post('ckeditor/image_upload', 'CKeditorController@upload')->name('upload');
     Route::get('kelola/galadana', 'KelolaController@index');
     Route::get('kelola/umum', 'UserController@edit');
     Route::put('kelola/user/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);

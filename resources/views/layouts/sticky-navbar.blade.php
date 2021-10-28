@@ -28,6 +28,13 @@
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="csrf-param" content="_token" />
+        <script>
+          window.Laravel = <?php echo json_encode([
+              'csrfToken' => csrf_token(),
+          ]); ?>
+        </script>
     @yield('title')
 <!--
 SOFTY PINKO
