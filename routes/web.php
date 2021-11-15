@@ -49,6 +49,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('ckeditor/image_upload', 'CKeditorController@upload')->name('upload');
     Route::get('kelola/galadana', 'KelolaController@index');
     Route::get('kelola/umum', 'UserController@edit');
+    Route::get('kelola/umum/reset-password/', 'UserController@gantiPassword')->name('kelola.reset-password');
+    Route::post('reset-password', 'UserController@store')->name('reset.password');
     Route::put('kelola/user/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
     Route::get('kelola/{slug}/ubah', 'GaladanaController@edit')->name('galadana.edit');
     Route::get('kelola/{slug}', 'GaladanaController@show')->name('galadana.show','[a-z]+');
@@ -75,6 +77,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/galadana/{id}/delete','GaladanaController@delete')->name('galadana.destroy');
     Route::delete('/manajemen-kategori/{id}/hapus','KategoriController@delete')->name('manajemen-kategori.destroy');
     Route::get('user-pengguna', 'AdminController@userpengguna')->name('user-pengguna');
+    Route::get('user-admin', 'AdminController@useradmin')->name('user-admin');
 });
 // Route::group(['middleware' => Auth::user()->role('pengguna')], function () {
 // });

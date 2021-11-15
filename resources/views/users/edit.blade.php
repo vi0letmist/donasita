@@ -14,7 +14,7 @@
         margin: 0 10px 4px 20px;
     }
     .foto_profil img{
-        max-width: 300px;
+        max-width: 250px;
         clip-path: circle();
         border-radius: 50%;
     }
@@ -95,6 +95,9 @@
                                     </div> -->
                                     <input name="role" type="hidden" class="form-control" id="role" value="{{ old('name',$user->role) }}">
                                     <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+                                        <fieldset>
+                                            <a href="/kelola/umum/reset-password/" type="button" class="main-button-slider margin-right-10">Ganti kata sandi</a>
+                                        </fieldset>
                                         <fieldset>
                                             <button type="submit" id="form-submit" class="main-button">Simpan</button>
                                         </fieldset>

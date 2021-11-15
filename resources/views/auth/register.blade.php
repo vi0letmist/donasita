@@ -112,7 +112,7 @@
       <div class="row justify-content-center padding-top-20">
         <div class="col-lg-5 col-md-7">
           <div class="login-item">
-            
+
               <div class="text-center text-muted mb-4">
                 <img src="{{ asset('assets') }}/images/logo1.png" alt="Softy Pinko" style="width:10em;"/>
               </div>
@@ -167,7 +167,7 @@
                       <span class="input-group-text"><i class="fas fa-retweet"></i></span>
                     </div>
                         <input id="password-confirm" placeholder="Ketik ulang kata sandi" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                        
+
                   </div>
                 </div>
                 <!-- <div class="custom-control custom-control-alternative custom-checkbox">
@@ -177,17 +177,17 @@
                   </label>
                 </div> -->
                 <div class="form-group row mb-0 center-all">
-                                <button type="submit" class="main-button">
-                                    {{ __('Daftar') }}
-                                </button>
-                        </div>
+                    <button type="submit" class="main-button">
+                        {{ __('Daftar') }}
+                    </button>
+                </div>
               </form>
               </div>
           </div>
           <div class="row mt-3">
             <div class="col-6">
-              <a><small>Sudah mempunyai akun?</small></a> 
-                <a href="{{ route('login') }}"><small>Masuk</small></a>  
+              <a><small>Sudah mempunyai akun?</small></a>
+                <a href="{{ route('login') }}"><small>Masuk</small></a>
             </div>
           </div>
         </div>

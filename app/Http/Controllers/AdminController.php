@@ -476,7 +476,8 @@ class AdminController extends Controller
     public function userpengguna()
     {
         DB::statement(DB::raw('set @rownum=0'));
-        $user = User::select([
+        $user = User::where('role', '=', 'pengguna')
+                ->select([
                 DB::raw('@rownum  := @rownum  + 1 AS rownum'),
                 'users.*'
             ]);
@@ -499,5 +500,33 @@ class AdminController extends Controller
             ->make(true);
         }
         return view ('admin.user.pengguna');
+    }
+    public function useradmin()
+    {
+        DB::statement(DB::raw('set @rownum=0'));
+        $user = User::where('role', '=', 'admin')
+                ->select([
+                DB::raw('@rownum  := @rownum  + 1 AS rownum'),
+                'users.*'
+            ]);
+        if(request()->ajax()) {
+            return DataTables::of($user)
+            ->addIndexColumn()
+            ->addColumn('action', function($user){
+                $editUrl = route('manajemen-post.edit', $user->id);
+                $showUrl = route('manajemen-post.show', $user->id);
+                $btn = '<a href="'.$editUrl.'">
+                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-note btn-icon-wrapper"> </i></button>
+                </a>';
+                $btn = $btn.'<a href="'.$showUrl.'">
+                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                </a>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteGaladana"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>';
+                return $btn;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+        }
+        return view ('admin.user.admin');
     }
 }

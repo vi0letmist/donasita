@@ -313,15 +313,28 @@ div.colored{
 .padding-left-5 {
   padding-left: 5em !important;
 }
+.padding-left-8 {
+    padding-left: 8em !important;
+}
+.padding-left-5 {
+    padding-left: 5em !important;
+  }
 .padding-right-10 {
   padding-right: 10px !important;
+}
+.padding-right-20 {
+    padding-right: 20px !important;
 }
 .padding-left-10 {
   padding-left: 10px !important;
 }
+.padding-right-8 {
+    padding-right: 8em !important;
+  }
 .padding-right-5 {
   padding-right: 5em !important;
 }
+
 .padding-left-4 {
   padding-left: 4rem !important;
 }
@@ -351,6 +364,9 @@ div.colored{
 }
 .padding-right-0 {
   padding-right: 0 !important;
+}
+.margin-right-10 {
+    margin-right: 10px !important;
 }
 .margin-top-20 {
   margin-top: 20px !important;
