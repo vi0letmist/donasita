@@ -11,6 +11,7 @@
         background: #f2f2fe;
     }
 </style>
+
 <div class="container padding-top-60">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -35,12 +36,14 @@
                         </ul>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 sideRight">
+                    @include('alerts.success')
+                    @include('alerts.errors')
                         <form id="kelolaUpdate" method="POST" action="{{ route('kelola.update', $galadana->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="edit-item-header">
                                 <strong><h5>Ubah Penggalangan Dana</h5></strong>
-                                <p>{{ ($galadana->judul) }}</p>  
+                                <p>{{ ($galadana->judul) }}</p>
                             </div>
                             <div class="edit-item-body">
                                 <div class="edit-body-header">
@@ -76,7 +79,7 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('slug') ? ' has-danger' : '' }}">
                                                     <p>Tautan penggalangan dana:</p>
-                                                    <p style="color:#999;font-weight:400;"><strong>galadana/{{$galadana->slug }}</strong></p>
+                                                    <p style="color:#999;font-weight:400;"><strong>g/{{$galadana->slug }}</strong></p>
                                                     <fieldset>
                                                         <input name="slug" type="text" class="form-control" id="slug" value="{{ old('name',$galadana->slug) }}">
                                                     </fieldset>
@@ -94,8 +97,8 @@
                                                     <h5>Hapus Penggalangan Dana</h5>
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-sm-12">
-                                                    <p style="color: #999;font-weight:normal;margin:auto;">You will no longer have access to this fundraiser after deleting.<br>
-                                                    If you received donations, your donors will still be able to view a summary.</p>
+                                                    <p style="color: #999;font-weight:normal;margin:auto;">Anda tidak akan lagi memiliki akses terhadap penggalangan dana ini setelah menghapusnya.<br>
+                                                    Jika anda menerima donasi, donatur anda masih dapat melihat ringkasannya.</p>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-12 right-all">
                                                     <a href="#" class="deleteGaladana" data-id="{{$galadana->id}}" style="color: #d92550;text-decoration: underline!important;">
@@ -163,7 +166,7 @@
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">    
+            <div class="modal-header">
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-sm-10">
                         <h5 class="modal-title weight-900" id="seeallModalLabel">Ubah Gambar</h5>
@@ -189,7 +192,7 @@
                 </div>
             </div>
             <!-- <div class="modal-footer">
-               
+
             </div> -->
         </div>
     </div>

@@ -43,6 +43,8 @@
                         </ul>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 sideRight">
+                    @include('alerts.success')
+                    @include('alerts.errors')
                         <form id="kelolaUpdate" method="POST" action="{{ route('user.update', $user->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('put')

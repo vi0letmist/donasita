@@ -31,6 +31,8 @@
 </a>
                 </div>    </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
@@ -108,7 +110,7 @@
      });
 
      $('body').on('click', '.deleteTodo', function () {
- 
+
         var todo_id = $(this).data("id");
         if(confirm("Are You sure want to delete !"))
         {
@@ -116,7 +118,7 @@
               type: "get",
               url: "{{ url('delete-todo') }}"+'/'+todo_id,
               success: function (data) {
-              var oTable = $('#laravel-datatable-crud').dataTable(); 
+              var oTable = $('#laravel-datatable-crud').dataTable();
               oTable.fnDraw(false);
               },
               error: function (data) {
@@ -124,7 +126,7 @@
               }
           });
        }
-    });   
-  
+    });
+
    </script>
 @endpush

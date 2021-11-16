@@ -16,7 +16,7 @@
             background-image: url(../assets/images/sebastian-staines-SBCvP6i8hR8-unsplash.jpg);
             background-repeat: no-repeat;
             background-position: 85% 50%;
-            background-size: contain; 
+            background-size: contain;
             height: 100vh;
         }
     </style>
@@ -29,10 +29,10 @@
             <div class="container">
                 <div class="row">
                     <div class="offset-xl-1 col-xl-6 offset-lg-1 col-lg-8 col-md-12 col-sm-12">
-                        <h1><strong>Temukan pengumpulan </strong><br><strong>dana di *nama app*</strong></h1>
-                        <p>Bantu orang lain dengan menyumbang untuk <br> penggalangan dana mereka, 
-                        atau mulai penggalangan <br> untuk seseorang yang Anda sayangi.</p>   
-                        <a href="#features" class="main-button-slider">Discover More</a>
+                        <h1><strong>Temukan pengumpulan </strong><br><strong>dana di PeduliSantri</strong></h1>
+                        <p>Bantu orang lain dengan menyumbang untuk <br> penggalangan dana mereka,
+                        atau mulai penggalangan <br> untuk seseorang yang Anda sayangi.</p>
+                        <a href="#features" class="main-button-slider">Telusuri lebih jauh</a>
                     </div>
                 </div>
             </div>
@@ -42,10 +42,10 @@
     <!-- ***** Welcome Area End ***** -->
 
     <!-- ***** Features Small Start ***** -->
-    
+
     <!-- ***** Features Small End ***** -->
 
-    
+
     <!-- ***** Discover near Start ***** -->
     <section class="section padding-bottom-60 colored">
         <div class="container">

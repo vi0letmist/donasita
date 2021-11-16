@@ -34,15 +34,29 @@
         content: "\2022";
         color: #adadad;
         font-weight: 900;
-        display: inline-block; 
+        display: inline-block;
         width: 1.1em;
         margin-left: 3px;
     }
     .oren{
         background-color: #f7b924;
+        color: #fff !important;
+        font-weight: 500;
     }
     .ret{
         background-color: #d92550;
+        color: #fff !important;
+        font-weight: 500;
+    }
+    .hijau{
+        background-color: #3ac47d;
+        color: #fff !important;
+        font-weight: 500;
+    }
+    .biru{
+        background-color: #3f6ad8;
+        color: #fff !important;
+        font-weight: 500;
     }
 </style>
 <div class="container padding-top-60">
@@ -85,9 +99,17 @@
                                         <div>
                                             <a class="ret">Penggalangan dana anda ditolak</a>
                                         </div>
+                                    @elseif($g->status == 1)
+                                        <div>
+                                            <a class="hijau">Penggalangan dana masih berjalan</a>
+                                        </div>
+                                    @elseif($g->status == 2)
+                                        <div>
+                                            <a class="biru">Penggalangan dana sudah selesai</a>
+                                        </div>
                                     @endif
                                     <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
-                                        
+
                                     </div>
                                     <h5 class="features-title"><b>{{$g->judul}}</b></h5>
                                     <div class="center-all">
@@ -111,7 +133,7 @@
                                 </div>
                             @endif
                         </div>
-                    
+
                     </div>
                 </div>
             </div>

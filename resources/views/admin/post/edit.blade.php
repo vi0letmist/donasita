@@ -31,6 +31,8 @@
                     </button>
                 </div>    </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
@@ -96,7 +98,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="mt-1 btn btn-primary">Submit</button>
+                            <button class="mt-1 btn btn-primary">Kirim</button>
                         </form>
                     </div>
                 </div>

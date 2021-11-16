@@ -15,7 +15,7 @@
                         </i>
                     </div>
                     <div>Analytics Dashboard
-                        <div class="page-title-subheading">Ini adalah dashboard utama admin pada sistem penggalangan dana untuk pondok pesantren 
+                        <div class="page-title-subheading">Ini adalah dashboard utama admin pada sistem penggalangan dana untuk pondok pesantren
                         </div>
                     </div>
                 </div>
@@ -69,8 +69,11 @@
                             </ul>
                         </div>
                     </div>
-                </div> -->   </div> 
-        </div>            <div class="row">
+                </div> -->   </div>
+        </div>
+        @include('alerts.success')
+        @include('alerts.errors')
+        <div class="row">
         <div class="col-md-6 col-xl-4">
             <div class="card mb-3 widget-content">
                 <div class="widget-content-outer">
@@ -138,7 +141,7 @@
                         <canvas id="mataChart" class="chartjs" width="undefined" height="undefined"></canvas>
                     </div>
                 </div>
-            </div>                
+            </div>
         </div>
     </div>
 @endsection

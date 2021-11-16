@@ -31,10 +31,12 @@
 </a>
                 </div>    </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Control Types</h5>
+                    <div class="card-body"><h5 class="card-title">Buat Kategori</h5>
                         <form id="createForm" method="POST" action="{{ route('manajemen-kategori.store') }}" enctype="multipart/form-data">
                         @csrf
                             <div class="form-group{{ $errors->has('gambar') ? ' has-danger' : '' }} position-relative">
@@ -51,7 +53,7 @@
                                 </fieldset>
                                 @include('alerts.feedback', ['field' => 'nama'])
                             </div>
-                            
+
                             <!-- <div class="position-relative form-group">
                                 <label for="examplePassword" class="">Password</label>
                                 <div class="file-upload">
@@ -64,7 +66,7 @@
                                     </div>
                                 </div>
                             </div> -->
-                            <button class="mt-1 btn btn-primary">Submit</button>
+                            <button class="mt-1 btn btn-primary">Kirim</button>
                         </form>
                     </div>
                 </div>

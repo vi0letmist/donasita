@@ -15,7 +15,8 @@ use Yajra\DataTables\DataTables;
 class KelolaController extends Controller
 {
     public function index(){
-        $galadana = Galadana::where('user_id', Auth::user()->id)->get();
+        $galadana = Galadana::where('user_id', Auth::user()->id)
+        ->where('status', 1)->get();
         return view('campaign.kelola', compact('galadana'));
     }
 }

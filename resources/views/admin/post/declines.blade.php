@@ -71,6 +71,8 @@
                     </div>
                 </div> -->    </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
@@ -87,7 +89,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @php 
+                                @php
                                     $no=1;
                                 @endphp
                                 @foreach($galadana as $g)
@@ -117,7 +119,7 @@
                                 </tr>
                                 @endif
                                 @endforeach
-                            
+
                             </tbody>
                         </table>
                         <table id="nyobaTableIh">

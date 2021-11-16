@@ -72,22 +72,24 @@
                     </div>
                 </div>  -->   </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
                     <li class="nav-item">
                         <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-status-2">
-                            <span>Card Tabs</span>
+                            <span>Donasi yang berhasil</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-status-1">
-                            <span>Animated Lines</span>
+                            <span>Donasi yang menunggu konfirmasi</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-3">
-                            <span>Basic</span>
+                            <span>Donasi yang Batal</span>
                         </a>
                     </li>
                 </ul>
@@ -137,7 +139,7 @@
                     <div class="tab-pane tabs-animation fade" id="tab-content-status-3" role="tabpanel">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="main-card mb-3 card">
-                                <div class="card-body"><h5 class="card-title">Donasi yang menunggu konfirmasi</h5>
+                                <div class="card-body"><h5 class="card-title">Donasi yang Batal</h5>
                                     <table id="tableDonate3" class="mb-0 table table-hover">
                                         <thead>
                                         <tr>

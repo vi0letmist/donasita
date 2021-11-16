@@ -278,7 +278,7 @@ class GaladanaController extends Controller
 
         $galadana->update();
 
-        return redirect('/kelola/galadana')->withStatus(__('Penggalangan dana berhasil diupdate'));
+        return redirect()->back()->withStatus(__('Penggalangan dana berhasil diupdate'));
     }
 
     public function tost()

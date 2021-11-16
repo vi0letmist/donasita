@@ -31,6 +31,8 @@
 </a>
                 </div>    </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="main-card mb-3 card">
@@ -45,7 +47,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @php 
+                                @php
                                     $no=1;
                                 @endphp
                                 @foreach($kategori as $k)
@@ -66,11 +68,11 @@
                                             <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
                                         </a>
                                         <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteKategori"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                                        
+
                                     </td>
                                 </tr>
                                 @endforeach
-                            
+
                             </tbody>
                         </table>
                     </div>

@@ -37,6 +37,8 @@
                     </button>
                 </div>    </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 cerita">
                 <div class="main-card mb-3 card">
@@ -53,23 +55,16 @@
                                     {{$galadana->judul}}
                                 </div>
                                 <div class="form-group">
-                                    <strong>Penggalangan dana untuk: </strong><br>
-                                    {{$galadana->users->name}}
-                                </div>
-                                <div class="form-group">
-                                    <strong>Kode Pos/Alamat: </strong><br>
-                                    55183 - Brajan, Tamantirto, Kasihan, Bantul, Yogyakarta bla bla bla bla bla bla bla bla bla bla bla bla bla
-                                </div>
-                                <div class="form-group">
-                                    <strong>Target pencapaian donasi: </strong><br>
-                                    Rp. {{$galadana->target_capaian}}
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="form-group">
                                     <strong>Oleh: </strong><br>
                                     {{$galadana->users->name}}
                                 </div>
+                                <div class="form-group">
+                                    <strong>Target pencapaian donasi: </strong><br>
+                                    @currency($galadana->target_capaian)
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
                                 <div class="form-group">
                                     <strong>Cerita/Penjelasan: </strong><br>
                                     <text>
@@ -77,7 +72,7 @@
                                     </text>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -126,6 +121,6 @@
             { "width": "20%", "targets": 4 },
         ]
        });
-     });  
+     });
    </script>
 @endpush

@@ -25,7 +25,10 @@
                     </div>
                 </div>
             </div>
-        </div>            <div class="row">
+        </div>
+        @include('alerts.success')
+        @include('alerts.errors')
+        <div class="row">
         <div class="col-md-6 col-xl-12">
             <div class="main-card mb-3 card">
                 <div class="card-body">

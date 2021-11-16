@@ -81,6 +81,8 @@
                     </div>
                 </div>  -->   </div>
         </div>
+        @include('alerts.success')
+        @include('alerts.errors')
         <div class="row">
             <!-- ***** Features Small Item Start ***** -->
             @if($galadana->isEmpty())
@@ -95,7 +97,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                     <div class="features-populer-item">
                         <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
-                                
+
                         </div>
                         <h5 class="features-title"><b>{{$g->judul}}</b></h5>
                         <div class="desc-ngitem">
@@ -125,7 +127,7 @@
 <div class="modal fade" id="exampleModal{{$g->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">    
+            <div class="modal-header">
                 <div class="row">
                     <div class="col-lg-2 offset-lg-10 col-md-2 offset-md-10 col-sm-2 offset-sm-10">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -148,23 +150,16 @@
                                 {{$g->judul}}
                             </div>
                             <div class="form-group">
-                                <strong>Penggalangan dana untuk: </strong><br>
-                                {{$g->users->name}}
-                            </div>
-                            <div class="form-group">
-                                <strong>Kode Pos/Alamat: </strong><br>
-                                55183 - Brajan, Tamantirto, Kasihan, Bantul, Yogyakarta bla bla bla bla bla bla bla bla bla bla bla bla bla
-                            </div>
-                            <div class="form-group">
-                                <strong>Target pencapaian donasi: </strong><br>
-                                Rp. {{$g->target_capaian}}
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form-group">
                                 <strong>Oleh: </strong><br>
                                 {{$g->users->name}}
                             </div>
+                            <div class="form-group">
+                                <strong>Target pencapaian donasi: </strong><br>
+                                @currency($g->target_capaian)
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+
                             <div class="form-group cerita">
                                 <strong>Cerita/Penjelasan: </strong><br>
                                 <text>
@@ -176,7 +171,7 @@
                 </div>
             </div>
             <!-- <div class="modal-footer">
-            
+
             </div> -->
         </div>
     </div>
