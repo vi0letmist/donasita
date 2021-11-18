@@ -1,6 +1,6 @@
 @extends('layouts.sticky-navbar')
 @section('title')
-    <title>Masuk di *namaapp*</title>
+    <title>Masuk di PeduliSantri</title>
 @endsection
 @section('content')
 <style>
@@ -88,7 +88,7 @@
             </div>
         </div>
     </div> -->
-   
+
     <!-- Header -->
     <main class="py-4">
     <div class="header bg-gradient-primary py-7 py-lg-8">
@@ -97,7 +97,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
               <h1>Masuk</h1>
-              <p class="text-lead">Selamat datang di *nama app* sebuah situs yang mempertemukan antara Donatur dan Penggalang Dana.</p>
+              <p class="text-lead">Selamat datang di PeduliSantri sebuah situs yang mempertemukan antara Donatur dan Penggalang Dana.</p>
             </div>
           </div>
         </div>
@@ -158,9 +158,9 @@
           </div>
           <div class="row mt-3">
             <div class="col-6">
-                @if (Route::has('password.request'))  
+                @if (Route::has('password.request'))
                 <a href="#"><small>Lupa kata sandi?</small></a>
-                @endif    
+                @endif
             </div>
             <div class="col-6 text-right">
               <a href="{{ route('register') }}"><small>Buat akun baru</small></a>

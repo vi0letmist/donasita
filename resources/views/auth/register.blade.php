@@ -1,6 +1,6 @@
 @extends('layouts.sticky-navbar')
 @section('title')
-    <title>Daftar di *namaapp*</title>
+    <title>Daftar di PeduliSantri</title>
 @endsection
 @section('content')
 <style>
@@ -101,7 +101,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
               <h1>Daftar</h1>
-              <p class="text-lead">Selamat datang di *nama app* sebuah situs yang mempertemukan antara Donatur dan Penggalang Dana.</p>
+              <p class="text-lead">Selamat datang di PeduliSantri sebuah situs yang mempertemukan antara Donatur dan Penggalang Dana.</p>
             </div>
           </div>
         </div>

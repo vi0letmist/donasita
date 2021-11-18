@@ -10,6 +10,21 @@
     html,body{
         background: #f2f2fe;
     }
+    .price .zoom-field-label{
+        padding:5px;
+        top:-.8em !important;
+    }
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
 </style>
 <div class="container padding-top-60">
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -34,12 +49,14 @@
                             <!-- One "tab" for each step in the form: -->
                             <div class="tab">
                                 <div class="col-lg-12 col-md-12 col-sm-12 price padding-left-0 padding-right-0">
-                                    <div class="form-group mb-3 {{ $errors->has('target_capaian') ? ' has-danger' : '' }}">
+                                    <!-- <label for="target_capaian">Target capaian penggalangan dana anda</label> -->
+                                    <div class="zoom-field-wrapper has-value form-group mb-3 {{ $errors->has('target_capaian') ? ' has-danger' : '' }}">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                                 <fieldset>
-                                                    <input oninput="this.className = ''" name="target_capaian" value="{{ old('target_capaian') }}" type="text" class="form-control{{ $errors->has('target_capaian') ? ' is-invalid' : '' }}" id="target_capaian" placeholder="10.000.000" required="" autofocus>
+                                                    <input oninput="this.className = ''" name="target_capaian" value="{{ old('target_capaian') }}" type="number" class="zoom-field-input form-control{{ $errors->has('target_capaian') ? ' is-invalid' : '' }}" id="target_capaian" placeholder="10.000.000" required="" autofocus>
+                                                    <label class="zoom-field-label" for="target_capaian">Target capaian penggalangan dana anda</label>
                                                 </fieldset>
                                             </div>
                                         </div>
@@ -47,24 +64,27 @@
                                     @include('alerts.feedback', ['field' => 'target_capaian'])
                                 </div>
                                 <div class="fit">
-                                    <div class="form-group{{ $errors->has('judul') ? ' has-danger' : '' }}">
+                                    <div class="zoom-field-wrapper has-value form-group{{ $errors->has('judul') ? ' has-danger' : '' }}">
                                         <fieldset>
-                                            <input oninput="this.className = ''" name="judul" value="{{ old('judul') }}" type="text" class="form-control{{ $errors->has('judul') ? ' is-invalid' : '' }}" id="judul" placeholder="{{ __('Judul Penggalangan Dana') }}" required="">
+                                            <input oninput="this.className = ''" name="judul" value="{{ old('judul') }}" type="text" class="zoom-field-input form-control{{ $errors->has('judul') ? ' is-invalid' : '' }}" id="judul" required="">
+                                            <label class="zoom-field-label" for="judul">Judul penggalangan dana</label>
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'judul'])
                                     </div>
-                                    <div class="form-group{{ $errors->has('kategori') ? ' has-danger' : '' }}">
-                                        <select name="kategori" class="form-control{{ $errors->has('kategori') ? ' has-danger' : '' }}" required="" style="border-radius:25px;border:1px solid #eee;min-height:50px">
+                                    <div class="zoom-field-wrapper has-value form-group{{ $errors->has('kategori') ? ' has-danger' : '' }}">
+                                        <select name="kategori" id="kategori" class="zoom-field-input form-control{{ $errors->has('kategori') ? ' has-danger' : '' }}" required="" style="border-radius:25px;border:1px solid #eee;min-height:50px">
                                         @foreach ($kategori as $k)
-                                            <option value="{{$k->id}}">{{$k->nama}}</option>
+                                            <option class="zoom-field-input" id="kategori" value="{{$k->id}}">{{$k->nama}}</option>
                                         @endforeach
                                         </select>
+                                        <label class="zoom-field-label" for="kategori">Kategori penggalangan dana</label>
                                         @include('alerts.feedback', ['field' => 'rak'])
                                         </input>
                                     </div>
-                                    <div class="form-group{{ $errors->has('batas_waktu') ? ' has-danger' : '' }}">
+                                    <div class="zoom-field-wrapper has-value form-group{{ $errors->has('batas_waktu') ? ' has-danger' : '' }}">
                                         <fieldset>
-                                            <input oninput="this.className = ''" name="batas_waktu" value="{{ old('batas_waktu') }}" type="date" class="form-control{{ $errors->has('batas_waktu') ? ' is-invalid' : '' }}" id="batas_waktu" placeholder="{{ __('Batas Waktu Penggalangan Dana') }}" required="">
+                                            <input oninput="this.className = ''" name="batas_waktu" value="{{ old('batas_waktu') }}" type="date" class="zoom-field-input form-control{{ $errors->has('batas_waktu') ? ' is-invalid' : '' }}" id="batas_waktu" required="">
+                                            <label class="zoom-field-label" for="batas_waktu">Batas waktu penggalangan dana</label>
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'batas_waktu'])
                                     </div>
@@ -74,8 +94,9 @@
                                 <div class="fit">
                                     <h5 class="padding-top-20">
                                     </h5>
-                                    <div class="file-upload">
-                                        <input style="padding-top: 10px;" type="file" class="form-control btn btn-sm" name="gambar" value="{{old('gambar')}}" onchange="readURL(this);" accept="image/*">
+                                    <div class="zoom-field-wrapper has-value file-upload">
+                                        <input style="padding-top: 10px;" id="gambar" type="file" class="zoom-field-input form-control btn btn-sm" name="gambar" value="{{old('gambar')}}" onchange="readURL(this);" accept="image/*">
+                                        <label class="zoom-field-label" for="gambar">Gambar untuk penggalangan dana</label>
                                         <div class="file-upload-content">
                                             <img class="file-upload-image" src="#" alt="your image" />
                                             <div class="image-title-wrap">
@@ -87,6 +108,7 @@
                             </div>
                             <div class="tab">
                                 <div class="fit">
+                                    <label for="cerita">Cerita penggalangan dana anda:</label>
                                     <div class="form-group{{ $errors->has('cerita') ? ' has-danger' : '' }}">
                                         <fieldset>
                                             <textarea oninput="this.className = ''" name="cerita" value="{{ old('cerita') }}" rows="6" class="form-control{{ $errors->has('cerita') ? ' is-invalid' : '' }} cerita" id="cerita" placeholder="Your Message" required=""></textarea>
@@ -98,8 +120,7 @@
                             <div class="tab">
                                 <div class="fit">
                                     <i class="fas fa-heart icon-gradient bg-tempting-azure" style="font-size:8rem;"></i>
-                                    <h5 class="padding-top-20">Terimakasih telah melakukan penggalangan dana menggunakan *namaapp*<br>
-                                        penggalangan dana anda akan ditinjau terlebih dahulu
+                                    <h5 class="padding-top-20">Terimakasih telah melakukan penggalangan dana menggunakan PeduliSantri                    penggalangan dana anda akan ditinjau terlebih dahulu
                                     </h5>
                                 </div>
                             </div>
@@ -109,7 +130,7 @@
                                 <button type="button" class="main-button" id="nextBtn" onclick="nextPrev(1)">Selanjutnya</button>
                                 </div>
                             </div>
-                            
+
                         </form>
                     </div>
                 </div>
@@ -120,8 +141,8 @@
                             <h6>Tips</h6>
                         </div>
                         <div class="create-sidebar-body tick padding-top-10">
-                        <h6>Anda selalu dapat mengubah jumlah nominal penggalangan dana nanti. Jika 
-                                anda tidak yakin harus mulai dari mana, sebagian besar penggalangan dana 
+                        <h6>Anda selalu dapat mengubah jumlah nominal penggalangan dana nanti. Jika
+                                anda tidak yakin harus mulai dari mana, sebagian besar penggalangan dana
                                 memiliki sasaran/target Rp. 10.000.000</h6><br>
                         <h6>Untuk mendapatkan dana yang anda inginkan, pastikan anda:</h6>
                         <ul>
