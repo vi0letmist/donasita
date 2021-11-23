@@ -92,9 +92,14 @@ class GaladanaController extends Controller
         //     }
         // }
 
-
+        $donasi = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
+                ->select('galadana.id','donates.*')
+                ->where('donates.status', 2)
+                ->latest('donates.updated_at')
+                ->getQuery()
+                ->get();
         // Return the search view with the resluts compacted
-        return view('search', compact('galadana'));
+        return view('search', compact('galadana','donasi'));
     }
     public function load_galadana_search(Request $request)
     {

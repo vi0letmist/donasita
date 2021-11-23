@@ -21,7 +21,7 @@
 @if(Auth::check())
     <ul class="nav nav-page-left">
         <li>
-            <form action="{{route('search')}}" method="GET">
+            <form action="{{route('pencarian')}}" method="GET">
                 <div class="search-wrapper search active">
                     <div class="input-holder">
                         <input type="text" class="search-input" name="search" placeholder="Ketik untuk mencari">
@@ -81,7 +81,7 @@
 @else
     <ul class="nav nav-page-left">
         <li>
-        <form action="{{route('search')}}" method="GET">
+        <form action="{{route('pencarian')}}" method="GET">
                 <div class="search-wrapper search active">
                     <div class="input-holder">
                         <input type="text" class="search-input" name="search" placeholder="Ketik untuk mencari">

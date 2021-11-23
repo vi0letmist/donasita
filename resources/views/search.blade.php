@@ -3,7 +3,7 @@
     'activePage' => 'post',
 ])
 @section('title')
-    <title>search</title>
+    <title>Pencarian</title>
 @endsection
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="{{ asset('js/share.js') }}"></script>
@@ -38,7 +38,13 @@
                     <div class="desc-ngitem">
                         {!! html_entity_decode(\Illuminate\Support\Str::limit($post->cerita, $limit = 80, $end = '...')) !!}
                     </div>
-                    <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->locale('id')->diffForHumans()}}</p>
+                    @if(!$donasi->isEmpty())
+                    @foreach($donasi as $d)
+                    @if($post->id == $d->galadana_id)
+                    <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
+                    @endif
+                    @endforeach
+                    @endif
                     <div class="bar">
                         <div class="progress-bar-xs progress">
                             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $post->progres_capaian / $post->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$post->progres_capaian / $post->target_capaian * 100}}%"></div>
@@ -61,5 +67,12 @@
         </div>
     </div>
 </section>
+@else
+    <div class="col-lg-12 col-md-12 col-sm-12 center-all padding-top-20">
+        <img src="{{ asset('assets') }}/images/inbox-empty-icon.png" width="200px">
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 center-all padding-bottom-20">
+        <h2 style="color:#dee2e6">Tidak ada data</h2>
+    </div>
 @endif
 @endsection

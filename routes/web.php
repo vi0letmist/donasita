@@ -37,7 +37,7 @@ Route::get('/donasi/intruksi/{id}', 'DonateController@intruksi')->name('donasi',
 Route::get('/donasi/bukti-pembayaran/{id}', 'DonateController@buktiPembayaran')->name('donasi','bukti-pembayaran');
 Route::get('/donasi/konfirmasi-donasi/{id}', 'DonateController@konfirmasiDonasi')->name('donasi','konfirmasi-donasi');
 Route::post('/donasi/upload-pembayaran/{id}', 'DonateController@uploadBukti')->name('donasi.uploadBukti');
-Route::get('search/', 'GaladanaController@search')->name('search');
+Route::get('pencarian/', 'GaladanaController@search')->name('pencarian');
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
