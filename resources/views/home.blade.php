@@ -47,7 +47,13 @@
                             <div class="desc-ngitem">
                             {!! html_entity_decode(\Illuminate\Support\Str::limit($l->cerita, $limit = 80, $end = '...')) !!}
                             </div>
-                            <!-- <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($l->created_at))->locale('id')->diffForHumans()}}</p> -->
+                            @if(!$donasi->isEmpty())
+                            @foreach($donasi as $d)
+                            @if($l->id == $d->galadana_id)
+                            <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
+                            @endif
+                            @endforeach
+                            @endif
                             <div class="bar">
                                 <div class="progress-bar-xs progress">
                                     <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $l->progres_capaian / $l->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$l->progres_capaian / $l->target_capaian * 100}}%"></div>
@@ -120,7 +126,7 @@
                         membantu mereka yang paling membutuhkannya.</p>
                         <p>Mulai PeduliSantri untuk mengumpulkan uang untuk membantu diri sendiri dan orang lain selama masa sulit ini. Baca posting blog kami
                         Penggalangan Dana untuk Coronavirus Relief: Bagaimana Anda Dapat Membantu Perjuangan untuk informasi lebih lanjut.</p>
-                        <a href="#" class="main-button">Mulai PeduliSantri</a>
+                        <a href="/galadana/create" class="main-button">Mulai PeduliSantri</a>
                     </div>
                 </div>
                 <!-- <div class="col-lg-1"></div> -->
@@ -147,7 +153,13 @@
                         <div class="desc-ngitem">
                         {!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}
                         </div>
-                        <!-- <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($g->created_at))->locale('id')->diffForHumans()}}</p> -->
+                        @if(!$donasi->isEmpty())
+                        @foreach($donasi as $d)
+                        @if($g->id == $d->galadana_id)
+                        <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
+                        @endif
+                        @endforeach
+                        @endif
                         <div class="bar">
                             <div class="progress-bar-xs progress">
                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $g->progres_capaian / $g->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$g->progres_capaian / $g->target_capaian * 100}}%"></div>

@@ -3498,7 +3498,7 @@ features-populer
 .features-populer-item .lastdonate {
   font-weight: 400;
   text-align: left;
-  padding: 10px 20px 5px 20px;
+  padding: 0 20px 5px 20px;
   font-size: 10px;
   color: #777;
   letter-spacing: 0.5px;

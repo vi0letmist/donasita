@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <a href="/home" class="logo">
-                    <img src="{{ asset('assets') }}/images/logo1.png" alt="Softy Pinko" style="width:10em;"/>
+                    <img src="{{ asset('assets') }}/images/logo1.png" alt="PeduliSantri" style="width:10em;"/>
                 </a>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9">
@@ -19,7 +19,7 @@
         </div>
         <div class="row copyright">
             <div class="col-lg-6 col-md-6 col-sm-6 left-all">
-                <p>Copyright &copy; 2021 *Nama App* - Jaffar Jatmiko Jati</p>
+                <p>Copyright &copy; 2021 PeduliSantri - Jaffar Jatmiko Jati</p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 right-all">
                 <ul class="social">

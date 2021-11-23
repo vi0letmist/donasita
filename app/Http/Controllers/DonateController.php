@@ -29,6 +29,7 @@ class DonateController extends Controller
                 ->first();
         $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
                 ->where('donates.galadana_id','=',$galadana->id)
+                ->where('donates.status', 2)
                 ->select('galadana.*')
                 ->getQuery()
                 ->count();
@@ -49,6 +50,7 @@ class DonateController extends Controller
                 ->first();
         $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
                 ->where('galadana.id','=',$donasi->galadana_id)
+                ->where('donates.status', 2)
                 ->select('galadana.*')
                 ->getQuery()
                 ->count();
@@ -84,6 +86,7 @@ class DonateController extends Controller
                 ->first();
         $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
                 ->where('galadana.id','=',$donasi->galadana_id)
+                ->where('donates.status', 2)
                 ->select('galadana.*')
                 ->getQuery()
                 ->count();
@@ -104,6 +107,7 @@ class DonateController extends Controller
                 ->first();
         $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
                 ->where('galadana.id','=',$donasi->galadana_id)
+                ->where('donates.status', 2)
                 ->select('galadana.*')
                 ->getQuery()
                 ->count();

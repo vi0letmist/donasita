@@ -19,7 +19,7 @@ class Galadana extends Model
     {
         return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
     }
-    public function donate()
+    public function donates()
     {
         return $this->hasMany(Donate::class, 'id', 'galadana_id');
     }

@@ -29,12 +29,12 @@ class HomeController extends Controller
     {
         $latest = Galadana::latest()->where('status', '=', 1)->take(3)->get();
         $galadana = Galadana::latest()->where('status', '=', 1)->take(6)->get();
-        // $donasi = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
-        //         ->select('galadana.*','donates.created_at')
-        //         ->latest('galadana.created_at')
-        //         ->take(6)
-        //         ->getQuery()
-        //         ->get();
+        $donasi = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
+                ->select('galadana.id','donates.*')
+                ->where('donates.status', 2)
+                ->latest('donates.updated_at')
+                ->getQuery()
+                ->get();
         return view('home', compact('latest', 'galadana','donasi'));
     }
 }

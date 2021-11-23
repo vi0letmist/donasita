@@ -12,7 +12,13 @@
                     <div class="desc-ngitem">
                         {!! html_entity_decode(\Illuminate\Support\Str::limit($row->cerita, $limit = 80, $end = '...')) !!}
                     </div>
-                    <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($row->created_at))->locale('id')->diffForHumans()}}</p>
+                    @if(!$donasi->isEmpty())
+                    @foreach($donasi as $d)
+                    @if($row->id == $d->galadana_id)
+                    <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
+                    @endif
+                    @endforeach
+                    @endif
                     <div class="bar">
                         <div class="progress-bar-xs progress">
                             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $row->progres_capaian / $row->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$row->progres_capaian / $row->target_capaian * 100}}%"></div>

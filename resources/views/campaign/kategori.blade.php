@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="offset-xl-1 col-xl-6 offset-lg-1 col-lg-8 col-md-12 col-sm-12">
                         <h1><strong>Dapatkan Bantuan Untuk </strong><br><strong>Penggalangan Dana {{$kategori->nama}}</strong></h1>
-                        <p>Dengan PeduliSantri, Anda bisa mendapatkan bantuan dalam biaya {{$kategori->nama}}</p>
+                        <p>Dengan PeduliSantri, anda bisa mendapatkan bantuan dalam biaya {{$kategori->nama}}</p>
                         <a href="/galadana/create" class="main-button-slider">Mulai Galadana</a>
                     </div>
                 </div>

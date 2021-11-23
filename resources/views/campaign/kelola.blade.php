@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 sideRight">
                         <div class="padding-top-20 border-bottom-10">
-                            <h5>Kelola Penggalangan dana Anda</h5>
+                            <h5>Kelola Penggalangan dana anda</h5>
                         </div>
                         <div class="row kelolaAll">
                             <!-- ***** Features Small Item Start ***** -->

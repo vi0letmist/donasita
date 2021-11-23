@@ -31,7 +31,7 @@
                     <div class="offset-xl-1 col-xl-6 offset-lg-1 col-lg-8 col-md-12 col-sm-12">
                         <h1><strong>Temukan pengumpulan </strong><br><strong>dana di PeduliSantri</strong></h1>
                         <p>Bantu orang lain dengan menyumbang untuk <br> penggalangan dana mereka,
-                        atau mulai penggalangan <br> untuk seseorang yang Anda sayangi.</p>
+                        atau mulai penggalangan <br> untuk seseorang yang anda sayangi.</p>
                         <a href="#features" class="main-button-slider">Telusuri lebih jauh</a>
                     </div>
                 </div>

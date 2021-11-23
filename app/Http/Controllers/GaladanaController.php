@@ -45,6 +45,7 @@ class GaladanaController extends Controller
                 ->get();
         $sumDonasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
                 ->where('donates.galadana_id','=', $galadana->id)
+                ->where('donates.status',2)
                 ->select('galadana.*')
                 ->getQuery()
                 ->count();
@@ -114,7 +115,13 @@ class GaladanaController extends Controller
                 ->orderBy('id', 'DESC')->limit(6)->get();
             }
         }
-        return view('get-galadana-kategori', compact('data','search'));
+        $donasi = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
+                ->select('galadana.id','donates.*')
+                ->where('donates.status', 2)
+                ->latest('donates.updated_at')
+                ->getQuery()
+                ->get();
+        return view('get-galadana-kategori', compact('data','search','donasi'));
     }
     public function kategori($slug)
     {
@@ -149,7 +156,13 @@ class GaladanaController extends Controller
                 ->select('galadana.*')->orderBy('id', 'DESC')->limit(6)->get();
             }
         }
-        return view('get-galadana-kategori', compact('data','kategori'));
+        $donasi = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
+                ->select('galadana.id','donates.*')
+                ->where('donates.status', 2)
+                ->latest('donates.updated_at')
+                ->getQuery()
+                ->get();
+        return view('get-galadana-kategori', compact('data','kategori','donasi'));
     }
     public function load_komen(Request $request, $id)
     {
