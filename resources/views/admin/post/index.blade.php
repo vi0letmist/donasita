@@ -87,6 +87,11 @@
                             <span>Galadana yang sudah selesai</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-status-0">
+                            <span>Galadana ditolak</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -117,6 +122,27 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body"><h5 class="card-title">Galadana yang sudah selesai</h5>
                                     <table id="tableIndex2" class="mb-0 table table-hover" style="min-width:923px;">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Judul</th>
+                                            <th>Cerita</th>
+                                            <th>Oleh</th>
+                                            <th>Status</th>
+                                            <th>Created at</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tabs-animation fade" id="tab-content-status-0" role="tabpanel">
+                        <div class="col-lg-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Galadana ditolak</h5>
+                                    <table id="tableIndex3" class="mb-0 table table-hover" style="min-width:923px;">
                                         <thead>
                                         <tr>
                                             <th>No</th>
@@ -173,6 +199,34 @@
         serverSide: true,
         ajax: {
             url: "{{ url('post-status-2') }}",
+            type: 'GET',
+        },
+        columns: [
+           {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
+           { data: 'judul', name: 'judul' },
+           { data: 'cerita', name: 'cerita' },
+           { data: 'name', name: 'name' },
+           { data: 'status', name: 'status', orderable: false, searchable: false },
+           { data: 'created_at', name: 'created_at' },
+           { data: 'action', name: 'action', orderable: false, searchable: false }
+        ],
+        order: [[ 5, "desc" ]],
+        columnDefs: [
+            { "width": "2%", "targets": 0 },
+            { "width": "20%", "targets": 1 },
+            { "width": "25%", "targets": 2 },
+            { "width": "12%", "targets": 3 },
+            { "width": "8%", "targets": 4 },
+            { "width": "15%", "targets": 5 },
+            { "width": "20%", "targets": 6 }
+        ]
+       });
+
+       $('#tableIndex3').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ url('post-ditolak') }}",
             type: 'GET',
         },
         columns: [

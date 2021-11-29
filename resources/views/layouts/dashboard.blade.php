@@ -473,7 +473,13 @@
                                         Manajemen Post
                                     </a>
                                 </li>
-                                <li class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-active' : '' }}">
+                                <li>
+                                    <a href="/persetujuan-post" class="{{ Request::is('persetujuan-post') ? 'mm-active' : '' }}">
+                                        <i class="metismenu-icon pe-7s-check"></i>
+                                        Persetujuan Post
+                                    </a>
+                                </li>
+                                <!-- <li class="{{ Request::is('post-ditolak', 'persetujuan-post') ? 'mm-active' : '' }}">
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-check"></i>
                                         Persetujuan Post
@@ -493,7 +499,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li class="app-sidebar__heading">Kategori</li>
                                 <li>
                                     <a href="/manajemen-kategori">
