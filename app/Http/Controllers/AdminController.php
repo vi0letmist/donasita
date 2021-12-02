@@ -57,12 +57,10 @@ class AdminController extends Controller
     public function manageDonasi()
     {
         DB::statement(DB::raw('set @rownum=0'));
-        $donasi =  Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
-                ->join('users', 'users.id', '=', 'galadana.user_id')
-                ->where('donates.status','=',2)
+        $donasi =  Donate::where('donates.status','=', 2)
                 ->select([
                 DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-                'donates.*', 'galadana.judul', 'users.name'
+                'donates.*'
             ])->get();
         if(request()->ajax()) {
             return DataTables::of($donasi)
@@ -107,7 +105,11 @@ class AdminController extends Controller
             ->rawColumns(['komen', 'status','action'])
             ->make(true);
         }
-        return view ('admin.donasi.index', compact('donasi'));
+        $donate = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                ->join('users', 'users.id', '=', 'galadana.user_id')
+                ->select('donates.*', 'galadana.judul', 'users.name')
+                ->get();
+        return view ('admin.donasi.index', compact('donate'));
     }
     public function manageDonasi2()
     {
@@ -164,12 +166,10 @@ class AdminController extends Controller
     public function manageDonasi3()
     {
         DB::statement(DB::raw('set @rownum=0'));
-        $donasi =   Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
-                ->join('users', 'users.id', '=', 'galadana.user_id')
-                ->where('donates.status','=',3)
+        $donasi =   Donate::where('donates.status','=',3)
                 ->select([
                 DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-                'donates.*', 'galadana.judul', 'users.name'
+                'donates.*',
             ])->get();
         if(request()->ajax()) {
             return DataTables::of($donasi)
@@ -214,7 +214,6 @@ class AdminController extends Controller
             ->rawColumns(['komen', 'status', 'action'])
             ->make(true);
         }
-        return compact('donasi');
     }
     public function konfirmasiDonasi()
     {
@@ -278,14 +277,14 @@ class AdminController extends Controller
         $galadana = Galadana::findOrFail($donasi->galadana_id);
         $galadana->progres_capaian = ($galadana->progres_capaian + $donasi->nominal);
         $galadana->update();
-        return redirect()->back()->withStatus(__('approve'));
+        return redirect()->back()->withStatus(__('Donasi disetujui'));
     }
     public function declineDonasi($id)
     {
         $donasi = Donate::findOrFail($id);
         $donasi->status = 3;
         $donasi->update();
-        return redirect()->back()->withStatus(__('approve'));
+        return redirect()->back()->withStatus(__('Donasi ditolak'));
     }
     public function managepost()
     {
@@ -502,14 +501,14 @@ class AdminController extends Controller
         $galadana = Galadana::findOrFail($id);
         $galadana->status = 1;
         $galadana->save();
-        return redirect()->back()->withStatus(__('approve'));
+        return redirect()->back()->withStatus(__('Galadana disetujui'));
     }
     public function decline($id)
     {
         $galadana = Galadana::findOrFail($id);
         $galadana->status = 0;
         $galadana->save();
-        return redirect()->back()->withStatus(__('decline'));
+        return redirect()->back()->withStatus(__('Galadana ditolak'));
     }
     public function update(Request $request, $id)
     {

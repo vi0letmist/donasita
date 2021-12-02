@@ -16,7 +16,7 @@
                         </i>
                     </div>
                     <div>Manajemen Postingan Penggalangan Dana
-                        <div class="page-title-subheading">Halaman ini berisikan postingan-postingan penggalangan dana yang sudah disetujui oleh admin.
+                        <div class="page-title-subheading">Halaman ini berisi tentang semua yang berhubungan dengan postingan penggalangan dana, baik yang sedang berjalan, yang sudah selesei maupun penggalangan dana yang ditolak.
                         </div>
                     </div>
                 </div>

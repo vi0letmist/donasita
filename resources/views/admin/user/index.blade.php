@@ -3,7 +3,7 @@
     'activePage' => 'post',
 ])
 @section('title')
-    <title>Manajemen User Admin</title>
+    <title>Manajemen User</title>
 @endsection
 @section('manajemen-post','active')
 @section('content')
@@ -15,8 +15,8 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Manajemen User Admin
-                        <div class="page-title-subheading">Halaman ini berisikan mengenai user yang mempunyai role admin.
+                    <div>Manajemen User
+                        <div class="page-title-subheading">Halaman ini berisikan tabel user yaitu user dengan role admin dan role donatur.
                         </div>
                     </div>
                 </div>

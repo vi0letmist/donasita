@@ -15,8 +15,8 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Manajemen Donasi
-                        <div class="page-title-subheading">Halaman ini berisikan mengenai donasi-donasi yang sudah terjadi pada sistem ini.
+                    <div>Konfirmasi Donasi
+                        <div class="page-title-subheading">Halaman ini berisikan mengenai donasi yang membutuhkan konfirmasi.
                         </div>
                     </div>
                 </div>

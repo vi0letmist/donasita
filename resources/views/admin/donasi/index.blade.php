@@ -78,12 +78,12 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
                     <li class="nav-item">
-                        <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-status-2">
+                        <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-2">
                             <span>Donasi yang berhasil</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-status-3">
+                        <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-3">
                             <span>Donasi yang Batal</span>
                         </a>
                     </li>
@@ -91,7 +91,7 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="tab-content">
-                    <div class="tab-pane tabs-animation fade show active" id="tab-content-status-2" role="tabpanel">
+                    <div class="tab-pane tabs-animation fade show active" id="tab-content-2" role="tabpanel">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body"><h5 class="card-title">Donasi yang berhasil</h5>
@@ -103,7 +103,7 @@
                                             <th>Nominal</th>
                                             <th>Komen</th>
                                             <th>Status</th>
-                                            <th>Created at</th>
+                                            <th>Dibuat pada</th>
                                             <th>Aksi</th>
                                         </tr>
                                         </thead>
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane tabs-animation fade" id="tab-content-status-3" role="tabpanel">
+                    <div class="tab-pane tabs-animation fade" id="tab-content-3" role="tabpanel">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body"><h5 class="card-title">Donasi yang Batal</h5>
@@ -124,7 +124,7 @@
                                             <th>Nominal</th>
                                             <th>Komen</th>
                                             <th>Status</th>
-                                            <th>Created at</th>
+                                            <th>Dibuat pada</th>
                                             <th>Aksi</th>
                                         </tr>
                                         </thead>
@@ -194,7 +194,7 @@
      });
    </script>
 @endpush
-@foreach($donasi as $d)
+@foreach($donate as $d)
 <!-- Modal -->
 <div class="modal fade" id="exampleModal{{$d->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
