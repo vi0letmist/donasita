@@ -85,6 +85,7 @@
                                 <th>Nama</th>
                                 <th>Nominal</th>
                                 <th>Komen</th>
+                                <th>Status</th>
                                 <th>Created at</th>
                                 <th>Aksi</th>
                             </tr>
@@ -112,15 +113,17 @@
            { data: 'nama', name: 'nama' },
            { data: 'nominal', name: 'nominal', searchable: false },
            { data: 'komen', name: 'komen', searchable: false },
+           { data: 'status', name: 'status', searchable: false },
            { data: 'created_at', name: 'created_at', searchable: false },
            { data: 'action', name: 'action', orderable: false, searchable: false }
         ],
         order: [[ 4, "desc" ]],
         columnDefs: [
-            { "width": "30%", "targets": 1 },
-            { "width": "20%", "targets": 2 },
-            { "width": "30%", "targets": 3 },
-            { "width": "20%", "targets": 4 },
+            { "width": "10%", "targets": 1 },
+            { "width": "30%", "targets": 2 },
+            { "width": "20%", "targets": 3 },
+            { "width": "10%", "targets": 4 },
+            { "width": "30%", "targets": 5 },
         ]
        });
      });
@@ -133,7 +136,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="row">
-                    <div class="col-lg-2 offset-lg-10 col-md-2 offset-md-10 col-sm-2 offset-sm-10">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+                        <h5 class="modal-title">Detail Donasi</h5>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

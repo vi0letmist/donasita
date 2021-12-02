@@ -57,10 +57,12 @@ class AdminController extends Controller
     public function manageDonasi()
     {
         DB::statement(DB::raw('set @rownum=0'));
-        $donasi = Donate::where('donates.status','=',2)
+        $donasi =  Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                ->join('users', 'users.id', '=', 'galadana.user_id')
+                ->where('donates.status','=',2)
                 ->select([
                 DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-                'donates.*'
+                'donates.*', 'galadana.judul', 'users.name'
             ])->get();
         if(request()->ajax()) {
             return DataTables::of($donasi)
@@ -96,10 +98,16 @@ class AdminController extends Controller
                 $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
                 return $komen;
             })
-            ->rawColumns(['komen', 'status'])
+            ->addColumn('action', function($donasi){
+                $btn = '<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal'.$donasi->id.'">
+                <i class="pe-7s-info btn-icon-wrapper"> </i>
+                </button>';
+                return $btn;
+            })
+            ->rawColumns(['komen', 'status','action'])
             ->make(true);
         }
-        return view ('admin.donasi.index');
+        return view ('admin.donasi.index', compact('donasi'));
     }
     public function manageDonasi2()
     {
@@ -143,17 +151,25 @@ class AdminController extends Controller
                 $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
                 return $komen;
             })
-            ->rawColumns(['komen', 'status'])
+            ->addColumn('action', function($donasi){
+                $btn = '<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal'.$donasi->id.'">
+                <i class="pe-7s-info btn-icon-wrapper"> </i>
+                </button>';
+                return $btn;
+            })
+            ->rawColumns(['komen', 'status','action'])
             ->make(true);
         }
     }
     public function manageDonasi3()
     {
         DB::statement(DB::raw('set @rownum=0'));
-        $donasi = Donate::where('donates.status','=',3)
+        $donasi =   Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
+                ->join('users', 'users.id', '=', 'galadana.user_id')
+                ->where('donates.status','=',3)
                 ->select([
                 DB::raw('@rownum  := @rownum  + 1 AS rownum'),
-                'donates.*'
+                'donates.*', 'galadana.judul', 'users.name'
             ])->get();
         if(request()->ajax()) {
             return DataTables::of($donasi)
@@ -189,9 +205,16 @@ class AdminController extends Controller
                 $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
                 return $komen;
             })
-            ->rawColumns(['komen', 'status'])
+            ->addColumn('action', function($donasi){
+                $btn = '<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal'.$donasi->id.'">
+                <i class="pe-7s-info btn-icon-wrapper"> </i>
+                </button>';
+                return $btn;
+            })
+            ->rawColumns(['komen', 'status', 'action'])
             ->make(true);
         }
+        return compact('donasi');
     }
     public function konfirmasiDonasi()
     {
@@ -218,6 +241,23 @@ class AdminController extends Controller
             ->addColumn('komen', function($donasi){
                 $komen = (\Illuminate\Support\Str::limit(html_entity_decode($donasi->komen), $limit = 40, $end = "..."));
                 return $komen;
+            })->addColumn('status', function($donasi){
+                if($donasi->status == 0){
+                    $status = '<div class="mb-2 mr-2 badge badge-success">Tertunda</div>';
+                    return $status;
+                }
+                elseif($donasi->status == 1){
+                    $status = '<div class="mb-2 mr-2 badge badge-primary">Menunggu Konfirmasi</div>';
+                    return $status;
+                }
+                elseif($donasi->status == 2){
+                    $status = '<div class="mb-2 mr-2 badge badge-success">Berhasil</div>';
+                    return $status;
+                }
+                elseif($donasi->status == 3){
+                    $status = '<div class="mb-2 mr-2 badge badge-danger">Batal</div>';
+                    return $status;
+                }
             })
             ->addColumn('action', function($donasi){
                 $btn = '<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal'.$donasi->id.'">
@@ -225,7 +265,7 @@ class AdminController extends Controller
                 </button>';
                 return $btn;
             })
-            ->rawColumns(['komen', 'action'])
+            ->rawColumns(['komen', 'action', 'status'])
             ->make(true);
         }
         return view ('admin.donasi.konfirmasi-donasi', compact('donasi'));
@@ -546,9 +586,8 @@ class AdminController extends Controller
             ->rawColumns(['action'])
             ->make(true);
         }
-        return view ('admin.user.pengguna');
     }
-    public function useradmin()
+    public function manajemenuser()
     {
         DB::statement(DB::raw('set @rownum=0'));
         $user = User::where('role', '=', 'admin')
@@ -574,6 +613,6 @@ class AdminController extends Controller
             ->rawColumns(['action'])
             ->make(true);
         }
-        return view ('admin.user.admin');
+        return view ('admin.user.index');
     }
 }

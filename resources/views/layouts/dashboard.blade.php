@@ -502,26 +502,32 @@
                                 </li> -->
                                 <li class="app-sidebar__heading">Kategori</li>
                                 <li>
-                                    <a href="/manajemen-kategori">
+                                    <a href="/manajemen-kategori" class="{{ Request::is('manajemen-kategori') ? 'mm-active' : '' }}">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Manajemen Kategori
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">Donasi</li>
                                 <li>
-                                    <a href="/manajemen-donasi">
+                                    <a href="/manajemen-donasi" class="{{ Request::is('manajemen-donasi') ? 'mm-active' : '' }}">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Manajemen Donasi
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/konfirmasi-donasi">
+                                    <a href="/konfirmasi-donasi" class="{{ Request::is('konfirmasi-donasi') ? 'mm-active' : '' }}">
                                         <i class="metismenu-icon pe-7s-check"></i>
                                         Konfirmasi Donasi
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">User</li>
-                                <li class="{{ Request::is('user-admin', 'user-pengguna') ? 'mm-active' : '' }}">
+                                <li>
+                                    <a href="/manajemen-user" class="{{ Request::is('manajemen-user') ? 'mm-active' : '' }}">
+                                        <i class="metismenu-icon pe-7s-check"></i>
+                                        Manajemen User
+                                    </a>
+                                </li>
+                                <!-- <li class="{{ Request::is('user-admin', 'user-pengguna') ? 'mm-active' : '' }}">
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Manajemen User
@@ -541,7 +547,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>

@@ -129,7 +129,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="row">
-                    <div class="col-lg-2 offset-lg-10 col-md-2 offset-md-10 col-sm-2 offset-sm-10">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+                        <h5 class="modal-title">Detail penggalangan dana</h5>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

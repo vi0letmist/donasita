@@ -75,21 +75,61 @@
         @include('alerts.success')
         @include('alerts.errors')
         <div class="row">
-            <div class="col-lg-12">
-                <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Tabel Admin</h5>
-                        <table id="tableIndex" class="mb-0 table table-hover">
-                            <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Email</th>
-                                <th>role</th>
-                                <th>Aksi</th>
-                            </tr>
-                            </thead>
-                        </table>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-1">
+                            <span>User Admin</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-2">
+                            <span>User Donatur</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="tab-content">
+                    <div class="tab-pane tabs-animation fade show active" id="tab-content-1" role="tabpanel">
+                        <div class="col-lg-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Tabel Admin</h5>
+                                    <table id="tableIndex" class="mb-0 table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Email</th>
+                                            <th>role</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="tab-pane tabs-animation fade" id="tab-content-2" role="tabpanel">
+                        <div class="col-lg-12">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Tabel Donatur</h5>
+                                    <table id="tableIndex2" class="mb-0 table table-hover" style="min-width:923px;">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Email</th>
+                                            <th>role</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -102,7 +142,29 @@
         processing: true,
         serverSide: true,
         ajax: {
-            url: "{{ url('user-admin') }}",
+            url: "{{ url('manajemen-user') }}",
+            type: 'GET',
+        },
+        columns: [
+           {data: 'rownum', name: 'rownum', orderable: true, searchable: false},
+           { data: 'name', name: 'name' },
+           { data: 'email', name: 'email' },
+           { data: 'role', name: 'role' },
+           { data: 'action', name: 'action', orderable: false, searchable: false }
+        ],
+        order: [[ 4, "desc" ]],
+        columnDefs: [
+            { "width": "25%", "targets": 1 },
+            { "width": "30%", "targets": 2 },
+            { "width": "25%", "targets": 3 },
+            { "width": "20%", "targets": 4 }
+        ]
+       });
+       $('#tableIndex2').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ url('user-pengguna') }}",
             type: 'GET',
         },
         columns: [
