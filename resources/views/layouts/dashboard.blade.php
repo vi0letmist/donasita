@@ -681,6 +681,43 @@
                   });
               });
             //   enddelete
+             //   startdelete kategori
+             $('body').on('click','.deleteUser', function(e){
+                  e.preventDefault();
+                  var delete_id = $(this).closest("tr").find('.deleteUserId').val();
+                  swal({
+                      title: "Anda yakin?",
+                      text: "Anda tidak akan bisa mengembalikannya lagi",
+                      icon: "warning",
+                      buttons: true,
+                      daggerMode:true,
+                      buttons: true,
+                      confirmButtonText: "Yes",
+                      cancelButtonText: "No",
+                      closeModal: false,
+                      closeModal: false
+                  })
+                  .then((willDelete) => {
+                      if(willDelete){
+                          var data = {
+                            "_token": $('input[name=_token]').val(),
+                            "id_lomba": delete_id,
+                            "_method": "DELETE"
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "/manajemen-user/"+delete_id+"/hapus",
+                            data: data,
+                            success: function(){
+                                swal("Terhapus", "User tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
+                            }
+                        });
+                      }else{
+                        swal("Batal dihapus!", "Data aman di database.", "error");
+                      }
+                  });
+              });
+            //   enddelete
               });
           </script>
 </body>

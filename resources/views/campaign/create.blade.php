@@ -78,7 +78,7 @@
                                         @endforeach
                                         </select>
                                         <label class="zoom-field-label" for="kategori">Kategori penggalangan dana</label>
-                                        @include('alerts.feedback', ['field' => 'rak'])
+                                        @include('alerts.feedback', ['field' => 'kategori'])
                                         </input>
                                     </div>
                                     <div class="zoom-field-wrapper has-value form-group{{ $errors->has('batas_waktu') ? ' has-danger' : '' }}">

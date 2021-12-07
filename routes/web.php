@@ -78,6 +78,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/manajemen-kategori/{id}/hapus','KategoriController@delete')->name('manajemen-kategori.destroy');
     Route::get('user-pengguna', 'AdminController@userpengguna')->name('user-pengguna');
     Route::get('manajemen-user', 'AdminController@manajemenuser')->name('manajemen-user');
+    Route::get('manajemen-user/{id}/ubah', 'AdminController@editUser')->name('manajemen-user.edit');
+    Route::put('manajemen-user/{id}', ['as' => 'manajemen-user.update', 'uses' => 'AdminController@updateUser']);
+    Route::delete('/manajemen-user/{id}/hapus','UserController@delete')->name('manajemen-user.destroy');
 });
 // Route::group(['middleware' => Auth::user()->role('pengguna')], function () {
 // });

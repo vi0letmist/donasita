@@ -66,4 +66,9 @@ class UserController extends Controller
 
         return redirect('/kelola/umum')->withStatus(__('Kata sandi berhasil diubah'));
     }
+    public function delete($id)
+    {
+        User::destroy($id);
+        return redirect()->back()->withStatus(__('User berhasil dihapus'));
+    }
 }

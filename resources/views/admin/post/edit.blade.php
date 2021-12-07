@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group{{ $errors->has('judul') ? ' has-danger' : '' }} position-relative">
-                                        <label class="form-control-label" for="input-judul">{{ __('Judul *  ') }}</label>
+                                        <label class="form-control-label" for="judul">{{ __('Judul *  ') }}</label>
                                         <fieldset>
                                             <input name="judul" value="{{ old('name', $galadana->judul) }}" type="text" class="form-control" id="judul">
                                         </fieldset>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group{{ $errors->has('slug') ? ' has-danger' : '' }} position-relative">
-                                        <label class="form-control-label" for="input-judul">{{ __('Slug *  ') }}</label>
+                                        <label class="form-control-label" for="slug">{{ __('Slug *  ') }}</label>
                                         <fieldset>
                                             <input name="slug" value="{{ old('name', $galadana->slug) }}" type="text" class="form-control" id="slug">
                                         </fieldset>
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group{{ $errors->has('target_capaian') ? ' has-danger' : '' }} position-relative">
-                                        <label class="form-control-label" for="input-target-capaian">{{ __('Target Capaian *  ') }}</label>
+                                        <label class="form-control-label" for="target_capaian">{{ __('Target Capaian *  ') }}</label>
                                         <fieldset>
                                             <input name="target_capaian" value="{{ old('name', $galadana->target_capaian) }}" type="text" class="form-control" id="target_capaian">
                                         </fieldset>
@@ -79,16 +79,32 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group{{ $errors->has('progres_capaian') ? ' has-danger' : '' }} position-relative">
-                                        <label class="form-control-label" for="input-progres-capaian">{{ __('Progres Capaian *  ') }}</label>
+                                        <label class="form-control-label" for="progres_capaian">{{ __('Progres Capaian *  ') }}</label>
                                         <fieldset>
                                             <input name="progres_capaian" value="{{ old('name', $galadana->progres_capaian) }}" type="text" class="form-control" id="progres_capaian">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'progres_capaian'])
                                     </div>
                                 </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group{{ $errors->has('kategori') ? ' has-danger' : '' }} position-relative">
+                                        <label class="form-control-label" for="kategori">{{ __('Kategori *  ') }}</label>
+                                        <fieldset>
+                                            <select name="kategori" id="kategori" class="form-control">
+                                            @foreach ($kategori as $k)
+                                                <option class="zoom-field-input" id="kategori" value="{{$k->id}}"
+                                                @if($k->id == old('kategori', $galadana->kategori_id))
+                                                selected="selected"
+                                                @endif>{{$k->nama}}</option>
+                                            @endforeach
+                                            </select>
+                                        </fieldset>
+                                        @include('alerts.feedback', ['field' => 'kategori'])
+                                    </div>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group{{ $errors->has('cerita') ? ' has-danger' : '' }} position-relative">
-                                        <label class="form-control-label" for="input-cerita">{{ __('Cerita *  ') }}</label>
+                                        <label class="form-control-label" for="cerita">{{ __('Cerita *  ') }}</label>
                                         <fieldset>
                                             <textarea name="cerita" value="{{ old('cerita') }}" rows="6" class="cerita" id="cerita">
                                                 {{ old('name',$galadana->cerita) }}

@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\User;
 use App\Galadana;
 use App\Donate;
+use App\Kategori;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 
@@ -397,7 +398,8 @@ class AdminController extends Controller
     public function edit($slug)
     {
         $galadana = Galadana::where('slug', $slug)->first();
-        return view('admin.post.edit', compact('galadana'));
+        $kategori = Kategori::all();
+        return view('admin.post.edit', compact('galadana','kategori'));
     }
     public function show($slug)
     {
@@ -520,6 +522,7 @@ class AdminController extends Controller
         $galadana->slug = $request->slug;
         $galadana->cerita = $request->cerita;
         $galadana->target_capaian = $request->target_capaian;
+        $galadana->kategori_id = $request->kategori;
 
         if ($request->gambar != null) {
             $target = base_path('public/images');
@@ -571,15 +574,15 @@ class AdminController extends Controller
             return DataTables::of($user)
             ->addIndexColumn()
             ->addColumn('action', function($user){
-                $editUrl = route('manajemen-post.edit', $user->id);
-                $showUrl = route('manajemen-post.show', $user->id);
-                $btn = '<a href="'.$editUrl.'">
+                $input = '<input type="hidden" class="deleteUserId" value="'.$user->id.'">';
+                $editUrl = route('manajemen-user.edit', $user->id);
+                $btn = $input.'<a href="'.$editUrl.'">
                 <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-note btn-icon-wrapper"> </i></button>
                 </a>';
-                $btn = $btn.'<a href="'.$showUrl.'">
-                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                </a>';
-                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteGaladana"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal'.$user->id.'">
+                <i class="pe-7s-info btn-icon-wrapper"> </i>
+                </button>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteUser"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>';
                 return $btn;
             })
             ->rawColumns(['action'])
@@ -598,20 +601,54 @@ class AdminController extends Controller
             return DataTables::of($user)
             ->addIndexColumn()
             ->addColumn('action', function($user){
-                $editUrl = route('manajemen-post.edit', $user->id);
-                $showUrl = route('manajemen-post.show', $user->id);
-                $btn = '<a href="'.$editUrl.'">
+                $input = '<input type="hidden" class="deleteUserId" value="'.$user->id.'">';
+                $editUrl = route('manajemen-user.edit', $user->id);
+                $btn = $input.'<a href="'.$editUrl.'">
                 <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-success"><i class="pe-7s-note btn-icon-wrapper"> </i></button>
                 </a>';
-                $btn = $btn.'<a href="'.$showUrl.'">
-                <button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                </a>';
-                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteGaladana"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal'.$user->id.'">
+                <i class="pe-7s-info btn-icon-wrapper"> </i>
+                </button>';
+                $btn = $btn.'<button class="mr-2 btn-icon btn-icon-only btn btn-sm btn-outline-danger deleteUser"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>';
                 return $btn;
             })
             ->rawColumns(['action'])
             ->make(true);
         }
-        return view ('admin.user.index');
+        $userAll = User::all();
+        return view ('admin.user.index', compact('userAll'));
+    }
+    public function editUser($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.user.edit', compact('user'));
+    }
+    public function updateUser(Request $request, $id)
+    {
+        $this->validate($request, [
+            'no_hp' => 'nullable',
+        ]);
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->no_hp = $request->no_hp;
+        $user->role = $request->role;
+
+        if ($request->foto_profil != null) {
+            $target = base_path('public/assets/images/avatars');
+
+            //code for remove old file
+            if($user->user != ''  && $user->foto_profil != null){
+                 $file_old = $target.$user->foto_profil;
+                 unlink($file_old);
+            }
+            $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
+            $user->foto_profil = $cover;
+            $request->file('foto_profil')->move($target, $cover);
+        }
+
+        $user->update();
+
+        return redirect('/manajemen-user')->withStatus(__('User berhasil diupdate'));
     }
 }
