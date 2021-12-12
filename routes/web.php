@@ -57,6 +57,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('kelola/{slug}', ['as' => 'kelola.update', 'uses' => 'GaladanaController@update']);
     Route::get('/dashboard', 'AdminController@index')->name('dashboard');
     Route::get('/profil', 'AdminController@profile')->name('profil');
+    Route::get('/profil/ganti-sandi/', 'AdminController@ganSandi')->name('profil.ganti-sandi');
+    Route::post('ganti-sandi', 'AdminController@changePass')->name('profil.password');
     Route::get('/layout', 'AdminController@layout')->name('layout');
     Route::get('manajemen-donasi', 'AdminController@manageDonasi')->name('manajemen-donasi');
     Route::get('konfirmasi-donasi', 'AdminController@konfirmasiDonasi')->name('konfirmasi-donasi');

@@ -32,7 +32,7 @@
         <div class="col-md-6 col-xl-12">
             <div class="main-card mb-3 card">
                 <div class="card-body">
-                    <h5 class="header-title">Statistik Unggahan</h5>
+                    <h5 class="header-title">Biodata</h5>
                     <form id="profilForm" method="POST" action="{{ route('user.update', Auth::user()->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('put')
@@ -70,6 +70,7 @@
                                 </div>
                                 <input name="role" type="hidden" class="form-control" id="role" value="{{ old('name', Auth::user()->role) }}">
                                 <div class="right-all">
+                                    <a href="/profil/ganti-sandi" class="mt-1 btn btn-light" style="margin-right:10px;">Ganti Sandi</a>
                                     <button class="mt-1 btn btn-primary" type="submit" id="form-submit">Submit</button>
                                 </div>
                             </div>

@@ -114,7 +114,7 @@
 
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             <a href="/profil">
-                                                <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                                <button type="button" tabindex="0" class="dropdown-item">Profil</button>
                                             </a>
                                             <div tabindex="-1" class="dropdown-divider"></div>
                                             <button type="button" tabindex="0" class="dropdown-item" onclick="event.preventDefault();
@@ -681,7 +681,7 @@
                   });
               });
             //   enddelete
-             //   startdelete kategori
+             //   startdelete user
              $('body').on('click','.deleteUser', function(e){
                   e.preventDefault();
                   var delete_id = $(this).closest("tr").find('.deleteUserId').val();

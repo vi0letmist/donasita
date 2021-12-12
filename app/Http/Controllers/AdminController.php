@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\User;
 use App\Galadana;
@@ -11,6 +12,7 @@ use App\Donate;
 use App\Kategori;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
+use App\Rules\MatchOldPassword;
 
 class AdminController extends Controller
 {
@@ -650,5 +652,20 @@ class AdminController extends Controller
         $user->update();
 
         return redirect('/manajemen-user')->withStatus(__('User berhasil diupdate'));
+    }
+    public function ganSandi(){
+        $user = User::where('id', Auth::user()->id)->first();
+        return view('admin.ganti-sandi', compact('user'));
+    }
+    public function changePass(Request $request){
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+
+        return redirect('/profil')->withStatus(__('Kata sandi berhasil diubah'));
     }
 }
