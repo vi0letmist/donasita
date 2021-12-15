@@ -37,6 +37,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="row">
                     @foreach($latest as $l)
+                    @if($l->id == $popularity[0] || $l->id == $popularity[1] || $l->id == $popularity[2])
                     <!-- ***** Features Small Item Start ***** -->
                     <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$l->slug}}';" style="cursor: pointer;">
                         <div class="features-populer-item">
@@ -51,6 +52,7 @@
                             @foreach($donasi as $d)
                             @if($l->id == $d->galadana_id)
                             <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
+                            @break
                             @endif
                             @endforeach
                             @endif
@@ -71,6 +73,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     @endforeach
                     <!-- ***** Features Small Item End ***** -->
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-bottom-40 right-all">
@@ -157,6 +160,7 @@
                         @foreach($donasi as $d)
                         @if($g->id == $d->galadana_id)
                         <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
+                        @break
                         @endif
                         @endforeach
                         @endif

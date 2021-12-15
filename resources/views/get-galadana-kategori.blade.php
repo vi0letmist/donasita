@@ -16,6 +16,7 @@
                     @foreach($donasi as $d)
                     @if($row->id == $d->galadana_id)
                     <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
+                    @break
                     @endif
                     @endforeach
                     @endif

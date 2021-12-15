@@ -3,7 +3,7 @@
     'activePage' => 'post',
 ])
 @section('title')
-    <title>Profil</title>
+    <title>Ganti Sandi Admin</title>
     <style>
         .foto_profil img {
             max-width: 200px !important;
