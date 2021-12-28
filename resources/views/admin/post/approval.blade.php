@@ -160,6 +160,10 @@
                                 <strong>Target pencapaian donasi: </strong><br>
                                 @currency($g->target_capaian)
                             </div>
+                            <div class="form-group">
+                                <strong>Dibuat pada: </strong><br>
+                                {{ \Carbon\Carbon::parse($g->created_at)->locale('id')->isoFormat('LLL') }}
+                            </div>
                         </div>
                         <div class="col-lg-12">
 

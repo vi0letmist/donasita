@@ -63,6 +63,10 @@
                                     <strong>Target pencapaian donasi: </strong><br>
                                     @currency($galadana->target_capaian)
                                 </div>
+                                <div class="form-group">
+                                    <strong>Dibuat pada: </strong><br>
+                                    {{ \Carbon\Carbon::parse($galadana->created_at)->locale('id')->isoFormat('LLL') }}
+                                </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
 
