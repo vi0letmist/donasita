@@ -6,7 +6,10 @@
     <title>Ganti Sandi Admin</title>
     <style>
         .foto_profil img {
-            max-width: 200px !important;
+            max-width: 300px !important;
+            clip-path: circle();
+            border-radius: 50%;
+            width:100%;
         }
     </style>
 @endsection

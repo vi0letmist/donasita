@@ -5,8 +5,11 @@
 @section('title')
     <title>Profil</title>
     <style>
-        .foto_profil img {
-            max-width: 200px !important;
+        .foto-profil img {
+            max-width: 300px !important;
+            clip-path: circle();
+            border-radius: 50%;
+            width:100%;
         }
     </style>
 @endsection
@@ -40,7 +43,7 @@
                             <div class="col-xl-4 col-md-12 col-sm-12">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 center-all padding-top-20">
-                                        <div class="foto_profil">
+                                        <div class="foto-profil">
                                             <img width="200" class="rounded-circle" src="{{ asset('assets') }}/images/avatars/{{Auth::user()->foto_profil}}" alt="foto profil" class="img-fluid">
                                         </div>
                                     </div>
@@ -71,7 +74,7 @@
                                 <input name="role" type="hidden" class="form-control" id="role" value="{{ old('name', Auth::user()->role) }}">
                                 <div class="right-all">
                                     <a href="/profil/ganti-sandi" class="mt-1 btn btn-light" style="margin-right:10px;">Ganti Sandi</a>
-                                    <button class="mt-1 btn btn-primary" type="submit" id="form-submit">Submit</button>
+                                    <button class="mt-1 btn btn-primary" type="submit" id="form-submit">Kirim</button>
                                 </div>
                             </div>
                         </div>

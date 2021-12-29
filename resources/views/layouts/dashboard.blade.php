@@ -51,9 +51,10 @@
 <link href="{{ asset('assets') }}/css/datatables.min.css" rel="stylesheet">
 <style>
     .foto_profil img{
-        max-width: 60px;
+        max-width: 60px !important;
         clip-path: circle();
         border-radius: 50%;
+        width:100%;
     }
 </style>
 </head>

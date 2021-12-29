@@ -7,10 +7,11 @@
 @endsection
 @section('manajemen-post','active')
 <style>
-    .foto_profil img{
-        max-width: 300px !important;
+    .foto-profil img{
+        max-width: 400px !important;
         clip-path: circle();
         border-radius: 50%;
+        width:100%;
     }
 </style>
 @section('content')
@@ -23,7 +24,7 @@
                         </i>
                     </div>
                     <div>Manajemen User
-                        <div class="page-title-subheading">Halaman ini berisikan tabel user yaitu user dengan role admin dan role donatur.
+                        <div class="page-title-subheading">Halaman ini berisikan tabel user yaitu user dengan role admin dan role pengguna.
                         </div>
                     </div>
                 </div>
@@ -91,7 +92,7 @@
                     </li>
                     <li class="nav-item">
                         <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-2">
-                            <span>User Donatur</span>
+                            <span>User Pengguna </span>
                         </a>
                     </li>
                 </ul>
@@ -120,7 +121,7 @@
                     <div class="tab-pane tabs-animation fade" id="tab-content-2" role="tabpanel">
                         <div class="col-lg-12">
                             <div class="main-card mb-3 card">
-                                <div class="card-body"><h5 class="card-title">Tabel Donatur</h5>
+                                <div class="card-body"><h5 class="card-title">Tabel Pengguna</h5>
                                     <table id="tableIndex2" class="mb-0 table table-hover" style="min-width:923px;">
                                         <thead>
                                         <tr>
@@ -214,7 +215,7 @@
                 <div class="modal-body scrollbar-container ps--active-y">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 no-padding">
-                            <div class="foto_profil">
+                            <div class="foto-profil">
                                 <img src="{{URL::asset('/assets/images/avatars/' . $u->foto_profil)}}" alt="foto_profil">
                             </div>
                         </div>
@@ -226,6 +227,10 @@
                             <div class="form-group">
                                 <strong>Email: </strong><br>
                                 {{$u->email}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Role: </strong><br>
+                                {{$u->role}}
                             </div>
                             <div class="form-group">
                                 <strong>Nomer Handphone: </strong><br>

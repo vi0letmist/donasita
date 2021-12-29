@@ -5,6 +5,11 @@
 @section('title')
     <title>Konfirmasi Donasi</title>
 @endsection
+<style>
+    .modal-content{
+        padding-bottom: 10px !important;
+    }
+</style>
 @section('manajemen-post','active')
 @section('content')
     <div class="app-main__inner">
@@ -167,6 +172,16 @@
                                 <strong>Nominal Donasi: </strong><br>
                                 @currency($d->nominal)
                             </div>
+                            <div class="form-group">
+                                <strong>Dibuat pada: </strong><br>
+                                {{ \Carbon\Carbon::parse($d->created_at)->locale('id')->isoFormat('LLL') }}
+                            </div>
+                            @if($d->komen != NULL)
+                            <div class="form-group">
+                                <strong>Komen: </strong><br>
+                                {{$d->komen}}
+                            </div>
+                            @endif
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
@@ -178,15 +193,13 @@
                                 {{$d->name}}
                             </div>
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 center-all">
-                            <a href="/konfirmasi-donasi/approve/{{$d->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
-                            <a href="/konfirmasi-donasi/decline/{{$d->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
-                        </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="modal-footer">
-            </div> -->
+            <div class="modal-footer">
+                <a href="/konfirmasi-donasi/decline/{{$d->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
+                <a href="/konfirmasi-donasi/approve/{{$d->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
+            </div>
         </div>
     </div>
 </div>

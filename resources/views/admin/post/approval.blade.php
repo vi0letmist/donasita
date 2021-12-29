@@ -15,6 +15,9 @@
             max-width: 100% !important;
             height: auto !important;
         }
+        .modal-content{
+            padding-bottom: 10px !important;
+        }
     </style>
     <div class="app-main__inner">
         <div class="app-page-title">
@@ -174,12 +177,16 @@
                                 </text>
                             </div>
                         </div>
+                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 center-all">
+
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <!-- <div class="modal-footer">
-
-            </div> -->
+            <div class="modal-footer">
+                <a href="/persetujuan-post/decline/{{$g->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
+                <a href="/persetujuan-post/approve/{{$g->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
+            </div>
         </div>
     </div>
 </div>

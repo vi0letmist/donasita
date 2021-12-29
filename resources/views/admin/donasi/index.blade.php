@@ -233,9 +233,15 @@
                                 @currency($d->nominal)
                             </div>
                             <div class="form-group">
-                                <strong>Dibuat pada: </strong><br>
-                                {{ \Carbon\Carbon::parse($d->created_at)->locale('id')->isoFormat('LLL') }}
+                                <strong>Disetujui pada: </strong><br>
+                                {{ \Carbon\Carbon::parse($d->updated_at)->locale('id')->isoFormat('LLL') }}
                             </div>
+                            @if($d->komen != NULL)
+                            <div class="form-group">
+                                <strong>Komen: </strong><br>
+                                {{$d->komen}}
+                            </div>
+                            @endif
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
@@ -247,7 +253,7 @@
                                 {{$d->name}}
                             </div>
                         </div>
-                        @if($d->status == 1)
+                        <!-- @if($d->status == 1)
                         <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                             <a href="/konfirmasi-donasi/approve/{{$d->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
                             <a href="/konfirmasi-donasi/decline/{{$d->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
@@ -256,12 +262,20 @@
                         <div>
 
                         </div>
-                        @endif
+                        @endif -->
                     </div>
                 </div>
             </div>
-            <!-- <div class="modal-footer">
-            </div> -->
+            @if($d->status == 1)
+            <div class="modal-footer" style="padding-bottom: 20px !important;">
+                <a href="/konfirmasi-donasi/decline/{{$d->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
+                <a href="/konfirmasi-donasi/approve/{{$d->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
+            </div>
+            @else
+            <div>
+
+            </div>
+            @endif
         </div>
     </div>
 </div>
