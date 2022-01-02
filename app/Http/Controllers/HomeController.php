@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $latest = Galadana::where('status', '=', 1)->get();
+        $galadana = Galadana::where('status', '=', 1)->get();
         $popularity = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
                 ->select('galadana_id', DB::raw('count(*) as gon_count'))
                 ->where('galadana.status', 1)
@@ -36,7 +36,7 @@ class HomeController extends Controller
                 ->groupBy('galadana_id')
                 ->orderByDesc('gon_count')
                 ->pluck('galadana_id');
-        $galadana = Galadana::latest()->where('status', '=', 1)->take(6)->get();
+        $latest = Galadana::latest()->where('status', '=', 1)->take(6)->get();
         $donasi = Galadana::join('donates', 'donates.galadana_id', '=', 'galadana.id')
                 ->select('galadana.id','donates.*')
                 ->where('donates.status', 2)

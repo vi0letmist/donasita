@@ -36,21 +36,21 @@
         <div class="container">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="row">
-                    @foreach($latest as $l)
-                    @if($l->id == $popularity[0] || $l->id == $popularity[1] || $l->id == $popularity[2])
+                    @foreach($galadana as $g)
+                    @if($g->id == $popularity[0] || $g->id == $popularity[1] || $g->id == $popularity[2])
                     <!-- ***** Features Small Item Start ***** -->
-                    <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$l->slug}}';" style="cursor: pointer;">
+                    <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$g->slug}}';" style="cursor: pointer;">
                         <div class="features-populer-item">
-                            <div class="populer" style="background-image: url(../images/{{$l->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
+                            <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
 
                             </div>
-                            <h5 class="features-title"><b>{{$l->judul}}</b></h5>
+                            <h5 class="features-title"><b>{{$g->judul}}</b></h5>
                             <div class="desc-ngitem">
-                            {!! html_entity_decode(\Illuminate\Support\Str::limit($l->cerita, $limit = 80, $end = '...')) !!}
+                            {!! html_entity_decode(\Illuminate\Support\Str::limit($g->cerita, $limit = 80, $end = '...')) !!}
                             </div>
                             @if(!$donasi->isEmpty())
                             @foreach($donasi as $d)
-                            @if($l->id == $d->galadana_id)
+                            @if($g->id == $d->galadana_id)
                             <p class="lastdonate">donasi terakhir {{\Carbon\Carbon::createFromTimeStamp(strtotime($d->updated_at))->locale('id')->diffForHumans()}}</p>
                             @break
                             @endif
@@ -58,17 +58,17 @@
                             @endif
                             <div class="bar">
                                 <div class="progress-bar-xs progress">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $l->progres_capaian / $l->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$l->progres_capaian / $l->target_capaian * 100}}%"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $g->progres_capaian / $g->target_capaian * 100 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{$g->progres_capaian / $g->target_capaian * 100}}%"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-7 col-md-12 col-sm-12 donateprog">
-                                    <p><b>@currency($l->progres_capaian)</b><br>
-                                    dari <b>@currency($l->target_capaian)</b>
+                                    <p><b>@currency($g->progres_capaian)</b><br>
+                                    dari <b>@currency($g->target_capaian)</b>
                                     </p>
                                 </div>
                                 <div class="col-lg-5 col-md-12 col-sm-12 donateprog right-all">
-                                    <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($l->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
+                                    <p><strong>{{\Carbon\Carbon::createFromTimeStamp(strtotime($g->batas_waktu))->locale('id')->diffInDays()}}</strong> hari lagi</p>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +146,7 @@
         <div class="container">
             <div class="row">
                 <!-- ***** Features Small Item Start ***** -->
-                @foreach($galadana as $g)
+                @foreach($latest as $g)
                 <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s" onclick="location.href='/g/{{$g->slug}}';" style="cursor: pointer;">
                     <div class="features-populer-item">
                         <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">

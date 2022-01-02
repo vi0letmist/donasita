@@ -131,12 +131,6 @@ class GaladanaController extends Controller
     public function kategori($slug)
     {
         $kategori = Kategori::where('slug', $slug)->first();
-        $galadana = Galadana::join('kategori', 'kategori.id', '=', 'galadana.kategori_id')
-                ->where('galadana.kategori_id','=', $kategori->id)
-                ->select('kategori.*', 'galadana.*')
-                ->latest('galadana.created_at')
-                ->getQuery()
-                ->get();
         return view('campaign.kategori', compact('kategori', 'galadana'));
     }
     public function load_galadana(Request $request, $id)
