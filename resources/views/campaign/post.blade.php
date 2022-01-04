@@ -432,33 +432,27 @@ $(document).ready(function () {
     }
 </script>
 <script>
-$(document).ready(function(){
-
- var _token = $('input[name="_token"]').val();
-
- load_more('', _token);
-
- function load_more(id="", _token)
- {
-
-  $.ajax({
-   url:"{{ route('galadana.load_komen', $galadana->id) }}",
-   method:"POST",
-   data:{id:id, _token:_token},
-   success:function(data)
-   {
-    $('#LoadMoreButton').remove();
-    $('#post_data').append(data);
-   }
-  })
- }
- $('body').on('click', '#LoadMoreButton', function(){
-    var id= $(this).data('id');
-
-    $('#LoadMoreButton').html("loading...");
-    load_more(id, _token);
- });
-
-});
+    $(document).ready(function(){
+    var _token = $('input[name="_token"]').val();
+    load_more('', _token);
+    function load_more(id="", _token)
+    {
+    $.ajax({
+    url:"{{ route('galadana.load_komen', $galadana->id) }}",
+    method:"POST",
+    data:{id:id, _token:_token},
+    success:function(data)
+    {
+        $('#LoadMoreButton').remove();
+        $('#post_data').append(data);
+    }
+    })
+    }
+    $('body').on('click', '#LoadMoreButton', function(){
+        var id= $(this).data('id');
+        $('#LoadMoreButton').html("loading...");
+        load_more(id, _token);
+    });
+    });
 </script>
 @endpush

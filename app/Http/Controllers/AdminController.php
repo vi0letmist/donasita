@@ -33,7 +33,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $galadana = Galadana::where('status', '=', 1)->count();
+        $galadana = Galadana::where('status', 1)->orWhere('status', 2)->count();
         $donasi = Donate::where('status', '=', 2)->sum('donates.nominal');
         $donatur = Donate::where('status', '=', 2)->count();
         $label  = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober",
@@ -430,7 +430,6 @@ class AdminController extends Controller
     }
     public function approvalpost()
     {
-        $galadana= Galadana::all();
         $galadana = galadana::join('users', 'users.id','=', 'galadana.user_id')
             ->whereNull('galadana.status')
             ->select('users.*', 'galadana.*')
@@ -511,6 +510,10 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'judul' => 'required',
+            'slug' => 'required',
+            'cerita' => 'required',
+            'target_capaian' => 'required',
             'cerita' => 'nullable'
         ]);
         $galadana = Galadana::findOrFail($id);

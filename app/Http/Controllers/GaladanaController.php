@@ -203,7 +203,6 @@ class GaladanaController extends Controller
         $galadana = Galadana::where('slug', $slug)
             ->where('user_id', Auth::user()->id)
             ->first();
-
         DB::statement(DB::raw('set @rownum=0'));
         $donasi = Donate::join('galadana', 'galadana.id','=', 'donates.galadana_id')
             ->where('donates.galadana_id', '=', $galadana->id)
@@ -267,6 +266,10 @@ class GaladanaController extends Controller
     public function update(Request $request, $slug)
     {
         $this->validate($request, [
+            'judul' => 'required',
+            'slug' => 'required',
+            'cerita' => 'required',
+            'target_capaian' => 'required',
             'cerita' => 'nullable'
         ]);
         $galadana = Galadana::findOrFail($slug);
