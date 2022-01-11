@@ -625,6 +625,9 @@ class AdminController extends Controller
     public function updateUser(Request $request, $id)
     {
         $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
             'no_hp' => 'nullable',
         ]);
         $user = User::findOrFail($id);

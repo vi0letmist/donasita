@@ -28,7 +28,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
-            'komen' => 'nullable',
+            'no_hp' => 'required',
             'password' => 'nullable',
             'role' => 'nullable',
             'foto_profil' => 'nullable'
@@ -70,7 +70,9 @@ class UserController extends Controller
     }
     public function delete($id)
     {
-        User::destroy($id);
+        $user = User::findOrFail($id);
+        $user->role = "nonaktif";
+        $user->save();
         return redirect()->back()->withStatus(__('User berhasil dihapus'));
     }
 }

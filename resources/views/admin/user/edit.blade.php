@@ -45,7 +45,7 @@
                                     <div class="form-group{{ $errors->has('foto_profil') ? ' has-danger' : '' }} position-relative">
                                         <label class="form-control-label" for="foto_profil">{{ __('Foto Profil *  ') }}</label>
                                         <fieldset>
-                                            <input name="foto_profil" id="foto_profil" type="file" class="form-control-file" value="{{ old('file', $user->foto_profil) }}">
+                                            <input name="foto_profil" id="foto_profil" type="file" class="form-control-file" value="{{ old('foto_profil', $user->foto_profil) }}">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'foto_profil'])
                                     </div>
@@ -63,7 +63,7 @@
                                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} position-relative">
                                         <label class="form-control-label" for="email">{{ __('Email *  ') }}</label>
                                         <fieldset>
-                                            <input name="email" value="{{ old('name', $user->email) }}" type="text" class="form-control" id="email">
+                                            <input name="email" value="{{ old('email', $user->email) }}" type="text" class="form-control" id="email">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'email'])
                                     </div>
@@ -72,7 +72,7 @@
                                     <div class="form-group{{ $errors->has('no_hp') ? ' has-danger' : '' }} position-relative">
                                         <label class="form-control-label" for="no_hp">{{ __('Nomer Handphone *  ') }}</label>
                                         <fieldset>
-                                            <input name="no_hp" value="{{ old('name', $user->no_hp) }}" type="text" class="form-control" id="no_hp">
+                                            <input name="no_hp" value="{{ old('no_hp', $user->no_hp) }}" type="text" class="form-control" id="no_hp">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'no_hp'])
                                     </div>

@@ -52,11 +52,11 @@ class KategoriController extends Controller
             ->addColumn('status', function($galadana){
                 if($galadana->status == 1){
                 $status = '<div class="mb-2 mr-2 badge badge-success">Berjalan</div>';
-                    return $status;    
+                    return $status;
                 }
                 elseif($galadana->status == 2){
                     $status = '<div class="mb-2 mr-2 badge badge-primary">Selesai</div>';
-                    return $status; 
+                    return $status;
                 }
                 elseif($galadana->status == 0){
                 $status = '<div class="mb-2 mr-2 badge badge-danger">Tidak Disetujui</div>';
@@ -95,7 +95,7 @@ class KategoriController extends Controller
         } else {
             $kategori->gambar = 'defaultKategori.jpg';
         }
-        
+
         $kategori->save();
 
         if ($request->gambar != null) {
@@ -125,8 +125,8 @@ class KategoriController extends Controller
             $cover = Str::random(30) . Auth::user()->id . '.' . $request->file('gambar')->getClientOriginalExtension();
             $kategori->gambar = $cover;
             $request->file('gambar')->move($target, $cover);
-        } 
-       
+        }
+
         $kategori->update();
 
         return redirect()->route('manajemen-kategori.index')->withStatus(__('Kategori berhasil diupdate'));

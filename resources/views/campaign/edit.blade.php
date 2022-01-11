@@ -86,7 +86,7 @@
                                                     @include('alerts.feedback', ['field' => 'slug'])
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 center-all">
-                                                    <a href="/kelola/galadana" class="main-button-slider" style="margin-right: 10px;">Batalkan</a>
+                                                    <!-- <a href="/kelola/galadana" class="main-button-slider" style="margin-right: 10px;">Batalkan</a> -->
                                                     <fieldset>
                                                         <button type="submit" id="form-submit" class="main-button">Simpan</button>
                                                     </fieldset>
@@ -126,7 +126,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 center-all">
-                                                    <a href="/kelola/galadana" class="main-button-slider" style="margin-right: 10px;">Batalkan</a>
+                                                    <!-- <a href="/kelola/galadana" class="main-button-slider" style="margin-right: 10px;">Batalkan</a> -->
                                                     <fieldset>
                                                     <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#editCollapse" style="margin-right: 10px;">
                                                         Ubah
@@ -146,7 +146,7 @@
                                             </fieldset>
                                             @include('alerts.feedback', ['field' => 'cerita'])
                                             <div class="col-lg-12 col-md-12 col-sm-12 center-all" style="margin: 20px 10px 20px 10px;">
-                                                <a href="/kelola/galadana" class="main-button-slider" style="margin-right: 10px;">Batalkan</a>
+                                                <!-- <a href="/kelola/galadana" class="main-button-slider" style="margin-right: 10px;">Batalkan</a> -->
                                                 <fieldset>
                                                     <button type="submit" id="form-submit" class="main-button">Simpan</button>
                                                 </fieldset>
@@ -210,7 +210,7 @@
                   e.preventDefault();
                   var delete_id = $(this).data('id');
                   swal({
-                      title: "Anda yakin?",
+                      title: "Anda yakin untuk menonaktifkan penggalangan dana ini?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
                       icon: "warning",
                       buttons: true,
@@ -233,7 +233,7 @@
                             url: "/galadana/"+delete_id+"/delete",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ window.location.href= "/kelola/galadana";});
+                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil dinonaktifkan", "success").then(function(){ window.location.href= "/kelola/galadana";});
                             }
                         });
                       }else{

@@ -133,10 +133,58 @@
        });
      });
    </script>
+   <script type="text/javascript">
+          $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            //   startdecline galadana
+              $('body').on('click','.declineDonasi', function(e){
+                  e.preventDefault();
+                  var delete_id = $(this).closest('.modalKonfirmasi').find('.declineDonasiId').val();
+                  swal({
+                      title: "Anda yakin menolak donasi ini?",
+                      text: "Anda tidak akan bisa mengembalikannya lagi",
+                      icon: "warning",
+                      buttons: true,
+                      daggerMode:true,
+                      buttons: true,
+                      confirmButtonText: "Yes",
+                      cancelButtonText: "No",
+                      closeModal: false,
+                      closeModal: false
+                  })
+                  .then((willDelete) => {
+                      if(willDelete){
+                          var data = {
+                            "_token": $('input[name=_token]').val(),
+                            "id_lomba": delete_id,
+                            "_method": "GET"
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "/konfirmasi-donasi/decline/"+delete_id,
+                            data: data,
+                            success: function(){
+                                swal("Tertolak", "Donasi tersebut sudah berhasil ditolak", "success").then(function(){ location.reload();});
+                            }
+                        });
+                      }else{
+                        swal("Batal ditolak!", "Data aman di database.", "error");
+                      }
+                  });
+              });
+            //   enddelete
+
+              });
+</script>
 @endpush
 @foreach($donasi as $d)
 <!-- Modal -->
-<div class="modal fade" id="exampleModal{{$d->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+<div class="modal fade modalKonfirmasi" id="exampleModal{{$d->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+<input type="hidden" class="declineDonasiId" value="{{$d->id}}">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -197,7 +245,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="/konfirmasi-donasi/decline/{{$d->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
+                <button class="mb-2 mr-2 btn btn-danger declineDonasi">Tolak</button>
                 <a href="/konfirmasi-donasi/approve/{{$d->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
             </div>
         </div>

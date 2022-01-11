@@ -97,8 +97,11 @@
                 </div>
             @else
                 @foreach($galadana as $g)
+
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+
                     <div class="features-populer-item">
+                    <input type="hidden" class="declineGaladanaId" value="{{$g->id}}">
                         <div class="populer" style="background-image: url(../images/{{$g->gambar}});background-size:cover;background-repeat: no-repeat;background-position: center;">
 
                         </div>
@@ -113,9 +116,8 @@
                         <button class="mr-2 btn-icon btn-icon-only btn btn-info btn-blc" data-toggle="modal" data-target="#exampleModal{{$g->id}}">
                             <i class="pe-7s-info btn-icon-wrapper"> </i>
                         </button>
-                        <a href="/persetujuan-post/decline/{{$g->id}}">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger btn-blc"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
-                        </a>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger btn-blc declineGaladana"><i class="pe-7s-close btn-icon-wrapper"> </i></button>
+
                     </div>
                 </div>
                 <!-- ***** Features Small Item End ***** -->
@@ -125,9 +127,95 @@
     </div>
 
 @endsection
+@push('js')
+<script type="text/javascript">
+          $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            //   startdecline galadana
+              $('body').on('click','.declineGaladana', function(e){
+                  e.preventDefault();
+                  var delete_id = $(this).closest('.features-populer-item').find('.declineGaladanaId').val();
+                  swal({
+                      title: "Anda yakin menolak penggalangan dana ini?",
+                      text: "Anda tidak akan bisa mengembalikannya lagi",
+                      icon: "warning",
+                      buttons: true,
+                      daggerMode:true,
+                      buttons: true,
+                      confirmButtonText: "Yes",
+                      cancelButtonText: "No",
+                      closeModal: false,
+                      closeModal: false
+                  })
+                  .then((willDelete) => {
+                      if(willDelete){
+                          var data = {
+                            "_token": $('input[name=_token]').val(),
+                            "id_lomba": delete_id,
+                            "_method": "GET"
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "/persetujuan-post/decline/"+delete_id,
+                            data: data,
+                            success: function(){
+                                swal("Tertolak", "Penggalangan dana tersebut sudah berhasil ditolak", "success").then(function(){ location.reload();});
+                            }
+                        });
+                      }else{
+                        swal("Batal ditolak!", "Data aman di database.", "error");
+                      }
+                  });
+              });
+            //   enddelete
+            //   startdecline galadana
+            $('body').on('click','.declineGaladanaMod', function(e){
+                  e.preventDefault();
+                  var delete_id = $(this).closest('.modalKonfirmasi').find('.declineGaladanaId').val();
+                  swal({
+                      title: "Anda yakin menolak penggalangan dana ini?",
+                      text: "Anda tidak akan bisa mengembalikannya lagi",
+                      icon: "warning",
+                      buttons: true,
+                      daggerMode:true,
+                      buttons: true,
+                      confirmButtonText: "Yes",
+                      cancelButtonText: "No",
+                      closeModal: false,
+                      closeModal: false
+                  })
+                  .then((willDelete) => {
+                      if(willDelete){
+                          var data = {
+                            "_token": $('input[name=_token]').val(),
+                            "id_lomba": delete_id,
+                            "_method": "GET"
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "/persetujuan-post/decline/"+delete_id,
+                            data: data,
+                            success: function(){
+                                swal("Tertolak", "Penggalangan dana tersebut sudah berhasil ditolak", "success").then(function(){ location.reload();});
+                            }
+                        });
+                      }else{
+                        swal("Batal ditolak!", "Data aman di database.", "error");
+                      }
+                  });
+              });
+            //   enddelete
+              });
+</script>
+@endpush
 @foreach($galadana as $g)
 <!-- Modal -->
-<div class="modal fade" id="exampleModal{{$g->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+<div class="modal fade modalKonfirmasi" id="exampleModal{{$g->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+    <input type="hidden" class="declineGaladanaId" value="{{$g->id}}">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -184,7 +272,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="/persetujuan-post/decline/{{$g->id}}" class="mb-2 mr-2 btn btn-danger">Tolak</a>
+                <button class="mb-2 mr-2 btn btn-danger declineGaladanaMod">Tolak</button>
                 <a href="/persetujuan-post/approve/{{$g->id}}" class="mb-2 mr-2 btn btn-success">Setuju</a>
             </div>
         </div>

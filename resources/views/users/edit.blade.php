@@ -18,6 +18,9 @@
         clip-path: circle();
         border-radius: 50%;
     }
+    .alert-danger {
+    margin-top: 20px;
+    }
 </style>
 <div class="container padding-top-60">
     <div class="row">
@@ -57,7 +60,7 @@
                                         <img src="{{ asset('assets') }}/images/avatars/{{$user->foto_profil}}" class="img-fluid" alt="foto profil"></img>
                                     </div>
 
-                                    <div class="offset-lg-3 col-lg-6 col-md-6 col-sm-6 form-group{{ $errors->has('foto_profil') ? ' has-danger' : '' }}">
+                                    <!-- <div class="offset-lg-3 col-lg-6 col-md-6 col-sm-6 form-group{{ $errors->has('foto_profil') ? ' has-danger' : '' }}">
                                         <label>Foto Profil:</label>
                                         <fieldset>
                                             <input name="foto_profil" type="file" class="form-control" id="foto_profil" value="{{ old('foto_profil', $user->foto_profil) }}">
@@ -66,6 +69,13 @@
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3">
 
+                                    </div> -->
+                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                        <label>Foto Profil:</label>
+                                        <fieldset>
+                                            <input name="foto_profil" type="file" class="form-control" id="foto_profil" value="{{ old('foto_profil', $user->foto_profil) }}">
+                                        </fieldset>
+                                        @include('alerts.feedback', ['field' => 'foto_profil'])
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                         <label>Nama:</label>
@@ -77,9 +87,16 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                         <label>Email:</label>
                                         <fieldset>
-                                            <input name="email" type="text" class="form-control" id="email" value="{{ old('name',$user->email) }}">
+                                            <input name="email" type="text" class="form-control" id="email" value="{{ old('email',$user->email) }}">
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'email'])
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('no_hp') ? ' has-danger' : '' }}">
+                                        <label>No. Handphone:</label>
+                                        <fieldset>
+                                            <input name="no_hp" type="text" class="form-control" id="no_hp" value="{{ old('no_hp',$user->no_hp) }}">
+                                        </fieldset>
+                                        @include('alerts.feedback', ['field' => 'no_hp'])
                                     </div>
                                     <!-- <div class="col-lg-6 col-md-6 col-sm-12 form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                         <label>Password Saat Ini</label>
@@ -95,7 +112,7 @@
                                         </fieldset>
                                         @include('alerts.feedback', ['field' => 'password'])
                                     </div> -->
-                                    <input name="role" type="hidden" class="form-control" id="role" value="{{ old('name',$user->role) }}">
+                                    <input name="role" type="hidden" class="form-control" id="role" value="{{ old('role',$user->role) }}">
                                     <div class="col-lg-12 col-md-12 col-sm-12 center-all">
                                         <fieldset>
                                             <a href="/kelola/umum/reset-password/" type="button" class="main-button-slider margin-right-10">Ganti kata sandi</a>

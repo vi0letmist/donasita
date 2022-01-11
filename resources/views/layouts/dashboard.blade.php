@@ -613,7 +613,7 @@
                   e.preventDefault();
                   var delete_id = $(this).closest("tr").find('.deleteGaladanaId').val();
                   swal({
-                      title: "Anda yakin?",
+                      title: "Anda yakin menonaktifkan penggalangan dana ini?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
                       icon: "warning",
                       buttons: true,
@@ -636,11 +636,11 @@
                             url: "/galadana/"+delete_id+"/delete",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "Penggalangan dana tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
+                                swal("Nonaktif", "Penggalangan dana tersebut sudah berhasil dinonaktifkan", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{
-                        swal("Batal dihapus!", "Data aman di database.", "error");
+                        swal("Batal dinonaktifkan!", "Data aman di database.", "error");
                       }
                   });
               });
@@ -650,7 +650,7 @@
                   e.preventDefault();
                   var delete_id = $(this).closest("tr").find('.deleteKategoriId').val();
                   swal({
-                      title: "Anda yakin?",
+                      title: "Anda yakin ingin menghapus kategori ini?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
                       icon: "warning",
                       buttons: true,
@@ -687,7 +687,7 @@
                   e.preventDefault();
                   var delete_id = $(this).closest("tr").find('.deleteUserId').val();
                   swal({
-                      title: "Anda yakin?",
+                      title: "Anda yakin ingin menonaktifkan user ini?",
                       text: "Anda tidak akan bisa mengembalikannya lagi",
                       icon: "warning",
                       buttons: true,
@@ -710,11 +710,11 @@
                             url: "/manajemen-user/"+delete_id+"/hapus",
                             data: data,
                             success: function(){
-                                swal("Terhapus", "User tersebut sudah berhasil terhapus", "success").then(function(){ location.reload();});
+                                swal("Nonaktif", "User tersebut sudah berhasil dinonaktifkan", "success").then(function(){ location.reload();});
                             }
                         });
                       }else{
-                        swal("Batal dihapus!", "Data aman di database.", "error");
+                        swal("Batal dinonaktif!", "Data aman di database.", "error");
                       }
                   });
               });

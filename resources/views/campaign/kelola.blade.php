@@ -97,7 +97,7 @@
                                     </div>
                                     @elseif($g->status == 0)
                                         <div>
-                                            <a class="ret">Penggalangan dana anda ditolak</a>
+                                            <a class="ret">Penggalangan dana anda ditolak/nonaktif</a>
                                         </div>
                                     @elseif($g->status == 1)
                                         <div>

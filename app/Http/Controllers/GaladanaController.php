@@ -341,7 +341,9 @@ class GaladanaController extends Controller
     }
     public function delete($id)
     {
-        Galadana::destroy($id);
+        $galadana = Galadana::findOrFail($id);
+        $galadana->status = 0;
+        $galadana->save();
         return redirect()->back()->withStatus(__('Galadana berhasil dihapus'));
     }
 }
